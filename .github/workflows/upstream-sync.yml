@@ -1,10 +1,11 @@
+---
 name: Sync with Upstream anthropics/skills
 
-on:
+'on':
   # Run every 6 hours for complete 24-hour coverage (4 times daily)
   schedule:
     - cron: '0 */6 * * *'  # At minute 0 past every 6th hour
-  
+
   # Allow manual triggering from Actions tab
   workflow_dispatch:
 
@@ -15,19 +16,19 @@ permissions:
 jobs:
   sync-upstream:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0  # Fetch all history for proper merging
-      
+
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      
+
       - name: Sync with upstream (safe mode)
         uses: tgymnich/fork-sync@v2
         with:
@@ -37,17 +38,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
         id: sync
-      
+
       - name: Check sync result
         run: |
-          echo "Sync completed. If conflicts occurred, a PR was created automatically."
+          echo "Sync completed. If conflicts occurred, a PR was \
+          created automatically."
           echo "Status: ${{ steps.sync.outcome }}"
-      
+
       - name: Verify protected directories
         if: steps.sync.outcome == 'success'
         run: |
           echo "Verifying that custom directories remain intact..."
-          
+
           # Check if critical custom directories exist
           for dir in "universal" "tools" "docs"; do
             if [ ! -d "$dir" ]; then
@@ -57,9 +59,10 @@ jobs:
               echo "✅ Directory '$dir' is present"
             fi
           done
-          
+
           # Check if critical tools exist
-          for tool in "tools/convert.py" "tools/validate.py" "tools/sync-upstream.sh"; do
+          for tool in "tools/convert.py" "tools/validate.py" \
+          "tools/sync-upstream.sh"; do
             if [ ! -f "$tool" ]; then
               echo "❌ ERROR: Critical tool '$tool' is missing!"
               exit 1
@@ -67,9 +70,9 @@ jobs:
               echo "✅ Tool '$tool' is present"
             fi
           done
-          
-          echo "✅ All protected directories and tools verified successfully"
-      
+
+          echo "✅ All protected directories and tools verified"
+
       - name: Commit successful fast-forward merge
         if: steps.sync.outcome == 'success'
         run: |
@@ -78,30 +81,41 @@ jobs:
             echo "No changes to commit - already up to date"
           else
             git add -A
-            git commit -m "chore: sync upstream anthropics/skills main – new/updated skills" || echo "No changes to commit"
+            git commit -m "chore: sync upstream anthropics/skills \
+            main – new/updated skills" || echo "No changes to commit"
             git push origin main || echo "Push failed or nothing to push"
           fi
-      
+
       - name: Summary
         if: always()
         run: |
           echo "## Sync Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.sync.outcome }}" == "success" ]; then
-            echo "✅ **Sync completed successfully**" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **Sync completed successfully**" \
+            >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "The repository has been synchronized with upstream anthropics/skills (main branch)." >> $GITHUB_STEP_SUMMARY
-            echo "All custom directories (universal/, tools/, docs/) remain protected." >> $GITHUB_STEP_SUMMARY
+            echo "The repository has been synchronized with upstream \
+            anthropics/skills (main branch)." >> $GITHUB_STEP_SUMMARY
+            echo "All custom directories (universal/, tools/, docs/) \
+            remain protected." >> $GITHUB_STEP_SUMMARY
           else
-            echo "⚠️ **Sync encountered conflicts**" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ **Sync encountered conflicts**" \
+            >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "A pull request has been automatically created for manual review." >> $GITHUB_STEP_SUMMARY
-            echo "Please review the PR to resolve any conflicts before merging." >> $GITHUB_STEP_SUMMARY
+            echo "A pull request has been automatically created for \
+            manual review." >> $GITHUB_STEP_SUMMARY
+            echo "Please review the PR to resolve any conflicts before \
+            merging." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Protected Directories:" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ universal/ - Universal LLM Skills Format" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ tools/ - Custom tools (convert.py, validate.py, sync-upstream.sh)" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ docs/ - Enhanced documentation" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ universal/ - Universal LLM Skills Format" \
+            >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ tools/ - Custom tools (convert.py, validate.py, \
+            sync-upstream.sh)" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ docs/ - Enhanced documentation" \
+            >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "These will never be overwritten by the automated sync." >> $GITHUB_STEP_SUMMARY
+            echo "These will never be overwritten by the automated \
+            sync." >> $GITHUB_STEP_SUMMARY
           fi
