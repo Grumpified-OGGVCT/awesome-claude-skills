@@ -6,6 +6,10 @@ Automation tools for working with Claude Skills and the universal format.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
+| [nlp-discover.py](#nlp-discoverpy) 🤖 | NLP-powered semantic search | `python tools/nlp-discover.py "query"` |
+| [find-skill](#find-skill) 🌟 | Simple skill search wrapper | `./tools/find-skill pdf` |
+| [discover.py](#discoverpy) ⭐ | Find skills by search/browse | `python tools/discover.py` |
+| [index-skills.py](#index-skillspy) | Generate skill search index | `python tools/index-skills.py` |
 | [convert.py](#convertpy) | Convert skills to universal format | `python tools/convert.py --all` |
 | [validate.py](#validatepy) | Validate universal skill format | `python tools/validate.py --all` |
 | [sync-upstream.sh](#sync-upstreamsh) | Sync with anthropics/skills | `./tools/sync-upstream.sh` |
@@ -21,6 +25,383 @@ pip install pyyaml
 ```
 
 ## Tool Documentation
+
+### nlp-discover.py
+
+🤖 **AI-Powered Semantic Search using Gemini 3 Flash Preview**
+
+#### Why Use This?
+
+The most advanced skill discovery method! Uses LLM-powered natural language understanding to:
+- **Understand intent** - "I need help with documents" → finds PDF, Word, Excel tools
+- **Interpret queries** - Clarifies vague searches automatically
+- **Generate explanations** - AI-written descriptions of each skill
+- **Smart recommendations** - Suggests related skills you might not know about
+
+This solves the original problem: "I have to know what to ask for in order to find it."  
+Now you just describe what you need in plain English!
+
+#### Features
+
+- 🧠 **Semantic search** - Understands meaning, not just keywords
+- 💡 **Query interpretation** - "business stuff" → "business and marketing tools"
+- 📝 **AI explanations** - Detailed, helpful skill descriptions
+- ⚡ **Powered by Gemini 3 Flash Preview** - Fast and accurate
+- 🔄 **Auto-fallback** - Uses basic search if API unavailable
+
+#### Prerequisites
+
+1. **API Key** - Set one of (in order of preference):
+   ```bash
+   export OLLAMA_TURBO_CLOUD_API_KEY='your-key'   # Fastest (recommended)
+   export OLLAMA_PROXY_API_KEY='your-key'         # Alternative
+   export OLLAMA_API_KEY='your-key'               # Alternative
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install openai
+   ```
+
+#### Usage
+
+```bash
+# Natural language search
+python tools/nlp-discover.py "I need to work with documents"
+python tools/nlp-discover.py "help me with my business"
+python tools/nlp-discover.py "tools for my website"
+
+# Get AI-generated explanations
+python tools/nlp-discover.py "pdf tools" --explain
+
+# More results
+python tools/nlp-discover.py "business tools" --top 10
+
+# Specify custom API key
+python tools/nlp-discover.py "query" --api-key "your-key"
+
+# Specify custom endpoint
+python tools/nlp-discover.py "query" --endpoint "https://custom.endpoint/v1"
+```
+
+#### Real Examples
+
+**Example 1: Vague query gets interpreted**
+```bash
+$ python tools/nlp-discover.py "something for my website"
+
+🔍 Query: "something for my website"
+💡 You're looking for tools to test, analyze, or build web applications.
+
+Found 3 relevant skill(s):
+
+1. 📦 webapp-testing
+   Testing and validation for web applications
+   
+2. 📦 artifacts-builder
+   Build complex web artifacts with React and Tailwind
+   
+3. 📦 domain-name-brainstormer
+   Find the perfect domain name for your project
+```
+
+**Example 2: Business query with explanation**
+```bash
+$ python tools/nlp-discover.py "I need help with my business" --explain
+
+🔍 Query: "I need help with my business"
+💡 You're looking for business and marketing tools like lead research,
+    competitive analysis, and brand guidelines.
+
+Found 5 relevant skill(s):
+
+1. 📦 lead-research-assistant
+   📝 Detailed Explanation:
+      This skill helps you identify and qualify high-quality leads by
+      analyzing your product, searching for target companies, and
+      providing actionable outreach strategies.
+      
+      Use this when you're prospecting new clients, building a sales
+      pipeline, or need to research potential customers at scale.
+      
+      Sales teams, business development professionals, and startups
+      looking to grow their customer base will find this invaluable.
+```
+
+#### How It Works
+
+1. **Query Interpretation**: Gemini analyzes your query and clarifies the intent
+2. **Context Building**: Creates a summary of all available skills
+3. **Semantic Matching**: LLM ranks skills by relevance to your need
+4. **Result Generation**: Returns top matches with installation instructions
+5. **Explanation (Optional)**: Generates AI-written skill descriptions
+
+#### Comparison: NLP vs Basic Search
+
+| Feature | NLP Search | Basic Search |
+|---------|-----------|--------------|
+| Understands intent | ✅ Yes | ❌ No (keywords only) |
+| Vague queries | ✅ Interprets | ❌ May fail |
+| Explanations | ✅ AI-generated | ❌ Static description |
+| Related skills | ✅ Smart suggestions | ❌ Exact matches only |
+| Setup | API key required | None needed |
+| Speed | ~1-2 seconds | Instant |
+
+**When to use NLP:** Exploring, vague needs, want recommendations  
+**When to use basic:** Know exact keyword, offline, API unavailable
+
+#### Configuration
+
+**Available Endpoints** (auto-detected from API key):
+
+| API Key | Endpoint | Speed |
+|---------|----------|-------|
+| `OLLAMA_TURBO_CLOUD_API_KEY` | `turbo.ollama.cloud` | Fastest ⚡ |
+| `OLLAMA_PROXY_API_KEY` | `proxy.ollama.cloud` | Fast |
+| `OLLAMA_API_KEY` | `cloud.ollama.ai` | Standard |
+
+**Model Parameters:**
+
+```python
+semantic_search_temp = 0.3    # Consistent recommendations
+explain_temp = 0.5            # Natural explanations  
+interpret_temp = 0.4          # Accurate interpretation
+max_tokens = 500              # Sufficient for JSON response
+```
+
+#### Troubleshooting
+
+**"No API key found"**
+```bash
+export OLLAMA_TURBO_CLOUD_API_KEY='your-key-here'
+```
+
+**"openai library not installed"**
+```bash
+pip install openai
+```
+
+**"NLP search failed"**
+- Tool automatically falls back to basic keyword search
+- Check API key validity
+- Verify internet connection
+
+#### See Also
+
+- [NLP Discovery Guide](../docs/NLP-DISCOVERY.md) - Full documentation
+- [GitHub Workflow](../.github/workflows/nlp-discovery-demo.yml) - CI/CD example
+- [discover.py](#discoverpy) - Basic search alternative
+
+### find-skill
+
+🌟 **The simplest way to find skills!**
+
+#### Why Use This?
+
+This is a convenience wrapper around discover.py that:
+- Automatically generates the index if needed (first run)
+- Simplifies the command syntax
+- Perfect for quick searches
+
+#### Usage
+
+```bash
+# Search for anything
+./tools/find-skill pdf
+./tools/find-skill domain name
+./tools/find-skill meeting notes
+
+# Interactive mode (no arguments)
+./tools/find-skill
+```
+
+#### Examples
+
+**Quick search:**
+```bash
+$ ./tools/find-skill pdf
+
+🔍 Found 10 skill(s) matching 'pdf':
+[Shows all PDF-related skills with details]
+```
+
+**Multi-word search:**
+```bash
+$ ./tools/find-skill domain name
+
+🔍 Found 1 skill(s) matching 'domain name':
+[Shows domain name brainstormer]
+```
+
+**First time:**
+```bash
+$ ./tools/find-skill pdf
+📦 First time setup - generating skill index...
+[Generates index, then shows results]
+```
+
+### discover.py
+
+⭐ **Start here!** Interactive tool to discover and search for skills.
+
+#### Why Use This?
+
+Can't remember what skills are available? Don't know what to search for? This tool solves the discoverability problem by letting you:
+- **Search** by keywords without knowing exact skill names
+- **Browse** by category or tags
+- **Explore** interactively to see what's available
+- **Get installation instructions** for any skill
+
+#### Features
+
+- 🔍 **Keyword search** - Find skills by what they do, not what they're called
+- 📂 **Category filtering** - Browse skills by type (Business, Development, Creative, etc.)
+- 🏷️ **Tag-based discovery** - Filter by technology or use case
+- 📋 **Interactive mode** - Explore with a friendly CLI interface
+- ⚡ **Quick search** - One-line command for fast lookups
+- 📥 **Installation help** - Get exact commands to install any skill
+
+#### Quick Start
+
+```bash
+# Interactive mode (recommended for first-time users)
+python tools/discover.py
+
+# Quick search for specific needs
+python tools/discover.py --search "domain name"
+python tools/discover.py --search "pdf"
+python tools/discover.py --search "meeting"
+
+# Browse by category
+python tools/discover.py --categories
+python tools/discover.py --category "Business & Marketing"
+
+# List everything
+python tools/discover.py --list
+```
+
+#### Interactive Mode Commands
+
+When you run `python tools/discover.py` without arguments, you enter interactive mode:
+
+```
+> search pdf              # Find skills related to PDFs
+> search domain name      # Find domain-related skills
+> category Business       # Show business & marketing skills
+> tag web                 # Show all web-related skills
+> list                    # List all skills
+> categories              # Show all categories
+> tags                    # Show all available tags
+> 1                       # View details of skill #1 from last results
+> help                    # Show available commands
+> quit                    # Exit
+```
+
+#### Real-World Examples
+
+**Example 1: "I need to work with PDFs but don't know what's available"**
+```bash
+$ python tools/discover.py --search "pdf"
+
+🔍 Found 10 skill(s) matching 'pdf':
+
+📦 pdf
+   Category: Document Processing
+   Comprehensive PDF manipulation toolkit for extracting text...
+   
+   Installation:
+   Claude.ai: Upload the file 'document-skills/pdf/SKILL.md'
+   Claude Code: cp -r document-skills/pdf ~/.config/claude-code/skills/
+```
+
+**Example 2: "What business tools are available?"**
+```bash
+$ python tools/discover.py --category "Business & Marketing"
+
+📂 Skills in 'Business & Marketing' (5):
+
+📦 brand-guidelines
+   Applies Anthropic's official brand colors...
+   
+📦 competitive-ads-extractor
+   Extracts and analyzes competitors' ads...
+   
+📦 domain-name-brainstormer
+   Generates creative domain name ideas...
+```
+
+**Example 3: "Show me everything with 'git'"**
+```bash
+$ python tools/discover.py --search "git"
+
+🔍 Found 3 skill(s) matching 'git':
+[Lists all git-related skills with details]
+```
+
+#### Prerequisites
+
+First, generate the skill index:
+```bash
+python tools/index-skills.py
+```
+
+This creates `SKILL-INDEX.json` which the discovery tool uses. The index is automatically updated when you add new skills.
+
+#### Tips
+
+- **Use broad keywords**: Search for "document" instead of specific file types
+- **Try tags**: Use `tags` command to see all filterable tags
+- **Browse categories**: Start with `categories` to understand what's available
+- **Interactive is best**: Use interactive mode for exploration, command-line for quick lookups
+
+### index-skills.py
+
+Generates a searchable index of all skills in the repository.
+
+#### Purpose
+
+This tool scans all SKILL.md files and creates `SKILL-INDEX.json`, which powers the discovery tool. Run this whenever:
+- You add new skills
+- You update skill descriptions
+- The index is missing or outdated
+
+#### Usage
+
+```bash
+# Generate index (creates SKILL-INDEX.json)
+python tools/index-skills.py
+
+# Generate index to custom location
+python tools/index-skills.py --output my-index.json
+```
+
+#### What It Does
+
+1. Scans repository for all `SKILL.md` files
+2. Extracts metadata (name, description, category)
+3. Generates searchable tags from content
+4. Categorizes skills automatically
+5. Creates `SKILL-INDEX.json` with all information
+
+#### Output
+
+```
+Scanning repository for skills...
+Found 27 skills across 7 categories
+✅ Index written to SKILL-INDEX.json
+
+Skills by Category:
+  Business & Marketing: 5
+  Development & Code Tools: 5
+  ...
+```
+
+#### Automation
+
+The index is automatically regenerated by:
+- The discovery tool (if index is missing)
+- CI/CD on skill additions
+- Manual runs when needed
 
 ### convert.py
 

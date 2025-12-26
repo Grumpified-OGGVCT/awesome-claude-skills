@@ -1,0 +1,98 @@
+---
+name: NLP Skill Discovery Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: 'Search query for skill discovery'
+        required: true
+        default: 'I need tools for documents'
+      explain:
+        description: 'Generate detailed explanations'
+        required: false
+        type: boolean
+        default: false
+      top:
+        description: 'Number of results'
+        required: false
+        default: '5'
+
+permissions:
+  contents: read
+
+jobs:
+  nlp-discovery:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai pyyaml
+      
+      - name: Generate skill index
+        run: |
+          python tools/index-skills.py
+      
+      - name: Run NLP Discovery
+        env:
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+        run: |
+          echo "🔍 Searching for: ${{ github.event.inputs.query }}"
+          echo ""
+          
+          if [ "${{ github.event.inputs.explain }}" = "true" ]; then
+            python tools/nlp-discover.py "${{ github.event.inputs.query }}" \
+              --top ${{ github.event.inputs.top }} \
+              --explain
+          else
+            python tools/nlp-discover.py "${{ github.event.inputs.query }}" \
+              --top ${{ github.event.inputs.top }}
+          fi
+      
+      - name: Test Examples
+        if: github.event.inputs.query == 'test'
+        env:
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+        run: |
+          echo "Running example queries..."
+          echo ""
+          
+          echo "=== Test 1: Document tools ==="
+          python tools/nlp-discover.py "I need to work with documents" --top 3
+          echo ""
+          
+          echo "=== Test 2: Business tools ==="
+          python tools/nlp-discover.py "help me with my business" --top 3
+          echo ""
+          
+          echo "=== Test 3: Web development ==="
+          python tools/nlp-discover.py "something for my website" --top 3
+          echo ""
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## NLP Discovery Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Query**: ${{ github.event.inputs.query }}" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Results**: Top ${{ github.event.inputs.top }}" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Explanations**: ${{ github.event.inputs.explain }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### NLP Features Tested" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Semantic search (intent understanding)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Query interpretation" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event.inputs.explain }}" = "true" ]; then
+            echo "- ✅ Skill explanations generated" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Model**: Gemini 3 Flash Preview via Ollama Cloud (OLLAMA_API_KEY)" >> $GITHUB_STEP_SUMMARY

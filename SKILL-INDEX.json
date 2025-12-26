@@ -1,0 +1,549 @@
+{
+  "version": "1.0",
+  "total_skills": 27,
+  "categories": [
+    "Business & Marketing",
+    "Communication & Writing",
+    "Creative & Media",
+    "Development & Code Tools",
+    "Document Processing",
+    "Other",
+    "Productivity & Organization"
+  ],
+  "skills": [
+    {
+      "name": "artifacts-builder",
+      "path": "artifacts-builder",
+      "skill_file": "artifacts-builder/SKILL.md",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "category": "Development & Code Tools",
+      "tags": [
+        "code",
+        "design",
+        "development & code tools",
+        "file",
+        "test",
+        "web"
+      ]
+    },
+    {
+      "name": "brand-guidelines",
+      "path": "brand-guidelines",
+      "skill_file": "brand-guidelines/SKILL.md",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "category": "Business & Marketing",
+      "tags": [
+        "business & marketing",
+        "design",
+        "word"
+      ]
+    },
+    {
+      "name": "canvas-design",
+      "path": "canvas-design",
+      "skill_file": "canvas-design/SKILL.md",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "category": "Creative & Media",
+      "tags": [
+        "code",
+        "communication",
+        "content",
+        "creative",
+        "creative & media",
+        "data",
+        "design",
+        "document",
+        "file",
+        "git",
+        "image",
+        "pdf",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "changelog-generator",
+      "path": "changelog-generator",
+      "skill_file": "changelog-generator/SKILL.md",
+      "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns hours of manual changelog writing into minutes of automated generation.",
+      "category": "Development & Code Tools",
+      "tags": [
+        "content",
+        "development & code tools",
+        "document",
+        "email",
+        "file",
+        "git",
+        "image",
+        "media",
+        "security",
+        "test",
+        "writing"
+      ]
+    },
+    {
+      "name": "competitive-ads-extractor",
+      "path": "competitive-ads-extractor",
+      "skill_file": "competitive-ads-extractor/SKILL.md",
+      "description": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns.",
+      "category": "Business & Marketing",
+      "tags": [
+        "analysis",
+        "business & marketing",
+        "content",
+        "creative",
+        "data",
+        "design",
+        "document",
+        "file",
+        "image",
+        "marketing",
+        "media",
+        "meeting",
+        "organization",
+        "productivity",
+        "research",
+        "security",
+        "test",
+        "video",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "content-research-writer",
+      "path": "content-research-writer",
+      "skill_file": "content-research-writer/SKILL.md",
+      "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership.",
+      "category": "Communication & Writing",
+      "tags": [
+        "analysis",
+        "code",
+        "communication & writing",
+        "content",
+        "data",
+        "document",
+        "email",
+        "file",
+        "media",
+        "organization",
+        "pdf",
+        "productivity",
+        "research",
+        "slack",
+        "test",
+        "web",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "developer-growth-analysis",
+      "path": "developer-growth-analysis",
+      "skill_file": "developer-growth-analysis/SKILL.md",
+      "description": "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.",
+      "category": "Other",
+      "tags": [
+        "analysis",
+        "api",
+        "code",
+        "content",
+        "data",
+        "debug",
+        "design",
+        "document",
+        "file",
+        "image",
+        "other",
+        "security",
+        "slack",
+        "web"
+      ]
+    },
+    {
+      "name": "docx",
+      "path": "document-skills/docx",
+      "skill_file": "document-skills/docx/SKILL.md",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "category": "Document Processing",
+      "tags": [
+        "analysis",
+        "api",
+        "business",
+        "code",
+        "content",
+        "data",
+        "debug",
+        "document",
+        "document processing",
+        "excel",
+        "file",
+        "image",
+        "media",
+        "organization",
+        "pdf",
+        "test",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "domain-name-brainstormer",
+      "path": "domain-name-brainstormer",
+      "skill_file": "domain-name-brainstormer/SKILL.md",
+      "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking.",
+      "category": "Business & Marketing",
+      "tags": [
+        "analysis",
+        "business",
+        "business & marketing",
+        "code",
+        "creative",
+        "design",
+        "media",
+        "research",
+        "test",
+        "web",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "file-organizer",
+      "path": "file-organizer",
+      "skill_file": "file-organizer/SKILL.md",
+      "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
+      "category": "Productivity & Organization",
+      "tags": [
+        "analysis",
+        "code",
+        "content",
+        "data",
+        "document",
+        "file",
+        "git",
+        "image",
+        "media",
+        "meeting",
+        "organization",
+        "pdf",
+        "productivity & organization",
+        "video"
+      ]
+    },
+    {
+      "name": "image-enhancer",
+      "path": "image-enhancer",
+      "skill_file": "image-enhancer/SKILL.md",
+      "description": "Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts.",
+      "category": "Creative & Media",
+      "tags": [
+        "creative & media",
+        "document",
+        "file",
+        "git",
+        "image",
+        "media",
+        "web"
+      ]
+    },
+    {
+      "name": "internal-comms",
+      "path": "internal-comms",
+      "skill_file": "internal-comms/SKILL.md",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "category": "Business & Marketing",
+      "tags": [
+        "business & marketing",
+        "communication",
+        "content",
+        "file",
+        "word"
+      ]
+    },
+    {
+      "name": "invoice-organizer",
+      "path": "invoice-organizer",
+      "skill_file": "invoice-organizer/SKILL.md",
+      "description": "Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours of manual bookkeeping into minutes of automated organization.",
+      "category": "Productivity & Organization",
+      "tags": [
+        "api",
+        "automation",
+        "business",
+        "code",
+        "content",
+        "creative",
+        "document",
+        "email",
+        "file",
+        "image",
+        "organization",
+        "pdf",
+        "productivity & organization",
+        "test"
+      ]
+    },
+    {
+      "name": "lead-research-assistant",
+      "path": "lead-research-assistant",
+      "skill_file": "lead-research-assistant/SKILL.md",
+      "description": "Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business development, and marketing professionals.",
+      "category": "Business & Marketing",
+      "tags": [
+        "business",
+        "business & marketing",
+        "code",
+        "data",
+        "email",
+        "file",
+        "git",
+        "marketing",
+        "media",
+        "productivity",
+        "research",
+        "web"
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "path": "mcp-builder",
+      "skill_file": "mcp-builder/SKILL.md",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "category": "Development & Code Tools",
+      "tags": [
+        "api",
+        "code",
+        "content",
+        "data",
+        "design",
+        "development & code tools",
+        "document",
+        "file",
+        "git",
+        "organization",
+        "research",
+        "security",
+        "test",
+        "web"
+      ]
+    },
+    {
+      "name": "meeting-insights-analyzer",
+      "path": "meeting-insights-analyzer",
+      "skill_file": "meeting-insights-analyzer/SKILL.md",
+      "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversations, or miss opportunities to listen. Perfect for professionals seeking to improve their communication and leadership skills.",
+      "category": "Communication & Writing",
+      "tags": [
+        "analysis",
+        "code",
+        "communication",
+        "communication & writing",
+        "data",
+        "file",
+        "meeting",
+        "word"
+      ]
+    },
+    {
+      "name": "pdf",
+      "path": "document-skills/pdf",
+      "skill_file": "document-skills/pdf/SKILL.md",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "category": "Document Processing",
+      "tags": [
+        "aws",
+        "code",
+        "content",
+        "data",
+        "document",
+        "document processing",
+        "excel",
+        "file",
+        "image",
+        "pdf",
+        "word"
+      ]
+    },
+    {
+      "name": "pptx",
+      "path": "document-skills/pptx",
+      "skill_file": "document-skills/pptx/SKILL.md",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "category": "Document Processing",
+      "tags": [
+        "analysis",
+        "api",
+        "code",
+        "content",
+        "creative",
+        "data",
+        "design",
+        "document",
+        "document processing",
+        "file",
+        "image",
+        "media",
+        "organization",
+        "pdf",
+        "powerpoint",
+        "web",
+        "writing"
+      ]
+    },
+    {
+      "name": "raffle-winner-picker",
+      "path": "raffle-winner-picker",
+      "skill_file": "raffle-winner-picker/SKILL.md",
+      "description": "Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.",
+      "category": "Productivity & Organization",
+      "tags": [
+        "data",
+        "document",
+        "email",
+        "excel",
+        "file",
+        "media",
+        "productivity & organization",
+        "slack",
+        "test"
+      ]
+    },
+    {
+      "name": "skill-creator",
+      "path": "skill-creator",
+      "skill_file": "skill-creator/SKILL.md",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "category": "Development & Code Tools",
+      "tags": [
+        "analysis",
+        "api",
+        "business",
+        "code",
+        "content",
+        "data",
+        "design",
+        "development & code tools",
+        "document",
+        "file",
+        "image",
+        "organization",
+        "pdf",
+        "powerpoint",
+        "test",
+        "web",
+        "word",
+        "writing"
+      ]
+    },
+    {
+      "name": "skill-share",
+      "path": "skill-share",
+      "skill_file": "skill-share/SKILL.md",
+      "description": "A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery.",
+      "category": "Other",
+      "tags": [
+        "analysis",
+        "data",
+        "design",
+        "document",
+        "file",
+        "other",
+        "pdf",
+        "slack"
+      ]
+    },
+    {
+      "name": "slack-gif-creator",
+      "path": "slack-gif-creator",
+      "skill_file": "slack-gif-creator/SKILL.md",
+      "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\".",
+      "category": "Creative & Media",
+      "tags": [
+        "creative",
+        "creative & media",
+        "data",
+        "design",
+        "file",
+        "image",
+        "slack"
+      ]
+    },
+    {
+      "name": "template-skill",
+      "path": "template-skill",
+      "skill_file": "template-skill/SKILL.md",
+      "description": "Replace with description of the skill and when Claude should use it.",
+      "category": "Other",
+      "tags": [
+        "other"
+      ]
+    },
+    {
+      "name": "theme-factory",
+      "path": "theme-factory",
+      "skill_file": "theme-factory/SKILL.md",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "category": "Creative & Media",
+      "tags": [
+        "code",
+        "creative & media",
+        "file",
+        "pdf"
+      ]
+    },
+    {
+      "name": "video-downloader",
+      "path": "video-downloader",
+      "skill_file": "video-downloader/SKILL.md",
+      "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival. Handles various formats and quality options.",
+      "category": "Creative & Media",
+      "tags": [
+        "aws",
+        "content",
+        "creative & media",
+        "data",
+        "file",
+        "research",
+        "video",
+        "web"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "path": "webapp-testing",
+      "skill_file": "webapp-testing/SKILL.md",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "category": "Development & Code Tools",
+      "tags": [
+        "api",
+        "automation",
+        "content",
+        "debug",
+        "development & code tools",
+        "file",
+        "test",
+        "web"
+      ]
+    },
+    {
+      "name": "xlsx",
+      "path": "document-skills/xlsx",
+      "skill_file": "document-skills/xlsx/SKILL.md",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "category": "Document Processing",
+      "tags": [
+        "analysis",
+        "code",
+        "content",
+        "data",
+        "document",
+        "document processing",
+        "excel",
+        "file",
+        "test",
+        "writing"
+      ]
+    }
+  ]
+}

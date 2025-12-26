@@ -74,9 +74,60 @@ This repository is perfect for:
 
 ## 🚀 Quick Start
 
+### 🔍 NEW: Can't Find What You Need? Use Skill Discovery!
+
+**Problem**: "I have to know what to ask for in order to find it."  
+**Solution**: Use our discovery tools to find skills by what they do!
+
+#### 🌟 NLP-Enhanced Discovery (Recommended)
+
+Powered by **Gemini 3 Flash Preview** - understands natural language!
+
+```bash
+# Set the API key (available in repo secrets)
+export OLLAMA_API_KEY='your-key'
+
+# Just describe what you need in plain English
+python tools/nlp-discover.py "I need to work with documents"
+python tools/nlp-discover.py "help me find domain names"
+python tools/nlp-discover.py "tools for my startup"
+
+# Get AI-generated explanations
+python tools/nlp-discover.py "pdf tools" --explain
+```
+
+**Why NLP is better:**
+- 🧠 Semantic search - understands intent, not just keywords
+- 💡 Query interpretation - clarifies vague searches  
+- 📝 AI explanations - detailed skill descriptions
+- ⚡ Smart recommendations - suggests related skills
+
+**Setup:** Repository secret `OLLAMA_API_KEY` is already configured!  
+For local use, get the key from repo secrets and set as environment variable.
+
+👉 **[NLP Discovery Guide](docs/NLP-DISCOVERY.md)**
+
+#### 📋 Basic Discovery (No API Key Required)
+
+```bash
+# Super simple wrapper
+./tools/find-skill pdf
+./tools/find-skill domain name
+
+# Or use Python for more control
+python tools/index-skills.py          # Generate index (one-time)
+python tools/discover.py              # Interactive mode
+python tools/discover.py --search "pdf"
+python tools/discover.py --category "Business & Marketing"
+```
+
+👉 **[Basic Discovery Guide](docs/SKILL-DISCOVERY.md)**
+
+---
+
 ### Option 1: Use Skills with Claude.ai (Easiest)
 
-1. Browse the [Skills](#skills) section below
+1. **Find a skill** using the discovery tool OR browse the [Skills](#skills) section below
 2. Pick a skill that matches your needs (e.g., [Domain Name Brainstormer](./domain-name-brainstormer/))
 3. Click the skill icon (🧩) in Claude.ai chat
 4. Add the skill or upload the SKILL.md file
@@ -87,7 +138,10 @@ This repository is perfect for:
 ### Option 2: Use Skills with Claude Code
 
 ```bash
-# Install a skill
+# Find a skill using discovery tool first!
+python tools/discover.py --search "what you need"
+
+# Then install it (example with domain-name-brainstormer)
 mkdir -p ~/.config/claude-code/skills/
 cp -r domain-name-brainstormer ~/.config/claude-code/skills/
 
@@ -132,8 +186,9 @@ See [Universal Skills Format](#universal-llm-skills-format) for more details.
 - [🎯 What Is This Repository?](#-what-is-this-repository)
 - [👥 Who Is This For?](#-who-is-this-for)
 - [🚀 Quick Start](#-quick-start)
+  - [🔍 Skill Discovery Tool](#-new-cant-find-what-you-need-use-skill-discovery) ⭐ **NEW**
 - [💡 What Are Claude Skills?](#-what-are-claude-skills)
-- [Universal LLM Skills Format](#universal-llm-skills-format) ✨ **NEW**
+- [Universal LLM Skills Format](#universal-llm-skills-format) ✨
 - [Automated Upstream Sync](#automated-upstream-sync)
 - [Skills](#skills)
   - [Document Processing](#document-processing)
