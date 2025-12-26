@@ -1,0 +1,26 @@
+name: raffle-winner-picker
+description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways,
+  raffles, and contests. Ensures fair, unbiased selection with transparency.
+tier: 1
+version: '1.0'
+source:
+  original_path: raffle-winner-picker
+  last_sync: '2025-12-26'
+  upstream_repo: anthropics/skills
+requirements:
+  tool_calling: false
+  min_context_window: 4096
+  recommended_context_window: 8192
+compatibility:
+  tested_providers:
+  - openrouter
+  - ollama
+  tested_models:
+  - llama3.2
+  - qwen2.5
+  - mistral
+  recommended_models:
+  - anthropic/claude-3.5-sonnet
+  - openai/gpt-4o
+  - meta-llama/llama-3.2-90b-instruct
+tags: []

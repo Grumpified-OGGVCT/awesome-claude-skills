@@ -1,0 +1,302 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "fill_pdf_fields",
+      "description": "Function from fill_fillable_fields.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "validation_error_for_field_value",
+      "description": "Function from fill_fillable_fields.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "monkeypatch_pydpf_method",
+      "description": "Function from fill_fillable_fields.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "patched_get_inherited",
+      "description": "Function from fill_fillable_fields.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "transform_coordinates",
+      "description": "Function from fill_pdf_form_with_annotations.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "fill_pdf_form",
+      "description": "Function from fill_pdf_form_with_annotations.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "convert",
+      "description": "Function from convert_pdf_to_images.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "rects_intersect",
+      "description": "Function from check_bounding_boxes.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "create_validation_image",
+      "description": "Function from create_validation_image.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_full_annotation_field_id",
+      "description": "Function from extract_form_field_info.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "make_field_dict",
+      "description": "Function from extract_form_field_info.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_field_info",
+      "description": "Function from extract_form_field_info.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "sort_key",
+      "description": "Function from extract_form_field_info.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "write_field_info",
+      "description": "Function from extract_form_field_info.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "create_json_stream",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_no_intersections",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_label_entry_intersection_same_field",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_intersection_between_different_fields",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_different_pages_no_intersection",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_entry_height_too_small",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_entry_height_adequate",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_default_font_size",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_no_entry_text",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_multiple_errors_limit",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_edge_touching_boxes",
+      "description": "Function from check_bounding_boxes_test.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+]

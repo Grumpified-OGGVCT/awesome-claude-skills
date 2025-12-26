@@ -35,6 +35,7 @@
 
 A curated list of practical Claude Skills for enhancing productivity across Claude.ai, Claude Code, and the Claude API.
 
+**✨ NEW: Universal Format** - All skills now available in OpenAI-compatible format for use with OpenRouter, Ollama, and other LLM providers! See [Universal Skills](#universal-llm-skills-format) below.
 
 > If you want your skills to take actions across 500+ apps, wire them up with [Composio](https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills)
 
@@ -42,6 +43,7 @@ A curated list of practical Claude Skills for enhancing productivity across Clau
 ## Contents
 
 - [What Are Claude Skills?](#what-are-claude-skills)
+- [Universal LLM Skills Format](#universal-llm-skills-format) ✨ **NEW**
 - [Skills](#skills)
   - [Document Processing](#document-processing)
   - [Development & Code Tools](#development--code-tools)
@@ -61,6 +63,92 @@ A curated list of practical Claude Skills for enhancing productivity across Clau
 ## What Are Claude Skills?
 
 Claude Skills are customizable workflows that teach Claude how to perform specific tasks according to your unique requirements. Skills enable Claude to execute tasks in a repeatable, standardized manner across all Claude platforms.
+
+## Universal LLM Skills Format
+
+🎯 **Skills now work with any OpenAI-compatible LLM!**
+
+All skills in this repository are available in a universal format that works with:
+- ✅ **OpenRouter** - Access 100+ models (GPT-4, Claude, Gemini, Llama, etc.) through one API
+- ✅ **Ollama** - Run models locally on your machine (completely free and private)
+- ✅ **Direct APIs** - OpenAI, Anthropic, and other compatible providers
+
+### Why Universal Format?
+
+Instead of being locked into Claude-specific features, the universal format uses standard **system prompts + tool calling** that work everywhere. This means:
+
+- 🌍 **One skill, many models** - Use the same skill across different LLM providers
+- 💰 **Cost flexibility** - Choose from free, budget, or premium models
+- 🔒 **Privacy options** - Run locally with Ollama or use cloud APIs
+- 🚀 **Easy migration** - Switch providers without rewriting skills
+
+### Quick Start
+
+```python
+# Example: Using a skill with OpenRouter
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key="YOUR_OPENROUTER_KEY"
+)
+
+# Load any universal skill
+with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
+    system_prompt = f.read()
+
+response = client.chat.completions.create(
+    model="anthropic/claude-3.5-sonnet",  # or any model!
+    messages=[
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": "Suggest domain names for a project management tool"}
+    ]
+)
+```
+
+### Three Skill Tiers
+
+**Tier 1: Instruction-Only (90% of skills)** 📝
+- Pure instructions and workflows
+- Works with ANY model
+- Examples: domain-name-brainstormer, meeting-insights-analyzer, brainstorming
+
+**Tier 2: Tool-Enhanced (10% of skills)** 🔧
+- Includes tool/function calling
+- Works best with Claude 3.5, GPT-4o, Gemini 1.5 Pro
+- Includes manual fallback for models without tool support
+- Examples: pdf editor, file organizer
+
+**Tier 3: Claude-Only (Reference)** 🎨
+- Requires Claude Artifacts or MCP
+- Kept as reference for Claude users
+- Examples: canvas design, artifacts builder
+
+### Documentation
+
+- **[OpenRouter Setup Guide](docs/OPENROUTER-SETUP.md)** - Use 100+ models through one API
+- **[Ollama Setup Guide](docs/OLLAMA-SETUP.md)** - Run models locally (free & private)
+- **[Model Compatibility Guide](docs/MODEL-COMPATIBILITY.md)** - Which models work best for each skill
+- **[Migration Guide](docs/MIGRATION-GUIDE.md)** - Convert your own skills to universal format
+
+### Tools
+
+```bash
+# Convert skills to universal format
+python tools/convert.py --all
+
+# Validate converted skills
+python tools/validate.py --all
+
+# Sync with upstream repository
+./tools/sync-upstream.sh
+```
+
+### Backward Compatibility
+
+✅ **Original skills remain unchanged** - The universal format is derived from originals
+✅ **Stays in sync with upstream** - Easy to pull updates from anthropics/skills
+✅ **No breaking changes** - Both formats coexist peacefully
 
 ## Skills
 

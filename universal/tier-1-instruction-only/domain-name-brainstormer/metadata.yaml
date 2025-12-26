@@ -1,0 +1,27 @@
+name: domain-name-brainstormer
+description: Generates creative domain name ideas for your project and checks availability
+  across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming
+  and manual checking.
+tier: 1
+version: '1.0'
+source:
+  original_path: domain-name-brainstormer
+  last_sync: '2025-12-26'
+  upstream_repo: anthropics/skills
+requirements:
+  tool_calling: false
+  min_context_window: 4096
+  recommended_context_window: 8192
+compatibility:
+  tested_providers:
+  - openrouter
+  - ollama
+  tested_models:
+  - llama3.2
+  - qwen2.5
+  - mistral
+  recommended_models:
+  - anthropic/claude-3.5-sonnet
+  - openai/gpt-4o
+  - meta-llama/llama-3.2-90b-instruct
+tags: []
