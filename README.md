@@ -80,15 +80,15 @@ This repository is perfect for:
 **Solution**: Use our interactive discovery tool to find skills by what they do!
 
 ```bash
-# Generate searchable index (one time)
-python tools/index-skills.py
+# Super simple - just search!
+./tools/find-skill pdf
+./tools/find-skill domain name
+./tools/find-skill meeting
 
-# Start interactive discovery
-python tools/discover.py
-
-# Or quick search
+# Or use Python directly
+python tools/index-skills.py     # One-time index generation
+python tools/discover.py          # Interactive mode
 python tools/discover.py --search "pdf"
-python tools/discover.py --search "domain name"
 python tools/discover.py --category "Business & Marketing"
 ```
 

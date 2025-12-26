@@ -1,0 +1,23 @@
+#!/bin/bash
+# Quick skill discovery wrapper
+# Makes it even easier to search for skills
+
+# Change to repo directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+cd "$REPO_ROOT"
+
+# Check if index exists
+if [ ! -f "SKILL-INDEX.json" ]; then
+    echo "📦 First time setup - generating skill index..."
+    python tools/index-skills.py
+    echo ""
+fi
+
+# If no arguments, show interactive mode
+if [ $# -eq 0 ]; then
+    python tools/discover.py
+else
+    # Otherwise, treat all arguments as search query
+    python tools/discover.py --search "$*"
+fi

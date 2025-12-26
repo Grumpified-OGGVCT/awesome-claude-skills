@@ -6,6 +6,7 @@ Automation tools for working with Claude Skills and the universal format.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
+| [find-skill](#find-skill) 🌟 | Simple skill search wrapper | `./tools/find-skill pdf` |
 | [discover.py](#discoverpy) ⭐ | Find skills by search/browse | `python tools/discover.py` |
 | [index-skills.py](#index-skillspy) | Generate skill search index | `python tools/index-skills.py` |
 | [convert.py](#convertpy) | Convert skills to universal format | `python tools/convert.py --all` |
@@ -23,6 +24,54 @@ pip install pyyaml
 ```
 
 ## Tool Documentation
+
+### find-skill
+
+🌟 **The simplest way to find skills!**
+
+#### Why Use This?
+
+This is a convenience wrapper around discover.py that:
+- Automatically generates the index if needed (first run)
+- Simplifies the command syntax
+- Perfect for quick searches
+
+#### Usage
+
+```bash
+# Search for anything
+./tools/find-skill pdf
+./tools/find-skill domain name
+./tools/find-skill meeting notes
+
+# Interactive mode (no arguments)
+./tools/find-skill
+```
+
+#### Examples
+
+**Quick search:**
+```bash
+$ ./tools/find-skill pdf
+
+🔍 Found 10 skill(s) matching 'pdf':
+[Shows all PDF-related skills with details]
+```
+
+**Multi-word search:**
+```bash
+$ ./tools/find-skill domain name
+
+🔍 Found 1 skill(s) matching 'domain name':
+[Shows domain name brainstormer]
+```
+
+**First time:**
+```bash
+$ ./tools/find-skill pdf
+📦 First time setup - generating skill index...
+[Generates index, then shows results]
+```
 
 ### discover.py
 

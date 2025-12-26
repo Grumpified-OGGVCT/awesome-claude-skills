@@ -20,20 +20,35 @@ You're absolutely right - the original setup had a major discoverability issue:
 - Discover skills interactively
 - Get instant installation instructions
 
-## Quick Start (3 Steps)
+## Quick Start (2 Steps!)
 
-### 1. Generate the Index (One Time)
+### 1. Use the Simple Wrapper (Easiest)
 
 ```bash
 cd /path/to/awesome-claude-skills
-python tools/index-skills.py
+
+# Search for anything!
+./tools/find-skill pdf
+./tools/find-skill domain name
+./tools/find-skill meeting
+
+# Interactive mode
+./tools/find-skill
 ```
 
-This scans all skills and creates a searchable index.
+The wrapper automatically generates the index if needed and searches for you!
 
-### 2. Start the Discovery Tool
+### 2. Or Use Python Directly
 
 ```bash
+# Generate the index (one time)
+python tools/index-skills.py
+
+# Search
+python tools/discover.py --search "pdf"
+python tools/discover.py --category "Business"
+
+# Interactive mode
 python tools/discover.py
 ```
 
@@ -63,12 +78,15 @@ Commands:
 
 Just describe what you want to do!
 
-```
-> search domain
-> search pdf editor
-> search meeting notes
-> category Business
-> tag web
+```bash
+# Using the simple wrapper
+./tools/find-skill domain
+./tools/find-skill pdf editor
+./tools/find-skill meeting notes
+
+# Or with python
+python tools/discover.py --search "domain"
+python tools/discover.py --category "Business"
 ```
 
 ## Common Use Cases

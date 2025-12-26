@@ -64,15 +64,15 @@ Do you primarily use Claude in a web browser?
 ### Quick Discovery
 
 ```bash
-# Generate skill index (one time only)
-python tools/index-skills.py
+# Super simple - just search!
+./tools/find-skill pdf
+./tools/find-skill domain
+./tools/find-skill meeting
 
-# Interactive discovery - explore what's available
-python tools/discover.py
-
-# Or search for what you need
+# Or use Python for more options
+python tools/index-skills.py     # Generate index (one time)
+python tools/discover.py          # Interactive mode
 python tools/discover.py --search "pdf"
-python tools/discover.py --search "domain"
 python tools/discover.py --category "Business & Marketing"
 ```
 
@@ -86,6 +86,10 @@ python tools/discover.py --category "Business & Marketing"
 ### Example: Finding a PDF Tool
 
 ```bash
+# Simple wrapper (easiest)
+$ ./tools/find-skill pdf
+
+# Or with Python
 $ python tools/discover.py --search "pdf"
 
 🔍 Found 10 skill(s) matching 'pdf':
