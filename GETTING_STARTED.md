@@ -119,6 +119,8 @@ Let's try the Domain Name Brainstormer skill:
 - Claude Code installed ([download here](https://claude.ai/download))
 - Basic terminal/command-line knowledge
 
+**Note**: Skills in the universal format need to be converted first. Most existing skills in the root directory work directly with Claude Code.
+
 ### Step 1: Create Skills Directory
 
 ```bash
@@ -304,6 +306,9 @@ pip install openai
 ```
 
 **Step 3: Use a Skill**
+
+**Note**: Skills must be converted first using `python tools/convert.py --all`. Or use pre-converted skills from the `universal/` directory.
+
 ```python
 from openai import OpenAI
 
@@ -313,7 +318,7 @@ client = OpenAI(
     api_key="YOUR_OPENROUTER_KEY"
 )
 
-# Load skill
+# Load skill (example assumes skills are converted)
 with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
     skill = f.read()
 
@@ -354,6 +359,9 @@ ollama pull llama3.2:70b
 ```
 
 **Step 3: Use a Skill**
+
+**Note**: Example assumes skill has been converted to universal format. Convert skills with `python tools/convert.py --skill skill-name`.
+
 ```python
 from openai import OpenAI
 
@@ -363,7 +371,7 @@ client = OpenAI(
     api_key="ollama"  # Ollama doesn't need a real key
 )
 
-# Load skill
+# Load skill (example path - adjust to your converted skills)
 with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
     skill = f.read()
 

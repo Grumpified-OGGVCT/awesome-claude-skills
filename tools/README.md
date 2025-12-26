@@ -307,7 +307,7 @@ python tools/model-tester.py --all --quick
 
 Install PyYAML:
 ```bash
-pip install pyyaml
+pip install PyYAML
 ```
 
 ### "Permission denied" when running sync-upstream.sh

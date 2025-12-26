@@ -97,6 +97,8 @@ claude
 
 ### Option 3: Use Skills with Any LLM (Universal Format)
 
+**Note**: Skills must be converted to universal format first. See [Universal Skills Format](#universal-llm-skills-format) for details.
+
 ```python
 from openai import OpenAI
 
@@ -106,7 +108,7 @@ client = OpenAI(
     api_key="YOUR_API_KEY"
 )
 
-# Load any skill
+# Load any skill (example assumes skills are already converted)
 with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
     skill = f.read()
 

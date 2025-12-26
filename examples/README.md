@@ -11,7 +11,7 @@ This directory contains practical examples demonstrating how to use universal sk
 
 ## 📋 Prerequisites
 
-Install the required package:
+Install the required package (Python 3.7+):
 ```bash
 pip install openai
 ```
