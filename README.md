@@ -77,24 +77,46 @@ This repository is perfect for:
 ### 🔍 NEW: Can't Find What You Need? Use Skill Discovery!
 
 **Problem**: "I have to know what to ask for in order to find it."  
-**Solution**: Use our interactive discovery tool to find skills by what they do!
+**Solution**: Use our discovery tools to find skills by what they do!
+
+#### 🌟 NLP-Enhanced Discovery (Recommended)
+
+Powered by **Gemini 3 Flash Preview** - understands natural language!
 
 ```bash
-# Super simple - just search!
+# Just describe what you need in plain English
+python tools/nlp-discover.py "I need to work with documents"
+python tools/nlp-discover.py "help me find domain names"
+python tools/nlp-discover.py "tools for my startup"
+
+# Get AI-generated explanations
+python tools/nlp-discover.py "pdf tools" --explain
+```
+
+**Why NLP is better:**
+- 🧠 Semantic search - understands intent, not just keywords
+- 💡 Query interpretation - clarifies vague searches  
+- 📝 AI explanations - detailed skill descriptions
+- ⚡ Smart recommendations - suggests related skills
+
+**Setup:** Set `OLLAMA_TURBO_CLOUD_API_KEY` (available in org secrets)  
+👉 **[NLP Discovery Guide](docs/NLP-DISCOVERY.md)**
+
+#### 📋 Basic Discovery (No API Key Required)
+
+```bash
+# Super simple wrapper
 ./tools/find-skill pdf
 ./tools/find-skill domain name
-./tools/find-skill meeting
 
-# Or use Python directly
-python tools/index-skills.py     # One-time index generation
-python tools/discover.py          # Interactive mode
+# Or use Python for more control
+python tools/index-skills.py          # Generate index (one-time)
+python tools/discover.py              # Interactive mode
 python tools/discover.py --search "pdf"
 python tools/discover.py --category "Business & Marketing"
 ```
 
-**No more guessing what skills exist!** Search by keywords, browse by category, or explore interactively.
-
-👉 **[Full Discovery Guide](docs/SKILL-DISCOVERY.md)** - Learn how to find skills without browsing long lists
+👉 **[Basic Discovery Guide](docs/SKILL-DISCOVERY.md)**
 
 ---
 

@@ -6,6 +6,7 @@ Automation tools for working with Claude Skills and the universal format.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
+| [nlp-discover.py](#nlp-discoverpy) 🤖 | NLP-powered semantic search | `python tools/nlp-discover.py "query"` |
 | [find-skill](#find-skill) 🌟 | Simple skill search wrapper | `./tools/find-skill pdf` |
 | [discover.py](#discoverpy) ⭐ | Find skills by search/browse | `python tools/discover.py` |
 | [index-skills.py](#index-skillspy) | Generate skill search index | `python tools/index-skills.py` |
@@ -24,6 +25,172 @@ pip install pyyaml
 ```
 
 ## Tool Documentation
+
+### nlp-discover.py
+
+🤖 **AI-Powered Semantic Search using Gemini 3 Flash Preview**
+
+#### Why Use This?
+
+The most advanced skill discovery method! Uses LLM-powered natural language understanding to:
+- **Understand intent** - "I need help with documents" → finds PDF, Word, Excel tools
+- **Interpret queries** - Clarifies vague searches automatically
+- **Generate explanations** - AI-written descriptions of each skill
+- **Smart recommendations** - Suggests related skills you might not know about
+
+This solves the original problem: "I have to know what to ask for in order to find it."  
+Now you just describe what you need in plain English!
+
+#### Features
+
+- 🧠 **Semantic search** - Understands meaning, not just keywords
+- 💡 **Query interpretation** - "business stuff" → "business and marketing tools"
+- 📝 **AI explanations** - Detailed, helpful skill descriptions
+- ⚡ **Powered by Gemini 3 Flash Preview** - Fast and accurate
+- 🔄 **Auto-fallback** - Uses basic search if API unavailable
+
+#### Prerequisites
+
+1. **API Key** - Set one of (in order of preference):
+   ```bash
+   export OLLAMA_TURBO_CLOUD_API_KEY='your-key'   # Fastest (recommended)
+   export OLLAMA_PROXY_API_KEY='your-key'         # Alternative
+   export OLLAMA_API_KEY='your-key'               # Alternative
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install openai
+   ```
+
+#### Usage
+
+```bash
+# Natural language search
+python tools/nlp-discover.py "I need to work with documents"
+python tools/nlp-discover.py "help me with my business"
+python tools/nlp-discover.py "tools for my website"
+
+# Get AI-generated explanations
+python tools/nlp-discover.py "pdf tools" --explain
+
+# More results
+python tools/nlp-discover.py "business tools" --top 10
+
+# Specify custom API key
+python tools/nlp-discover.py "query" --api-key "your-key"
+
+# Specify custom endpoint
+python tools/nlp-discover.py "query" --endpoint "https://custom.endpoint/v1"
+```
+
+#### Real Examples
+
+**Example 1: Vague query gets interpreted**
+```bash
+$ python tools/nlp-discover.py "something for my website"
+
+🔍 Query: "something for my website"
+💡 You're looking for tools to test, analyze, or build web applications.
+
+Found 3 relevant skill(s):
+
+1. 📦 webapp-testing
+   Testing and validation for web applications
+   
+2. 📦 artifacts-builder
+   Build complex web artifacts with React and Tailwind
+   
+3. 📦 domain-name-brainstormer
+   Find the perfect domain name for your project
+```
+
+**Example 2: Business query with explanation**
+```bash
+$ python tools/nlp-discover.py "I need help with my business" --explain
+
+🔍 Query: "I need help with my business"
+💡 You're looking for business and marketing tools like lead research,
+    competitive analysis, and brand guidelines.
+
+Found 5 relevant skill(s):
+
+1. 📦 lead-research-assistant
+   📝 Detailed Explanation:
+      This skill helps you identify and qualify high-quality leads by
+      analyzing your product, searching for target companies, and
+      providing actionable outreach strategies.
+      
+      Use this when you're prospecting new clients, building a sales
+      pipeline, or need to research potential customers at scale.
+      
+      Sales teams, business development professionals, and startups
+      looking to grow their customer base will find this invaluable.
+```
+
+#### How It Works
+
+1. **Query Interpretation**: Gemini analyzes your query and clarifies the intent
+2. **Context Building**: Creates a summary of all available skills
+3. **Semantic Matching**: LLM ranks skills by relevance to your need
+4. **Result Generation**: Returns top matches with installation instructions
+5. **Explanation (Optional)**: Generates AI-written skill descriptions
+
+#### Comparison: NLP vs Basic Search
+
+| Feature | NLP Search | Basic Search |
+|---------|-----------|--------------|
+| Understands intent | ✅ Yes | ❌ No (keywords only) |
+| Vague queries | ✅ Interprets | ❌ May fail |
+| Explanations | ✅ AI-generated | ❌ Static description |
+| Related skills | ✅ Smart suggestions | ❌ Exact matches only |
+| Setup | API key required | None needed |
+| Speed | ~1-2 seconds | Instant |
+
+**When to use NLP:** Exploring, vague needs, want recommendations  
+**When to use basic:** Know exact keyword, offline, API unavailable
+
+#### Configuration
+
+**Available Endpoints** (auto-detected from API key):
+
+| API Key | Endpoint | Speed |
+|---------|----------|-------|
+| `OLLAMA_TURBO_CLOUD_API_KEY` | `turbo.ollama.cloud` | Fastest ⚡ |
+| `OLLAMA_PROXY_API_KEY` | `proxy.ollama.cloud` | Fast |
+| `OLLAMA_API_KEY` | `cloud.ollama.ai` | Standard |
+
+**Model Parameters:**
+
+```python
+semantic_search_temp = 0.3    # Consistent recommendations
+explain_temp = 0.5            # Natural explanations  
+interpret_temp = 0.4          # Accurate interpretation
+max_tokens = 500              # Sufficient for JSON response
+```
+
+#### Troubleshooting
+
+**"No API key found"**
+```bash
+export OLLAMA_TURBO_CLOUD_API_KEY='your-key-here'
+```
+
+**"openai library not installed"**
+```bash
+pip install openai
+```
+
+**"NLP search failed"**
+- Tool automatically falls back to basic keyword search
+- Check API key validity
+- Verify internet connection
+
+#### See Also
+
+- [NLP Discovery Guide](../docs/NLP-DISCOVERY.md) - Full documentation
+- [GitHub Workflow](../.github/workflows/nlp-discovery-demo.yml) - CI/CD example
+- [discover.py](#discoverpy) - Basic search alternative
 
 ### find-skill
 
