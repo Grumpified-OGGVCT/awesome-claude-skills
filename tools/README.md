@@ -6,6 +6,8 @@ Automation tools for working with Claude Skills and the universal format.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
+| [discover.py](#discoverpy) ⭐ | Find skills by search/browse | `python tools/discover.py` |
+| [index-skills.py](#index-skillspy) | Generate skill search index | `python tools/index-skills.py` |
 | [convert.py](#convertpy) | Convert skills to universal format | `python tools/convert.py --all` |
 | [validate.py](#validatepy) | Validate universal skill format | `python tools/validate.py --all` |
 | [sync-upstream.sh](#sync-upstreamsh) | Sync with anthropics/skills | `./tools/sync-upstream.sh` |
@@ -21,6 +23,169 @@ pip install pyyaml
 ```
 
 ## Tool Documentation
+
+### discover.py
+
+⭐ **Start here!** Interactive tool to discover and search for skills.
+
+#### Why Use This?
+
+Can't remember what skills are available? Don't know what to search for? This tool solves the discoverability problem by letting you:
+- **Search** by keywords without knowing exact skill names
+- **Browse** by category or tags
+- **Explore** interactively to see what's available
+- **Get installation instructions** for any skill
+
+#### Features
+
+- 🔍 **Keyword search** - Find skills by what they do, not what they're called
+- 📂 **Category filtering** - Browse skills by type (Business, Development, Creative, etc.)
+- 🏷️ **Tag-based discovery** - Filter by technology or use case
+- 📋 **Interactive mode** - Explore with a friendly CLI interface
+- ⚡ **Quick search** - One-line command for fast lookups
+- 📥 **Installation help** - Get exact commands to install any skill
+
+#### Quick Start
+
+```bash
+# Interactive mode (recommended for first-time users)
+python tools/discover.py
+
+# Quick search for specific needs
+python tools/discover.py --search "domain name"
+python tools/discover.py --search "pdf"
+python tools/discover.py --search "meeting"
+
+# Browse by category
+python tools/discover.py --categories
+python tools/discover.py --category "Business & Marketing"
+
+# List everything
+python tools/discover.py --list
+```
+
+#### Interactive Mode Commands
+
+When you run `python tools/discover.py` without arguments, you enter interactive mode:
+
+```
+> search pdf              # Find skills related to PDFs
+> search domain name      # Find domain-related skills
+> category Business       # Show business & marketing skills
+> tag web                 # Show all web-related skills
+> list                    # List all skills
+> categories              # Show all categories
+> tags                    # Show all available tags
+> 1                       # View details of skill #1 from last results
+> help                    # Show available commands
+> quit                    # Exit
+```
+
+#### Real-World Examples
+
+**Example 1: "I need to work with PDFs but don't know what's available"**
+```bash
+$ python tools/discover.py --search "pdf"
+
+🔍 Found 10 skill(s) matching 'pdf':
+
+📦 pdf
+   Category: Document Processing
+   Comprehensive PDF manipulation toolkit for extracting text...
+   
+   Installation:
+   Claude.ai: Upload the file 'document-skills/pdf/SKILL.md'
+   Claude Code: cp -r document-skills/pdf ~/.config/claude-code/skills/
+```
+
+**Example 2: "What business tools are available?"**
+```bash
+$ python tools/discover.py --category "Business & Marketing"
+
+📂 Skills in 'Business & Marketing' (5):
+
+📦 brand-guidelines
+   Applies Anthropic's official brand colors...
+   
+📦 competitive-ads-extractor
+   Extracts and analyzes competitors' ads...
+   
+📦 domain-name-brainstormer
+   Generates creative domain name ideas...
+```
+
+**Example 3: "Show me everything with 'git'"**
+```bash
+$ python tools/discover.py --search "git"
+
+🔍 Found 3 skill(s) matching 'git':
+[Lists all git-related skills with details]
+```
+
+#### Prerequisites
+
+First, generate the skill index:
+```bash
+python tools/index-skills.py
+```
+
+This creates `SKILL-INDEX.json` which the discovery tool uses. The index is automatically updated when you add new skills.
+
+#### Tips
+
+- **Use broad keywords**: Search for "document" instead of specific file types
+- **Try tags**: Use `tags` command to see all filterable tags
+- **Browse categories**: Start with `categories` to understand what's available
+- **Interactive is best**: Use interactive mode for exploration, command-line for quick lookups
+
+### index-skills.py
+
+Generates a searchable index of all skills in the repository.
+
+#### Purpose
+
+This tool scans all SKILL.md files and creates `SKILL-INDEX.json`, which powers the discovery tool. Run this whenever:
+- You add new skills
+- You update skill descriptions
+- The index is missing or outdated
+
+#### Usage
+
+```bash
+# Generate index (creates SKILL-INDEX.json)
+python tools/index-skills.py
+
+# Generate index to custom location
+python tools/index-skills.py --output my-index.json
+```
+
+#### What It Does
+
+1. Scans repository for all `SKILL.md` files
+2. Extracts metadata (name, description, category)
+3. Generates searchable tags from content
+4. Categorizes skills automatically
+5. Creates `SKILL-INDEX.json` with all information
+
+#### Output
+
+```
+Scanning repository for skills...
+Found 27 skills across 7 categories
+✅ Index written to SKILL-INDEX.json
+
+Skills by Category:
+  Business & Marketing: 5
+  Development & Code Tools: 5
+  ...
+```
+
+#### Automation
+
+The index is automatically regenerated by:
+- The discovery tool (if index is missing)
+- CI/CD on skill additions
+- Manual runs when needed
 
 ### convert.py
 

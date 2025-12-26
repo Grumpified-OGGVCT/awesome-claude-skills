@@ -7,6 +7,7 @@ Welcome! This guide will help you start using Claude Skills in under 5 minutes.
 - [What You'll Learn](#what-youll-learn)
 - [Prerequisites](#prerequisites)
 - [Choose Your Path](#choose-your-path)
+- [Path 0: Finding the Right Skill (Start Here!)](#-path-0-finding-the-right-skill-start-here) ⭐ **NEW**
 - [Path 1: Claude.ai (Easiest)](#path-1-claudeai-easiest)
 - [Path 2: Claude Code](#path-2-claude-code)
 - [Path 3: Claude API](#path-3-claude-api)
@@ -49,6 +50,56 @@ Do you primarily use Claude in a web browser?
             └─ NO → Want to try other AI models?
                └─ YES → Use Path 4: Universal Format
 ```
+
+---
+
+## 🔍 Path 0: Finding the Right Skill (Start Here!)
+
+**Time required: 1 minute**
+
+**Problem**: "How do I know what skills exist?"
+
+**Solution**: Use the Skill Discovery Tool!
+
+### Quick Discovery
+
+```bash
+# Generate skill index (one time only)
+python tools/index-skills.py
+
+# Interactive discovery - explore what's available
+python tools/discover.py
+
+# Or search for what you need
+python tools/discover.py --search "pdf"
+python tools/discover.py --search "domain"
+python tools/discover.py --category "Business & Marketing"
+```
+
+### Why Use Discovery First?
+
+- 🔍 **Find skills by purpose** - Not by name
+- 📂 **Browse categories** - See what's available
+- 🏷️ **Filter by tags** - Find by technology
+- 📥 **Get install commands** - Copy-paste to use
+
+### Example: Finding a PDF Tool
+
+```bash
+$ python tools/discover.py --search "pdf"
+
+🔍 Found 10 skill(s) matching 'pdf':
+
+📦 pdf
+   Category: Document Processing
+   Comprehensive PDF manipulation toolkit...
+   
+   Installation:
+   Claude.ai: Upload 'document-skills/pdf/SKILL.md'
+   Claude Code: cp -r document-skills/pdf ~/.config/claude-code/skills/
+```
+
+**See the full guide**: [Skill Discovery Documentation](docs/SKILL-DISCOVERY.md)
 
 ---
 

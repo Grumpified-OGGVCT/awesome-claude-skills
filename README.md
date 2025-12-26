@@ -74,9 +74,33 @@ This repository is perfect for:
 
 ## 🚀 Quick Start
 
+### 🔍 NEW: Can't Find What You Need? Use Skill Discovery!
+
+**Problem**: "I have to know what to ask for in order to find it."  
+**Solution**: Use our interactive discovery tool to find skills by what they do!
+
+```bash
+# Generate searchable index (one time)
+python tools/index-skills.py
+
+# Start interactive discovery
+python tools/discover.py
+
+# Or quick search
+python tools/discover.py --search "pdf"
+python tools/discover.py --search "domain name"
+python tools/discover.py --category "Business & Marketing"
+```
+
+**No more guessing what skills exist!** Search by keywords, browse by category, or explore interactively.
+
+👉 **[Full Discovery Guide](docs/SKILL-DISCOVERY.md)** - Learn how to find skills without browsing long lists
+
+---
+
 ### Option 1: Use Skills with Claude.ai (Easiest)
 
-1. Browse the [Skills](#skills) section below
+1. **Find a skill** using the discovery tool OR browse the [Skills](#skills) section below
 2. Pick a skill that matches your needs (e.g., [Domain Name Brainstormer](./domain-name-brainstormer/))
 3. Click the skill icon (🧩) in Claude.ai chat
 4. Add the skill or upload the SKILL.md file
@@ -87,7 +111,10 @@ This repository is perfect for:
 ### Option 2: Use Skills with Claude Code
 
 ```bash
-# Install a skill
+# Find a skill using discovery tool first!
+python tools/discover.py --search "what you need"
+
+# Then install it (example with domain-name-brainstormer)
 mkdir -p ~/.config/claude-code/skills/
 cp -r domain-name-brainstormer ~/.config/claude-code/skills/
 
@@ -132,8 +159,9 @@ See [Universal Skills Format](#universal-llm-skills-format) for more details.
 - [🎯 What Is This Repository?](#-what-is-this-repository)
 - [👥 Who Is This For?](#-who-is-this-for)
 - [🚀 Quick Start](#-quick-start)
+  - [🔍 Skill Discovery Tool](#-new-cant-find-what-you-need-use-skill-discovery) ⭐ **NEW**
 - [💡 What Are Claude Skills?](#-what-are-claude-skills)
-- [Universal LLM Skills Format](#universal-llm-skills-format) ✨ **NEW**
+- [Universal LLM Skills Format](#universal-llm-skills-format) ✨
 - [Automated Upstream Sync](#automated-upstream-sync)
 - [Skills](#skills)
   - [Document Processing](#document-processing)
