@@ -84,6 +84,9 @@ This repository is perfect for:
 Powered by **Gemini 3 Flash Preview** - understands natural language!
 
 ```bash
+# Set the API key (available in repo secrets)
+export OLLAMA_API_KEY='your-key'
+
 # Just describe what you need in plain English
 python tools/nlp-discover.py "I need to work with documents"
 python tools/nlp-discover.py "help me find domain names"
@@ -99,7 +102,9 @@ python tools/nlp-discover.py "pdf tools" --explain
 - 📝 AI explanations - detailed skill descriptions
 - ⚡ Smart recommendations - suggests related skills
 
-**Setup:** Set `OLLAMA_TURBO_CLOUD_API_KEY` (available in org secrets)  
+**Setup:** Repository secret `OLLAMA_API_KEY` is already configured!  
+For local use, get the key from repo secrets and set as environment variable.
+
 👉 **[NLP Discovery Guide](docs/NLP-DISCOVERY.md)**
 
 #### 📋 Basic Discovery (No API Key Required)

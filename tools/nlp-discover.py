@@ -31,16 +31,16 @@ class NLPSkillDiscovery:
         """Initialize NLP discovery tool."""
         self.index = self.load_index(index_path)
         
-        # Try multiple API key options in order of preference
+        # Try API keys in order of preference (OLLAMA_API_KEY is primary)
         self.api_key = (
             api_key or 
-            os.getenv('OLLAMA_TURBO_CLOUD_API_KEY') or  # Fastest option
+            os.getenv('OLLAMA_API_KEY') or  # Primary key (repo secret)
+            os.getenv('OLLAMA_TURBO_CLOUD_API_KEY') or  # Org secret fallback
             os.getenv('OLLAMA_PROXY_API_KEY') or 
-            os.getenv('OLLAMA_API_KEY') or
             os.getenv('OLLAMA_CLOUD_API_KEY')  # Legacy fallback
         )
         
-        # Determine endpoint
+        # Determine endpoint based on which key is being used
         if endpoint:
             self.endpoint = endpoint
         elif os.getenv('OLLAMA_TURBO_CLOUD_API_KEY'):
@@ -48,7 +48,8 @@ class NLPSkillDiscovery:
         elif os.getenv('OLLAMA_PROXY_API_KEY'):
             self.endpoint = "https://proxy.ollama.cloud/v1"
         else:
-            self.endpoint = "https://cloud.ollama.ai/v1"
+            # Default endpoint for OLLAMA_API_KEY and legacy
+            self.endpoint = "https://api.ollama.cloud/v1"
         
         self.client = None
         
@@ -67,8 +68,8 @@ class NLPSkillDiscovery:
                 self.client = None
         elif not self.api_key:
             print("⚠️  No Ollama API key found. Using basic search.")
-            print("   Available keys: OLLAMA_TURBO_CLOUD_API_KEY, OLLAMA_PROXY_API_KEY, OLLAMA_API_KEY")
-            print("   Set with: export OLLAMA_TURBO_CLOUD_API_KEY='your-key'")
+            print("   Required: OLLAMA_API_KEY environment variable")
+            print("   Set with: export OLLAMA_API_KEY='your-key'")
     
     def load_index(self, index_path: str) -> Dict:
         """Load skill index from file."""
@@ -276,13 +277,13 @@ Examples:
   python tools/nlp-discover.py "business tools" --top 10
 
 Requirements:
-  - Set one of: OLLAMA_TURBO_CLOUD_API_KEY, OLLAMA_PROXY_API_KEY, or OLLAMA_API_KEY
+  - Set OLLAMA_API_KEY environment variable (available in repo secrets)
   - Install: pip install openai
   
-Environment Variables (in order of preference):
-  OLLAMA_TURBO_CLOUD_API_KEY    - Fastest endpoint (recommended)
-  OLLAMA_PROXY_API_KEY          - Proxy endpoint
-  OLLAMA_API_KEY                - Standard endpoint
+Environment Variables:
+  OLLAMA_API_KEY                - Primary API key (repo secret) - USE THIS!
+  OLLAMA_TURBO_CLOUD_API_KEY    - Alternative (org secret)
+  OLLAMA_PROXY_API_KEY          - Alternative (org secret)
         """
     )
     
@@ -308,7 +309,7 @@ Environment Variables (in order of preference):
     )
     parser.add_argument(
         '--api-key',
-        help='Ollama Cloud API key (or use OLLAMA_TURBO_CLOUD_API_KEY env var)'
+        help='Ollama Cloud API key (or use OLLAMA_API_KEY env var - available in repo secrets)'
     )
     parser.add_argument(
         '--endpoint',

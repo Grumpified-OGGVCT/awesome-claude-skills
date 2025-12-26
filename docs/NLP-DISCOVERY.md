@@ -2,55 +2,37 @@
 
 ## Setup Instructions
 
-### 1. Get Your Ollama Cloud API Keys
+### 1. Get Your Ollama API Key
 
-The organization has multiple Ollama API keys available as GitHub Secrets:
+The repository has `OLLAMA_API_KEY` available as a repository secret.
 
-- **OLLAMA_TURBO_CLOUD_API_KEY** - Fastest endpoint (recommended)
-- **OLLAMA_PROXY_API_KEY** - Proxy endpoint
-- **OLLAMA_API_KEY** - Standard endpoint
+**For local development:**
 
-To access them:
-
-1. Go to your GitHub organization settings
+1. Go to your GitHub repository settings
 2. Navigate to Secrets and variables → Actions
-3. Look for the OLLAMA keys listed above
-4. Copy the key value you want to use
+3. Look for `OLLAMA_API_KEY` 
+4. Copy the key value
 
-### 2. Set the API Key Locally
+**Note:** This key is already available in GitHub Actions workflows automatically.
 
-**Recommended (Turbo for best performance):**
+### 2. Set the API Key Locally (For Local Testing)
 
 ```bash
 # Linux/macOS
-export OLLAMA_TURBO_CLOUD_API_KEY='your-key-here'
+export OLLAMA_API_KEY='your-key-here'
 
 # Add to your shell profile for persistence
-echo 'export OLLAMA_TURBO_CLOUD_API_KEY="your-key-here"' >> ~/.bashrc
+echo 'export OLLAMA_API_KEY="your-key-here"' >> ~/.bashrc
 # or ~/.zshrc for zsh users
 
 # Windows (PowerShell)
-$env:OLLAMA_TURBO_CLOUD_API_KEY='your-key-here'
+$env:OLLAMA_API_KEY='your-key-here'
 
 # Windows (Command Prompt)
-set OLLAMA_TURBO_CLOUD_API_KEY=your-key-here
+set OLLAMA_API_KEY=your-key-here
 ```
 
-**Alternative options:**
-
-```bash
-# Proxy endpoint
-export OLLAMA_PROXY_API_KEY='your-key-here'
-
-# Standard endpoint
-export OLLAMA_API_KEY='your-key-here'
-```
-
-The tool automatically selects the best available key in this order:
-1. OLLAMA_TURBO_CLOUD_API_KEY (fastest)
-2. OLLAMA_PROXY_API_KEY
-3. OLLAMA_API_KEY
-4. OLLAMA_CLOUD_API_KEY (legacy fallback)
+The tool automatically detects and uses the key. No configuration needed!
 
 ### 3. Install Required Dependencies
 
@@ -76,10 +58,8 @@ python tools/nlp-discover.py "business tools" --top 10
 The tool uses **Gemini 3 Flash Preview** model from Ollama Cloud Service:
 
 - **Model**: `gemini-3-flash-preview`
-- **Endpoints**:
-  - Turbo: `https://turbo.ollama.cloud/v1` (recommended - fastest)
-  - Proxy: `https://proxy.ollama.cloud/v1`
-  - Standard: `https://cloud.ollama.ai/v1`
+- **Endpoint**: `https://api.ollama.cloud/v1` (default)
+- **API Key**: `OLLAMA_API_KEY` (repository secret - already configured!)
 - **Features**:
   - Semantic search (understands intent, not just keywords)
   - Query interpretation (clarifies vague queries)
@@ -91,10 +71,8 @@ The tool uses **Gemini 3 Flash Preview** model from Ollama Cloud Service:
 Default settings in `nlp-discover.py`:
 
 ```python
-# Endpoints (auto-selected based on API key)
-turbo_endpoint = "https://turbo.ollama.cloud/v1"     # Fastest
-proxy_endpoint = "https://proxy.ollama.cloud/v1"    # Proxy
-standard_endpoint = "https://cloud.ollama.ai/v1"    # Standard
+# Endpoint (default for OLLAMA_API_KEY)
+endpoint = "https://api.ollama.cloud/v1"
 
 # Model
 model = "gemini-3-flash-preview"
@@ -107,12 +85,11 @@ interpret_temp = 0.4          # Low-medium for accurate interpretation
 
 ## Environment Variables
 
-| Variable | Description | Endpoint | Priority |
-|----------|-------------|----------|----------|
-| `OLLAMA_TURBO_CLOUD_API_KEY` | Turbo cloud service | turbo.ollama.cloud | 1st (fastest) |
-| `OLLAMA_PROXY_API_KEY` | Proxy service | proxy.ollama.cloud | 2nd |
-| `OLLAMA_API_KEY` | Standard service | cloud.ollama.ai | 3rd |
-| `OLLAMA_CLOUD_API_KEY` | Legacy fallback | cloud.ollama.ai | 4th |
+| Variable | Description | Status |
+|----------|-------------|--------|
+| `OLLAMA_API_KEY` | Repository secret | ✅ Already configured! |
+
+**No setup required in GitHub Actions!** The key is automatically available.
 
 ## Fallback Behavior
 
@@ -189,18 +166,16 @@ $ python tools/nlp-discover.py "I want to build a website"
 
 ## Troubleshooting
 
-### "OLLAMA_TURBO_CLOUD_API_KEY not set"
+### "OLLAMA_API_KEY not set"
 
-**Solution**: Set the environment variable (use turbo for best performance):
-```bash
-export OLLAMA_TURBO_CLOUD_API_KEY='your-key-here'
-```
+**Solution**: 
 
-Or use one of the alternative keys:
+For local testing, set the environment variable:
 ```bash
-export OLLAMA_PROXY_API_KEY='your-key-here'
 export OLLAMA_API_KEY='your-key-here'
 ```
+
+**In GitHub Actions**: The key is automatically available! No action needed.
 
 ### "openai library not installed"
 
@@ -238,16 +213,14 @@ To use in workflows, add the secret to your repository:
 # In .github/workflows/your-workflow.yml
 - name: NLP Skill Discovery
   env:
-    OLLAMA_TURBO_CLOUD_API_KEY: ${{ secrets.OLLAMA_TURBO_CLOUD_API_KEY }}
+    OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
   run: |
     pip install openai
     python tools/nlp-discover.py "your query"
 ```
 
-**Available secrets in this organization:**
-- `OLLAMA_TURBO_CLOUD_API_KEY` - Recommended for CI/CD
-- `OLLAMA_PROXY_API_KEY` - Alternative
-- `OLLAMA_API_KEY` - Alternative
+**The repository secret `OLLAMA_API_KEY` is already configured!**  
+Just reference it in your workflow as shown above.
 
 ## Performance
 
