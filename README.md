@@ -150,6 +150,69 @@ python tools/validate.py --all
 ✅ **Stays in sync with upstream** - Easy to pull updates from anthropics/skills
 ✅ **No breaking changes** - Both formats coexist peacefully
 
+## Automated Upstream Sync
+
+This repository automatically stays synchronized with the official [anthropics/skills](https://github.com/anthropics/skills) repository while protecting all custom enhancements.
+
+### How It Works
+
+🤖 **Automated Synchronization**
+- Runs every 6 hours (4 times daily) to check for upstream updates
+- Can also be triggered manually from the Actions tab
+- Uses fast-forward-only merge strategy for safety
+
+🛡️ **Safety First**
+- **Never overwrites custom work** - All custom directories are protected:
+  - `universal/` - Universal LLM Skills Format and conversions
+  - `tools/` - Custom tools (convert.py, validate.py, sync-upstream.sh)
+  - `docs/` - Enhanced documentation and guides
+  - Custom skill folders not in upstream
+- **Automatic PR on conflicts** - If changes can't be merged cleanly, a pull request is automatically created for manual review
+- **No force pushes** - Human review required for any conflicts
+
+### What Gets Synced
+
+✅ **New skills** from anthropics/skills main branch  
+✅ **Updates to existing skills** from upstream  
+✅ **Bug fixes and improvements** from the official repository  
+
+❌ **Never synced** (protected):
+- Universal format conversions in `universal/`
+- Custom tools and scripts in `tools/`
+- Enhanced documentation in `docs/`
+- Custom skills not in upstream (changelog-generator, domain-name-brainstormer, etc.)
+
+### Manual Sync (Fallback)
+
+You can always sync manually using the provided script:
+
+```bash
+# Interactive manual sync with safety checks
+./tools/sync-upstream.sh
+```
+
+This script:
+- Creates a backup branch before syncing
+- Shows you what will be merged before proceeding
+- Prompts for confirmation at each step
+- Offers to re-convert skills after sync
+
+### When Human Review Is Needed
+
+The automation creates a pull request when:
+- 🔄 **Merge conflicts** occur between upstream and custom changes
+- 🚫 **Non-fast-forward** merge is required
+- ⚠️ **Protected files** would be modified by upstream
+
+Simply review the auto-generated PR, resolve any conflicts, and merge when ready.
+
+### Monitoring
+
+Check the [Actions tab](../../actions/workflows/upstream-sync.yml) to:
+- View sync history and results
+- Manually trigger a sync
+- Check for any auto-generated PRs needing review
+
 ## Skills
 
 ### Document Processing
