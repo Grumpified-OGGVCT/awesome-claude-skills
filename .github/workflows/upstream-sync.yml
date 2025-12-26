@@ -33,6 +33,7 @@ jobs:
         uses: tgymnich/fork-sync@v2
         with:
           owner: anthropics
+          repo: skills
           head: main
           base: main
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -82,7 +83,7 @@ jobs:
           else
             git add -A
             git commit -m "chore: sync upstream anthropics/skills \
-            main – new/updated skills" || echo "No changes to commit"
+            main - new/updated skills" || echo "No changes to commit"
             git push origin main || echo "Push failed or nothing to push"
           fi
 

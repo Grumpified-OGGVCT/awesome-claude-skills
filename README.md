@@ -208,7 +208,7 @@ Simply review the auto-generated PR, resolve any conflicts, and merge when ready
 
 ### Monitoring
 
-Check the [Actions tab](../../actions/workflows/upstream-sync.yml) to:
+Check the [Actions tab](../../actions) to:
 - View sync history and results
 - Manually trigger a sync
 - Check for any auto-generated PRs needing review
