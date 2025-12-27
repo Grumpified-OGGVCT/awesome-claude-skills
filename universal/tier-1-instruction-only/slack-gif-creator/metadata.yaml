@@ -1,12 +1,12 @@
-name: meeting-insights-analyzer
-description: Analyzes meeting transcripts and recordings to uncover behavioral patterns,
-  communication insights, and actionable feedback. Identifies when you avoid conflict,
-  use filler words, dominate conversations, or miss opportunities to listen. Perfect
-  for professionals seeking to improve their communication and leadership skills.
+name: slack-gif-creator
+description: Toolkit for creating animated GIFs optimized for Slack, with validators
+  for size constraints and composable animation primitives. This skill applies when
+  users request animated GIFs or emoji animations for Slack from descriptions like
+  "make me a GIF for Slack of X doing Y".
 tier: 1
 version: '1.0'
 source:
-  original_path: meeting-insights-analyzer
+  original_path: slack-gif-creator
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:

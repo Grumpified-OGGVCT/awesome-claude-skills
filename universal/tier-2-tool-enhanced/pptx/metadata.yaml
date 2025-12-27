@@ -1,14 +1,16 @@
-name: raffle-winner-picker
-description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways,
-  raffles, and contests. Ensures fair, unbiased selection with transparency.
-tier: 1
+name: pptx
+description: 'Presentation creation, editing, and analysis. When Claude needs to work
+  with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying
+  or editing content, (3) Working with layouts, (4) Adding comments or speaker notes,
+  or any other presentation tasks'
+tier: 2
 version: '1.0'
 source:
-  original_path: raffle-winner-picker
+  original_path: document-skills/pptx
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:
-  tool_calling: false
+  tool_calling: true
   min_context_window: 4096
   recommended_context_window: 8192
 compatibility:

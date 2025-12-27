@@ -1,0 +1,14 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "main",
+      "description": "Function from evaluation.py",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+]

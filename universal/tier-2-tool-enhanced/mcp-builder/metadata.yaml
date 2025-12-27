@@ -1,14 +1,16 @@
-name: raffle-winner-picker
-description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways,
-  raffles, and contests. Ensures fair, unbiased selection with transparency.
-tier: 1
+name: mcp-builder
+description: Guide for creating high-quality MCP (Model Context Protocol) servers
+  that enable LLMs to interact with external services through well-designed tools.
+  Use when building MCP servers to integrate external APIs or services, whether in
+  Python (FastMCP) or Node/TypeScript (MCP SDK).
+tier: 2
 version: '1.0'
 source:
-  original_path: raffle-winner-picker
+  original_path: mcp-builder
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:
-  tool_calling: false
+  tool_calling: true
   min_context_window: 4096
   recommended_context_window: 8192
 compatibility:
