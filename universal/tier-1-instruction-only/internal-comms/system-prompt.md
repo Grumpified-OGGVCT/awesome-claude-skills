@@ -1,6 +1,6 @@
 # Internal Comms
 
-A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).
+A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. The assistant should use these instructions whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).
 
 ## When to use these instructions
 To write internal communications, use these instructions for:
