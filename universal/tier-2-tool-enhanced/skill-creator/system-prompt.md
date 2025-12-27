@@ -4,7 +4,7 @@ Guide for creating effective skills. This skill should be used when users want t
 
 # Skill Creator
 
-these instructions provides guidance for creating effective skills.
+these instructions provide guidance for creating effective skills.
 
 ## About Skills
 
