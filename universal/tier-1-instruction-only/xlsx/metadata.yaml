@@ -1,0 +1,30 @@
+name: xlsx
+description: 'Comprehensive spreadsheet creation, editing, and analysis with support
+  for formulas, formatting, data analysis, and visualization. When Claude needs to
+  work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets
+  with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing
+  spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets,
+  or (5) Recalculating formulas'
+tier: 1
+version: '1.0'
+source:
+  original_path: document-skills/xlsx
+  last_sync: '2025-12-27'
+  upstream_repo: anthropics/skills
+requirements:
+  tool_calling: false
+  min_context_window: 4096
+  recommended_context_window: 8192
+compatibility:
+  tested_providers:
+  - openrouter
+  - ollama
+  tested_models:
+  - llama3.2
+  - qwen2.5
+  - mistral
+  recommended_models:
+  - anthropic/claude-3.5-sonnet
+  - openai/gpt-4o
+  - meta-llama/llama-3.2-90b-instruct
+tags: []

@@ -6,7 +6,7 @@ tier: 1
 version: '1.0'
 source:
   original_path: domain-name-brainstormer
-  last_sync: '2025-12-26'
+  last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:
   tool_calling: false

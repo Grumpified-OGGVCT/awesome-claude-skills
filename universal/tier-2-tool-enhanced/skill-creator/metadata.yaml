@@ -1,14 +1,15 @@
-name: raffle-winner-picker
-description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways,
-  raffles, and contests. Ensures fair, unbiased selection with transparency.
-tier: 1
+name: skill-creator
+description: Guide for creating effective skills. This skill should be used when users
+  want to create a new skill (or update an existing skill) that extends Claude's capabilities
+  with specialized knowledge, workflows, or tool integrations.
+tier: 2
 version: '1.0'
 source:
-  original_path: raffle-winner-picker
+  original_path: skill-creator
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:
-  tool_calling: false
+  tool_calling: true
   min_context_window: 4096
   recommended_context_window: 8192
 compatibility:

@@ -1,0 +1,13 @@
+name: file-organizer
+description: Intelligently organizes your files and folders across your computer by
+  understanding context, finding duplicates, suggesting better structures, and automating
+  cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without
+  manual effort.
+tier: 3
+version: '1.0'
+source:
+  original_path: file-organizer
+  last_sync: '2025-12-27'
+compatibility:
+  claude_only: true
+  reason: Requires Claude-specific features

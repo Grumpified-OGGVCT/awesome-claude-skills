@@ -1,12 +1,12 @@
-name: meeting-insights-analyzer
-description: Analyzes meeting transcripts and recordings to uncover behavioral patterns,
-  communication insights, and actionable feedback. Identifies when you avoid conflict,
-  use filler words, dominate conversations, or miss opportunities to listen. Perfect
-  for professionals seeking to improve their communication and leadership skills.
+name: developer-growth-analysis
+description: Analyzes your recent Claude Code chat history to identify coding patterns,
+  development gaps, and areas for improvement, curates relevant learning resources
+  from HackerNews, and automatically sends a personalized growth report to your Slack
+  DMs.
 tier: 1
 version: '1.0'
 source:
-  original_path: meeting-insights-analyzer
+  original_path: developer-growth-analysis
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:

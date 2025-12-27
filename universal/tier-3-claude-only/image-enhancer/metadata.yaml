@@ -1,0 +1,12 @@
+name: image-enhancer
+description: Improves the quality of images, especially screenshots, by enhancing
+  resolution, sharpness, and clarity. Perfect for preparing images for presentations,
+  documentation, or social media posts.
+tier: 3
+version: '1.0'
+source:
+  original_path: image-enhancer
+  last_sync: '2025-12-27'
+compatibility:
+  claude_only: true
+  reason: Requires Claude-specific features

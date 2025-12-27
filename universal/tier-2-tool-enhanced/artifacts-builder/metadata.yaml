@@ -1,12 +1,12 @@
-name: pdf
-description: Comprehensive PDF manipulation toolkit for extracting text and tables,
-  creating new PDFs, merging/splitting documents, and handling forms. When Claude
-  needs to fill in a PDF form or programmatically process, generate, or analyze PDF
-  documents at scale.
+name: artifacts-builder
+description: Suite of tools for creating elaborate, multi-component claude.ai HTML
+  artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).
+  Use for complex artifacts requiring state management, routing, or shadcn/ui components
+  - not for simple single-file HTML/JSX artifacts.
 tier: 2
 version: '1.0'
 source:
-  original_path: document-skills/pdf
+  original_path: artifacts-builder
   last_sync: '2025-12-27'
   upstream_repo: anthropics/skills
 requirements:
