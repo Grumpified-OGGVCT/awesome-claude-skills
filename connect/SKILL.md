@@ -42,7 +42,7 @@ Use this skill when you need Claude to:
 
 ### 1. Get API Key
 
-Get your free key at [platform.composio.dev](https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills)
+Get your free key at [platform.composio.dev](https://platform.composio.dev/?utm_source=GitHub&utm_content=AwesomeSkills)
 
 ### 2. Set Environment Variable
 

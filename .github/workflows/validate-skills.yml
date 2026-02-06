@@ -74,7 +74,34 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add SKILL-INDEX.json
           git commit -m "Auto-update SKILL-INDEX.json [skip ci]"
-          git push
+          
+          # Derive branch name from GITHUB_REF (e.g., refs/heads/main -> main)
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          
+          # Retry loop to handle non-fast-forward updates due to concurrent pushes
+          for attempt in 1 2 3; do
+            echo "Attempt ${attempt}: pulling latest changes with rebase..."
+            git pull --rebase origin "${BRANCH_NAME}" || {
+              echo "git pull --rebase failed on attempt ${attempt}"
+              if [ "${attempt}" -eq 3 ]; then
+                echo "Maximum pull attempts reached; exiting with failure."
+                exit 1
+              fi
+              continue
+            }
+          
+            echo "Attempt ${attempt}: pushing changes..."
+            if git push origin "${BRANCH_NAME}"; then
+              echo "Push succeeded on attempt ${attempt}"
+              break
+            fi
+          
+            echo "git push failed on attempt ${attempt}"
+            if [ "${attempt}" -eq 3 ]; then
+              echo "Maximum push attempts reached; exiting with failure."
+              exit 1
+            fi
+          done
       
       - name: Add PR comment if index would change
         if: |
@@ -86,7 +113,7 @@ jobs:
             const fs = require('fs');
             const indexData = JSON.parse(fs.readFileSync('SKILL-INDEX.json', 'utf8'));
             
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,

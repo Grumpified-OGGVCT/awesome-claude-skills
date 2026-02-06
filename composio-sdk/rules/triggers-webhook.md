@@ -57,7 +57,7 @@ app.post('/custom/webhook', express.raw({ type: 'application/json' }), (req, res
     return res.status(401).json({ error: 'Invalid signature' });
   }
 
-  const event = JSON.parse(payload);
+  const event = JSON.parse(Buffer.isBuffer(payload) ? payload.toString('utf8') : payload);
   handleEvent(event);
   res.json({ success: true });
 });

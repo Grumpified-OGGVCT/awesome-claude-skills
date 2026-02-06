@@ -20,13 +20,15 @@ Just ask for the key directly. Don't ask if they have one first.
 Run this command (replace API_KEY_HERE with the actual key):
 
 ```bash
-/opt/homebrew/bin/python3.11 -c "
+python3 -c "
 from composio import Composio
 composio = Composio(api_key='API_KEY_HERE')
 session = composio.create(user_id='claude_user')
 print(session.mcp.url)
 "
 ```
+
+> **Note**: If you need a specific Python version, replace `python3` with `python3.11` or your preferred interpreter path.
 
 If it fails with import error, first run: `pip3 install composio`
 
