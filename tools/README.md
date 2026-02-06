@@ -6,6 +6,8 @@ Automation tools for working with Claude Skills and the universal format.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
+| [generate-skill-index.py](#generate-skill-indexpy) 🆕 | Auto-generate SKILL-INDEX.json | `python tools/generate-skill-index.py` |
+| [validate-skill-yaml.py](#validate-skill-yamlpy) 🆕 | Validate YAML frontmatter | `python tools/validate-skill-yaml.py` |
 | [nlp-discover.py](#nlp-discoverpy) 🤖 | NLP-powered semantic search | `python tools/nlp-discover.py "query"` |
 | [find-skill](#find-skill) 🌟 | Simple skill search wrapper | `./tools/find-skill pdf` |
 | [discover.py](#discoverpy) ⭐ | Find skills by search/browse | `python tools/discover.py` |
@@ -25,6 +27,181 @@ pip install pyyaml
 ```
 
 ## Tool Documentation
+
+### generate-skill-index.py
+
+🆕 **Auto-Generate SKILL-INDEX.json**
+
+#### Purpose
+
+Automatically generates the complete `SKILL-INDEX.json` file from all `SKILL.md` files in the repository. This is the **authoritative** skill index used throughout the project.
+
+#### Features
+
+- 🔍 **Auto-discovery** - Scans all `*/SKILL.md` files automatically
+- 🏷️ **Smart categorization** - Auto-assigns categories based on name/description/tags
+- 📊 **Complete metadata** - Extracts name, description, tags, requires from YAML
+- 🔄 **Idempotent** - Safe to run multiple times
+- ✅ **Validation** - Ensures all YAML frontmatter is valid before generation
+
+#### Usage
+
+```bash
+# Generate SKILL-INDEX.json at repository root
+python tools/generate-skill-index.py
+```
+
+#### Output
+
+```
+Generating SKILL-INDEX.json...
+Root directory: /home/user/awesome-claude-skills
+Found 107 SKILL.md files
+
+✅ Generated /home/user/awesome-claude-skills/SKILL-INDEX.json
+   Total skills: 107
+   Categories: 8
+   Categories: App Automation, Business & Marketing, Communication & Writing, ...
+```
+
+#### Auto-Categorization Rules
+
+Skills are categorized based on:
+1. **Directory name patterns** - e.g., `*-automation` → App Automation
+2. **Description keywords** - e.g., "code", "github" → Development & Code Tools
+3. **Tags** - e.g., `[document, pdf]` → Document Processing
+4. **Default fallback** - "Other" category if no match
+
+**Categories:**
+- App Automation (78 skills)
+- Business & Marketing
+- Communication & Writing
+- Creative & Media
+- Development & Code Tools
+- Document Processing
+- Other
+- Productivity & Organization
+
+#### When to Run
+
+Run this tool when:
+- ✅ Adding new skills to the repository
+- ✅ Updating skill descriptions or metadata
+- ✅ SKILL-INDEX.json is missing or outdated
+- ✅ After merging upstream changes
+
+**Note:** This tool is automatically run by CI/CD on push to main/master.
+
+### validate-skill-yaml.py
+
+🆕 **Validate YAML Frontmatter in All Skills**
+
+#### Purpose
+
+Validates YAML frontmatter syntax and required fields in all `SKILL.md` files. Ensures consistency and catches errors before they reach production.
+
+#### Features
+
+- ✅ **Syntax validation** - Detects YAML parse errors
+- ✅ **Required fields** - Checks for `name` and `description`
+- ✅ **Type checking** - Validates data types (strings, lists, dicts)
+- ✅ **Clear errors** - Shows exactly which files have issues
+- ✅ **CI/CD ready** - Exit codes for automation
+
+#### Usage
+
+```bash
+# Validate all SKILL.md files
+python tools/validate-skill-yaml.py
+
+# Use in CI/CD (exits with code 1 on errors)
+python tools/validate-skill-yaml.py || exit 1
+```
+
+#### Example Output
+
+**Success:**
+```
+Validating 107 SKILL.md files...
+
+======================================================================
+✅ All 107 SKILL.md files are valid!
+```
+
+**With Errors:**
+```
+Validating 107 SKILL.md files...
+
+❌ my-skill/SKILL.md
+   - Missing required field: 'description'
+   - Field 'tags' must be a list
+
+❌ another-skill/SKILL.md
+   - YAML parse error: found unexpected ':'
+
+======================================================================
+❌ Found 3 errors in 2 files
+   Valid files: 105/107
+```
+
+#### Validation Rules
+
+**Required Fields:**
+- `name` (string) - Skill identifier
+- `description` (string) - Brief description of what skill does
+
+**Optional Fields:**
+- `tags` (list of strings) - Searchable keywords
+- `requires` (dict) - External dependencies (e.g., MCP servers)
+- `category` (string) - Manual category override
+
+**YAML Syntax:**
+- Must start and end with `---` delimiters
+- Proper indentation (2 spaces)
+- Quote strings with colons: `description: "This: works"`
+
+#### Common Errors & Fixes
+
+**Error: "No YAML frontmatter found"**
+```yaml
+# ❌ Missing delimiters
+name: my-skill
+
+# ✅ Correct format
+---
+name: my-skill
+description: Brief description
+---
+```
+
+**Error: "YAML parse error: found unexpected ':'"**
+```yaml
+# ❌ Unquoted colon
+description: This does: something
+
+# ✅ Quote the string
+description: "This does: something"
+```
+
+**Error: "Field 'tags' must be a list"**
+```yaml
+# ❌ Wrong type
+tags: web
+
+# ✅ Use list format
+tags: [web]
+# or
+tags:
+  - web
+  - code
+```
+
+#### Integration
+
+This tool is automatically run by:
+- 🔄 **CI/CD** - On every PR and push (`.github/workflows/validate-skills.yml`)
+- 🪝 **Pre-commit hooks** - Optional local validation before commit
+- 📦 **generate-skill-index.py** - Validates before generating index
 
 ### nlp-discover.py
 

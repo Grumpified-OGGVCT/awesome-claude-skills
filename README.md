@@ -43,11 +43,13 @@
 
 ## 🎯 What Is This Repository?
 
-**Awesome Claude Skills** is a curated collection of **27+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
+**Awesome Claude Skills** is a curated collection of **107+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
+
+**🔄 Auto-Synced with Upstream** - This repository automatically syncs daily with [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) while preserving all local customizations and running comprehensive QA validation. [Learn more →](.github/workflows/AUTO-SYNC-README.md)
 
 ### What You'll Find Here
 
-- **🎓 Pre-built Skills**: 27+ production-ready skills covering development, business, creative work, and more
+- **🎓 Pre-built Skills**: 107+ production-ready skills covering development, business, creative work, automation, and more
 - **🌍 Universal Format**: Works with Claude, GPT-4, Llama, Gemini, and any OpenAI-compatible LLM
 - **📚 Learning Resources**: Guides for creating your own custom skills
 - **🛠️ Tools & Scripts**: Automation for converting, validating, and testing skills

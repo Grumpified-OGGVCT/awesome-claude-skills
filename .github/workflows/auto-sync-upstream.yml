@@ -1,0 +1,445 @@
+name: Auto-Sync Upstream with QA Validation
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync even if no changes detected'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  check-and-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/ComposioHQ/awesome-claude-skills.git || true
+          git fetch upstream
+      
+      - name: Check for new commits
+        id: check_commits
+        run: |
+          # Get latest commit from upstream main
+          UPSTREAM_COMMIT=$(git rev-parse upstream/main)
+          echo "upstream_commit=$UPSTREAM_COMMIT" >> $GITHUB_OUTPUT
+          
+          # Check if we have a record of last sync
+          if [ -f .github/last-upstream-sync ]; then
+            LAST_SYNC=$(cat .github/last-upstream-sync)
+            echo "last_sync=$LAST_SYNC" >> $GITHUB_OUTPUT
+          else
+            echo "last_sync=none" >> $GITHUB_OUTPUT
+            LAST_SYNC="none"
+          fi
+          
+          # Check if there are new commits
+          if [ "$LAST_SYNC" = "none" ] || [ "$LAST_SYNC" != "$UPSTREAM_COMMIT" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ New commits detected in upstream"
+            
+            # Get commit messages since last sync
+            if [ "$LAST_SYNC" != "none" ]; then
+              echo "## New Commits from Upstream" > /tmp/commit-summary.md
+              git log --oneline --no-decorate $LAST_SYNC..$UPSTREAM_COMMIT --pretty=format:"- %s (%h)" >> /tmp/commit-summary.md
+              cat /tmp/commit-summary.md
+            fi
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No new commits in upstream"
+          fi
+      
+      - name: Create sync branch
+        if: steps.check_commits.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+        run: |
+          BRANCH_NAME="auto-sync/upstream-$(date +%Y%m%d-%H%M%S)"
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          git checkout -b $BRANCH_NAME
+        id: create_branch
+      
+      - name: Set up Python
+        if: steps.check_commits.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        if: steps.check_commits.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+      
+      - name: Clone upstream to temp directory
+        if: steps.check_commits.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+        run: |
+          mkdir -p /tmp/upstream_repo
+          cd /tmp/upstream_repo
+          git clone --depth=1 https://github.com/ComposioHQ/awesome-claude-skills.git .
+          echo "✅ Cloned upstream repository"
+      
+      - name: Merge upstream changes (preserve local customizations)
+        if: steps.check_commits.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+        id: merge_upstream
+        run: |
+          echo "## Merge Strategy" > /tmp/merge-report.md
+          echo "Using rsync with --ignore-existing to preserve local customizations" >> /tmp/merge-report.md
+          echo "" >> /tmp/merge-report.md
+          
+          # Sync new files from upstream, preserving our customizations
+          rsync -av --ignore-existing /tmp/upstream_repo/ ./ \
+            --exclude='.git' \
+            --exclude='README.md' \
+            --exclude='CONTRIBUTING.md' \
+            --exclude='SKILL-INDEX.json' \
+            --exclude='tools/' \
+            --exclude='docs/' \
+            --exclude='examples/' \
+            --exclude='universal/' \
+            --exclude='requirements.txt' \
+            --exclude='.github/' \
+            --exclude='*IMPLEMENTATION*' \
+            --exclude='*QA-*' \
+            --exclude='ARCHITECTURE.md' \
+            --exclude='UNIVERSAL-FORMAT.md' \
+            --exclude='CHANGELOG.md' \
+            --exclude='GETTING_STARTED.md' \
+            --exclude='QUICK-START-NLP.md' \
+            > /tmp/rsync-output.txt
+          
+          # Count changes
+          NEW_FILES=$(git status --short | grep "^??" | wc -l)
+          MODIFIED_FILES=$(git status --short | grep "^ M" | wc -l)
+          
+          echo "new_files=$NEW_FILES" >> $GITHUB_OUTPUT
+          echo "modified_files=$MODIFIED_FILES" >> $GITHUB_OUTPUT
+          
+          echo "### Files Changed" >> /tmp/merge-report.md
+          echo "- New files: $NEW_FILES" >> /tmp/merge-report.md
+          echo "- Modified files: $MODIFIED_FILES" >> /tmp/merge-report.md
+          echo "" >> /tmp/merge-report.md
+          
+          if [ $NEW_FILES -gt 0 ] || [ $MODIFIED_FILES -gt 0 ]; then
+            echo "✅ Merged upstream changes"
+            echo "merge_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "ℹ️ No file changes after merge"
+            echo "merge_success=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Stage all changes
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        run: |
+          git add -A
+          echo "📦 Staged all changes"
+      
+      - name: Run YAML validation
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        id: yaml_validation
+        run: |
+          echo "## YAML Validation Results" > /tmp/validation-report.md
+          
+          if python tools/validate-skill-yaml.py; then
+            echo "✅ All YAML frontmatter valid" | tee -a /tmp/validation-report.md
+            echo "yaml_valid=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ YAML validation failed" | tee -a /tmp/validation-report.md
+            echo "yaml_valid=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Regenerate SKILL-INDEX.json
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        id: regenerate_index
+        run: |
+          echo "## Skill Index Regeneration" >> /tmp/validation-report.md
+          
+          python tools/generate-skill-index.py > /tmp/index-output.txt
+          
+          if [ -f SKILL-INDEX.json ]; then
+            TOTAL_SKILLS=$(python -c "import json; print(json.load(open('SKILL-INDEX.json'))['total_skills'])")
+            echo "✅ Regenerated SKILL-INDEX.json: $TOTAL_SKILLS skills" | tee -a /tmp/validation-report.md
+            echo "total_skills=$TOTAL_SKILLS" >> $GITHUB_OUTPUT
+            echo "index_regenerated=true" >> $GITHUB_OUTPUT
+            
+            git add SKILL-INDEX.json
+          else
+            echo "❌ Failed to regenerate index" | tee -a /tmp/validation-report.md
+            echo "index_regenerated=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Run comprehensive QA validation
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        id: qa_validation
+        continue-on-error: true
+        run: |
+          echo "## Comprehensive QA Validation" > /tmp/qa-report.md
+          echo "" >> /tmp/qa-report.md
+          
+          # Security checks
+          echo "### Security Scan" >> /tmp/qa-report.md
+          
+          # Check for hardcoded secrets
+          if grep -r "api_key\s*=\s*['\"]" --include="*.py" --include="*.js" . | grep -v "os.getenv\|env.get" | grep -v ".git"; then
+            echo "⚠️ Potential hardcoded API keys found" >> /tmp/qa-report.md
+            echo "qa_warnings=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No hardcoded secrets detected" >> /tmp/qa-report.md
+          fi
+          
+          # Check for dangerous code patterns
+          if grep -r "eval\|exec(" --include="*.py" . | grep -v ".git" | grep -v "page.evaluate"; then
+            echo "⚠️ Dangerous code execution patterns found" >> /tmp/qa-report.md
+            echo "qa_warnings=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No dangerous code execution patterns" >> /tmp/qa-report.md
+          fi
+          
+          # File integrity check
+          echo "" >> /tmp/qa-report.md
+          echo "### File Integrity" >> /tmp/qa-report.md
+          
+          # Verify critical files preserved
+          CRITICAL_FILES=("ARCHITECTURE.md" "UNIVERSAL-FORMAT.md" "tools/README.md")
+          for file in "${CRITICAL_FILES[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✅ $file preserved" >> /tmp/qa-report.md
+            else
+              echo "❌ $file missing!" >> /tmp/qa-report.md
+              echo "qa_critical=true" >> $GITHUB_OUTPUT
+            fi
+          done
+          
+          # Count skills
+          SKILL_COUNT=$(find . -maxdepth 2 -name "SKILL.md" | wc -l)
+          echo "" >> /tmp/qa-report.md
+          echo "### Repository Stats" >> /tmp/qa-report.md
+          echo "- Total SKILL.md files: $SKILL_COUNT" >> /tmp/qa-report.md
+          
+          # Summary
+          echo "" >> /tmp/qa-report.md
+          if [ "${qa_critical:-false}" = "true" ]; then
+            echo "**Status:** ❌ Critical issues found" >> /tmp/qa-report.md
+            echo "qa_status=critical" >> $GITHUB_OUTPUT
+          elif [ "${qa_warnings:-false}" = "true" ]; then
+            echo "**Status:** ⚠️ Warnings detected" >> /tmp/qa-report.md
+            echo "qa_status=warnings" >> $GITHUB_OUTPUT
+          else
+            echo "**Status:** ✅ All checks passed" >> /tmp/qa-report.md
+            echo "qa_status=passed" >> $GITHUB_OUTPUT
+          fi
+          
+          cat /tmp/qa-report.md
+      
+      - name: Cleanup and repair (if needed)
+        if: steps.qa_validation.outputs.qa_status != 'passed' && steps.merge_upstream.outputs.merge_success == 'true'
+        run: |
+          echo "## Cleanup and Repair Actions" > /tmp/cleanup-report.md
+          
+          # Fix common issues
+          
+          # 1. Ensure all Python scripts are executable
+          find tools/ -name "*.py" -exec chmod +x {} \;
+          echo "✅ Set executable permissions on Python scripts" >> /tmp/cleanup-report.md
+          
+          # 2. Re-validate YAML after cleanup
+          if python tools/validate-skill-yaml.py; then
+            echo "✅ YAML validation passed after cleanup" >> /tmp/cleanup-report.md
+          else
+            echo "⚠️ YAML validation still has issues" >> /tmp/cleanup-report.md
+          fi
+          
+          # 3. Regenerate index if needed
+          if [ ! -f SKILL-INDEX.json ] || [ "$(stat -c%s SKILL-INDEX.json)" -lt 100 ]; then
+            python tools/generate-skill-index.py
+            git add SKILL-INDEX.json
+            echo "✅ Regenerated SKILL-INDEX.json" >> /tmp/cleanup-report.md
+          fi
+          
+          cat /tmp/cleanup-report.md
+      
+      - name: Commit changes
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        run: |
+          # Create comprehensive commit message
+          cat > /tmp/commit-msg.txt << 'EOF'
+          Auto-sync: Merge upstream changes from ComposioHQ/awesome-claude-skills
+
+          Upstream commit: ${{ steps.check_commits.outputs.upstream_commit }}
+          Changes: ${{ steps.merge_upstream.outputs.new_files }} new files, ${{ steps.merge_upstream.outputs.modified_files }} modified
+
+          QA Validation: ${{ steps.qa_validation.outputs.qa_status }}
+          YAML Valid: ${{ steps.yaml_validation.outputs.yaml_valid }}
+          Index Regenerated: ${{ steps.regenerate_index.outputs.index_regenerated }}
+          Total Skills: ${{ steps.regenerate_index.outputs.total_skills }}
+
+          Automated merge preserving local customizations.
+          EOF
+          
+          git commit -F /tmp/commit-msg.txt
+          
+          # Record this sync
+          mkdir -p .github
+          echo "${{ steps.check_commits.outputs.upstream_commit }}" > .github/last-upstream-sync
+          git add .github/last-upstream-sync
+          git commit -m "Update last-upstream-sync marker" || true
+      
+      - name: Push branch
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        run: |
+          git push origin ${{ steps.create_branch.outputs.branch_name }}
+      
+      - name: Create Pull Request
+        if: steps.merge_upstream.outputs.merge_success == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Read reports
+            let mergeReport = '';
+            let validationReport = '';
+            let qaReport = '';
+            let cleanupReport = '';
+            let commitSummary = '';
+            
+            try {
+              mergeReport = fs.readFileSync('/tmp/merge-report.md', 'utf8');
+            } catch (e) {}
+            
+            try {
+              validationReport = fs.readFileSync('/tmp/validation-report.md', 'utf8');
+            } catch (e) {}
+            
+            try {
+              qaReport = fs.readFileSync('/tmp/qa-report.md', 'utf8');
+            } catch (e) {}
+            
+            try {
+              cleanupReport = fs.readFileSync('/tmp/cleanup-report.md', 'utf8');
+            } catch (e) {}
+            
+            try {
+              commitSummary = fs.readFileSync('/tmp/commit-summary.md', 'utf8');
+            } catch (e) {}
+            
+            const qaStatus = '${{ steps.qa_validation.outputs.qa_status }}';
+            const statusEmoji = qaStatus === 'passed' ? '✅' : qaStatus === 'warnings' ? '⚠️' : '❌';
+            
+            const prBody = `# 🔄 Automated Upstream Sync
+
+            ${statusEmoji} **QA Status:** ${qaStatus.toUpperCase()}
+
+            This PR automatically merges the latest changes from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) while preserving all local customizations.
+
+            ## Summary
+
+            - **Upstream Commit:** \`${{ steps.check_commits.outputs.upstream_commit }}\`
+            - **New Files:** ${{ steps.merge_upstream.outputs.new_files }}
+            - **Modified Files:** ${{ steps.merge_upstream.outputs.modified_files }}
+            - **Total Skills:** ${{ steps.regenerate_index.outputs.total_skills }}
+
+            ${commitSummary}
+
+            ${mergeReport}
+
+            ${validationReport}
+
+            ${qaReport}
+
+            ${cleanupReport ? cleanupReport : ''}
+
+            ## Local Customizations Preserved
+
+            The following files/directories were **NOT overwritten** by upstream:
+            - ✅ \`README.md\` (our enhanced version)
+            - ✅ \`CONTRIBUTING.md\` (our detailed version)
+            - ✅ \`SKILL-INDEX.json\` (regenerated from all skills)
+            - ✅ \`tools/\` (our automation scripts)
+            - ✅ \`docs/\` (our documentation)
+            - ✅ \`examples/\`, \`universal/\` (our additions)
+            - ✅ All \`*IMPLEMENTATION*\`, \`QA-*\`, architecture docs
+
+            ## Action Required
+
+            ${qaStatus === 'passed' 
+              ? '✅ **Ready to Merge** - All QA checks passed. Click "Merge" to apply these updates.' 
+              : qaStatus === 'warnings'
+              ? '⚠️ **Review Required** - Some warnings detected. Review the QA report above before merging.'
+              : '❌ **Manual Review Required** - Critical issues found. Review and fix before merging.'}
+
+            ## Next Steps
+
+            1. Review the changes in the "Files changed" tab
+            2. Check the QA validation results above
+            3. If everything looks good, merge this PR
+            4. The changes will be automatically applied to the main branch
+
+            ---
+
+            🤖 **Automated by:** GitHub Actions \`auto-sync-upstream.yml\`  
+            📅 **Triggered:** ${new Date().toISOString()}  
+            🔍 **Workflow:** [View run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
+            
+            const { data: pr } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔄 Auto-sync upstream (${new Date().toISOString().split('T')[0]})`,
+              head: '${{ steps.create_branch.outputs.branch_name }}',
+              base: 'main',
+              body: prBody
+            });
+            
+            console.log(`Created PR #${pr.number}: ${pr.html_url}`);
+            
+            // Add labels
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              labels: ['automated', 'upstream-sync', qaStatus === 'passed' ? 'ready-to-merge' : 'needs-review']
+            });
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🔄 Upstream Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check_commits.outputs.has_changes }}" = "true" ]; then
+            echo "✅ **New commits detected from upstream**" >> $GITHUB_STEP_SUMMARY
+            echo "- Upstream commit: \`${{ steps.check_commits.outputs.upstream_commit }}\`" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "${{ steps.merge_upstream.outputs.merge_success }}" = "true" ]; then
+              echo "- New files: ${{ steps.merge_upstream.outputs.new_files }}" >> $GITHUB_STEP_SUMMARY
+              echo "- Modified files: ${{ steps.merge_upstream.outputs.modified_files }}" >> $GITHUB_STEP_SUMMARY
+              echo "- QA Status: **${{ steps.qa_validation.outputs.qa_status }}**" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "📋 **PR created** - Review and merge when ready" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "ℹ️ No file changes after merge" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "ℹ️ **No new commits** in upstream repository" >> $GITHUB_STEP_SUMMARY
+            echo "- Last sync: \`${{ steps.check_commits.outputs.last_sync }}\`" >> $GITHUB_STEP_SUMMARY
+          fi
