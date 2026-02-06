@@ -1,7 +1,9 @@
 {
-  "version": "1.0",
-  "total_skills": 27,
+  "version": "2.0",
+  "generated_date": "2026-02-06",
+  "total_skills": 107,
   "categories": [
+    "App Automation",
     "Business & Marketing",
     "Communication & Writing",
     "Creative & Media",
@@ -12,54 +14,184 @@
   ],
   "skills": [
     {
+      "name": "activecampaign-automation",
+      "path": "activecampaign-automation",
+      "skill_file": "activecampaign-automation/SKILL.md",
+      "description": "Automate ActiveCampaign tasks via Rube MCP (Composio): manage contacts, tags, list subscriptions, automation enrollment, and tasks. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "airtable-automation",
+      "path": "airtable-automation",
+      "skill_file": "airtable-automation/SKILL.md",
+      "description": "Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "amplitude-automation",
+      "path": "amplitude-automation",
+      "skill_file": "amplitude-automation/SKILL.md",
+      "description": "Automate Amplitude tasks via Rube MCP (Composio): events, user activity, cohorts, user identification. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
       "name": "artifacts-builder",
       "path": "artifacts-builder",
       "skill_file": "artifacts-builder/SKILL.md",
       "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
       "category": "Development & Code Tools",
-      "tags": [
-        "code",
-        "design",
-        "development & code tools",
-        "file",
-        "test",
-        "web"
-      ]
+      "tags": []
+    },
+    {
+      "name": "asana-automation",
+      "path": "asana-automation",
+      "skill_file": "asana-automation/SKILL.md",
+      "description": "Automate Asana tasks via Rube MCP (Composio): tasks, projects, sections, teams, workspaces. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "bamboohr-automation",
+      "path": "bamboohr-automation",
+      "skill_file": "bamboohr-automation/SKILL.md",
+      "description": "Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "basecamp-automation",
+      "path": "basecamp-automation",
+      "skill_file": "basecamp-automation/SKILL.md",
+      "description": "Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "bitbucket-automation",
+      "path": "bitbucket-automation",
+      "skill_file": "bitbucket-automation/SKILL.md",
+      "description": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "box-automation",
+      "path": "box-automation",
+      "skill_file": "box-automation/SKILL.md",
+      "description": "Automate Box cloud storage operations including file upload/download, search, folder management, sharing, collaborations, and metadata queries via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "brand-guidelines",
       "path": "brand-guidelines",
       "skill_file": "brand-guidelines/SKILL.md",
       "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
-      "category": "Business & Marketing",
-      "tags": [
-        "business & marketing",
-        "design",
-        "word"
-      ]
+      "category": "Creative & Media",
+      "tags": []
+    },
+    {
+      "name": "brevo-automation",
+      "path": "brevo-automation",
+      "skill_file": "brevo-automation/SKILL.md",
+      "description": "Automate Brevo (Sendinblue) tasks via Rube MCP (Composio): manage email campaigns, create/edit templates, track senders, and monitor campaign performance. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "cal-com-automation",
+      "path": "cal-com-automation",
+      "skill_file": "cal-com-automation/SKILL.md",
+      "description": "Automate Cal.com tasks via Rube MCP (Composio): manage bookings, check availability, configure webhooks, and handle teams. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "calendly-automation",
+      "path": "calendly-automation",
+      "skill_file": "calendly-automation/SKILL.md",
+      "description": "Automate Calendly scheduling, event management, invitee tracking, availability checks, and organization administration via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "canva-automation",
+      "path": "canva-automation",
+      "skill_file": "canva-automation/SKILL.md",
+      "description": "Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autofill. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "canvas-design",
       "path": "canvas-design",
       "skill_file": "canvas-design/SKILL.md",
       "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
-      "category": "Creative & Media",
-      "tags": [
-        "code",
-        "communication",
-        "content",
-        "creative",
-        "creative & media",
-        "data",
-        "design",
-        "document",
-        "file",
-        "git",
-        "image",
-        "pdf",
-        "word",
-        "writing"
-      ]
+      "category": "Document Processing",
+      "tags": []
     },
     {
       "name": "changelog-generator",
@@ -67,199 +199,407 @@
       "skill_file": "changelog-generator/SKILL.md",
       "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns hours of manual changelog writing into minutes of automated generation.",
       "category": "Development & Code Tools",
-      "tags": [
-        "content",
-        "development & code tools",
-        "document",
-        "email",
-        "file",
-        "git",
-        "image",
-        "media",
-        "security",
-        "test",
-        "writing"
-      ]
+      "tags": []
+    },
+    {
+      "name": "circleci-automation",
+      "path": "circleci-automation",
+      "skill_file": "circleci-automation/SKILL.md",
+      "description": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "clickup-automation",
+      "path": "clickup-automation",
+      "skill_file": "clickup-automation/SKILL.md",
+      "description": "Automate ClickUp project management including tasks, spaces, folders, lists, comments, and team operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "close-automation",
+      "path": "close-automation",
+      "skill_file": "close-automation/SKILL.md",
+      "description": "Automate Close CRM tasks via Rube MCP (Composio): create leads, manage calls/SMS, handle tasks, and track notes. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "coda-automation",
+      "path": "coda-automation",
+      "skill_file": "coda-automation/SKILL.md",
+      "description": "Automate Coda tasks via Rube MCP (Composio): manage docs, pages, tables, rows, formulas, permissions, and publishing. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "competitive-ads-extractor",
       "path": "competitive-ads-extractor",
       "skill_file": "competitive-ads-extractor/SKILL.md",
       "description": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns.",
-      "category": "Business & Marketing",
+      "category": "Creative & Media",
+      "tags": []
+    },
+    {
+      "name": "composio",
+      "path": "composio-sdk",
+      "skill_file": "composio-sdk/SKILL.md",
+      "description": "Build AI agents and apps with Composio - access 200+ external tools with Tool Router or direct execution",
+      "category": "Other",
       "tags": [
-        "analysis",
-        "business & marketing",
-        "content",
-        "creative",
-        "data",
-        "design",
-        "document",
-        "file",
-        "image",
-        "marketing",
-        "media",
-        "meeting",
-        "organization",
-        "productivity",
-        "research",
-        "security",
-        "test",
-        "video",
-        "word",
-        "writing"
+        "composio",
+        "tool-router",
+        "agents",
+        "mcp",
+        "tools",
+        "api",
+        "automation"
       ]
+    },
+    {
+      "name": "confluence-automation",
+      "path": "confluence-automation",
+      "skill_file": "confluence-automation/SKILL.md",
+      "description": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "connect",
+      "path": "connect",
+      "skill_file": "connect/SKILL.md",
+      "description": "Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services.",
+      "category": "Development & Code Tools",
+      "tags": []
+    },
+    {
+      "name": "connect-apps",
+      "path": "connect-apps",
+      "skill_file": "connect-apps/SKILL.md",
+      "description": "Connect Claude to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions in external services.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "content-research-writer",
       "path": "content-research-writer",
       "skill_file": "content-research-writer/SKILL.md",
       "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership.",
-      "category": "Communication & Writing",
-      "tags": [
-        "analysis",
-        "code",
-        "communication & writing",
-        "content",
-        "data",
-        "document",
-        "email",
-        "file",
-        "media",
-        "organization",
-        "pdf",
-        "productivity",
-        "research",
-        "slack",
-        "test",
-        "web",
-        "word",
-        "writing"
-      ]
+      "category": "Creative & Media",
+      "tags": []
+    },
+    {
+      "name": "convertkit-automation",
+      "path": "convertkit-automation",
+      "skill_file": "convertkit-automation/SKILL.md",
+      "description": "Automate ConvertKit (Kit) tasks via Rube MCP (Composio): manage subscribers, tags, broadcasts, and broadcast stats. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "datadog-automation",
+      "path": "datadog-automation",
+      "skill_file": "datadog-automation/SKILL.md",
+      "description": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "developer-growth-analysis",
       "path": "developer-growth-analysis",
       "skill_file": "developer-growth-analysis/SKILL.md",
       "description": "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.",
-      "category": "Other",
-      "tags": [
-        "analysis",
-        "api",
-        "code",
-        "content",
-        "data",
-        "debug",
-        "design",
-        "document",
-        "file",
-        "image",
-        "other",
-        "security",
-        "slack",
-        "web"
-      ]
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
-      "name": "docx",
-      "path": "document-skills/docx",
-      "skill_file": "document-skills/docx/SKILL.md",
-      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
-      "category": "Document Processing",
-      "tags": [
-        "analysis",
-        "api",
-        "business",
-        "code",
-        "content",
-        "data",
-        "debug",
-        "document",
-        "document processing",
-        "excel",
-        "file",
-        "image",
-        "media",
-        "organization",
-        "pdf",
-        "test",
-        "word",
-        "writing"
-      ]
+      "name": "discord-automation",
+      "path": "discord-automation",
+      "skill_file": "discord-automation/SKILL.md",
+      "description": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "docusign-automation",
+      "path": "docusign-automation",
+      "skill_file": "docusign-automation/SKILL.md",
+      "description": "Automate DocuSign tasks via Rube MCP (Composio): templates, envelopes, signatures, document management. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "domain-name-brainstormer",
       "path": "domain-name-brainstormer",
       "skill_file": "domain-name-brainstormer/SKILL.md",
       "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking.",
-      "category": "Business & Marketing",
-      "tags": [
-        "analysis",
-        "business",
-        "business & marketing",
-        "code",
-        "creative",
-        "design",
-        "media",
-        "research",
-        "test",
-        "web",
-        "word",
-        "writing"
-      ]
+      "category": "Creative & Media",
+      "tags": []
+    },
+    {
+      "name": "dropbox-automation",
+      "path": "dropbox-automation",
+      "skill_file": "dropbox-automation/SKILL.md",
+      "description": "Automate Dropbox file management, sharing, search, uploads, downloads, and folder operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "figma-automation",
+      "path": "figma-automation",
+      "skill_file": "figma-automation/SKILL.md",
+      "description": "Automate Figma tasks via Rube MCP (Composio): files, components, design tokens, comments, exports. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "file-organizer",
       "path": "file-organizer",
       "skill_file": "file-organizer/SKILL.md",
       "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
-      "category": "Productivity & Organization",
-      "tags": [
-        "analysis",
-        "code",
-        "content",
-        "data",
-        "document",
-        "file",
-        "git",
-        "image",
-        "media",
-        "meeting",
-        "organization",
-        "pdf",
-        "productivity & organization",
-        "video"
-      ]
+      "category": "Development & Code Tools",
+      "tags": []
+    },
+    {
+      "name": "freshdesk-automation",
+      "path": "freshdesk-automation",
+      "skill_file": "freshdesk-automation/SKILL.md",
+      "description": "Automate Freshdesk helpdesk operations including tickets, contacts, companies, notes, and replies via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "freshservice-automation",
+      "path": "freshservice-automation",
+      "skill_file": "freshservice-automation/SKILL.md",
+      "description": "Automate Freshservice ITSM tasks via Rube MCP (Composio): create/update tickets, bulk operations, service requests, and outbound emails. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "github-automation",
+      "path": "github-automation",
+      "skill_file": "github-automation/SKILL.md",
+      "description": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "gitlab-automation",
+      "path": "gitlab-automation",
+      "skill_file": "gitlab-automation/SKILL.md",
+      "description": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "gmail-automation",
+      "path": "gmail-automation",
+      "skill_file": "gmail-automation/SKILL.md",
+      "description": "Automate Gmail tasks via Rube MCP (Composio): send/reply, search, labels, drafts, attachments. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "google-analytics-automation",
+      "path": "google-analytics-automation",
+      "skill_file": "google-analytics-automation/SKILL.md",
+      "description": "Automate Google Analytics tasks via Rube MCP (Composio): run reports, list accounts/properties, funnels, pivots, key events. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "google-calendar-automation",
+      "path": "google-calendar-automation",
+      "skill_file": "google-calendar-automation/SKILL.md",
+      "description": "Automate Google Calendar events, scheduling, availability checks, and attendee management via Rube MCP (Composio). Create events, find free slots, manage attendees, and list calendars programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "google-drive-automation",
+      "path": "google-drive-automation",
+      "skill_file": "google-drive-automation/SKILL.md",
+      "description": "Automate Google Drive file operations (upload, download, search, share, organize) via Rube MCP (Composio). Upload/download files, manage folders, share with permissions, and search across drives programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "googlesheets-automation",
+      "path": "googlesheets-automation",
+      "skill_file": "googlesheets-automation/SKILL.md",
+      "description": "Automate Google Sheets operations (read, write, format, filter, manage spreadsheets) via Rube MCP (Composio). Read/write data, manage tabs, apply formatting, and search rows programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "helpdesk-automation",
+      "path": "helpdesk-automation",
+      "skill_file": "helpdesk-automation/SKILL.md",
+      "description": "Automate HelpDesk tasks via Rube MCP (Composio): list tickets, manage views, use canned responses, and configure custom fields. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "hubspot-automation",
+      "path": "hubspot-automation",
+      "skill_file": "hubspot-automation/SKILL.md",
+      "description": "Automate HubSpot CRM operations (contacts, companies, deals, tickets, properties) via Rube MCP using Composio integration.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "image-enhancer",
       "path": "image-enhancer",
       "skill_file": "image-enhancer/SKILL.md",
       "description": "Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts.",
-      "category": "Creative & Media",
-      "tags": [
-        "creative & media",
-        "document",
-        "file",
-        "git",
-        "image",
-        "media",
-        "web"
-      ]
+      "category": "Document Processing",
+      "tags": []
+    },
+    {
+      "name": "instagram-automation",
+      "path": "instagram-automation",
+      "skill_file": "instagram-automation/SKILL.md",
+      "description": "Automate Instagram tasks via Rube MCP (Composio): create posts, carousels, manage media, get insights, and publishing limits. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "intercom-automation",
+      "path": "intercom-automation",
+      "skill_file": "intercom-automation/SKILL.md",
+      "description": "Automate Intercom tasks via Rube MCP (Composio): conversations, contacts, companies, segments, admins. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "internal-comms",
       "path": "internal-comms",
       "skill_file": "internal-comms/SKILL.md",
       "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
-      "category": "Business & Marketing",
-      "tags": [
-        "business & marketing",
-        "communication",
-        "content",
-        "file",
-        "word"
-      ]
+      "category": "Communication & Writing",
+      "tags": []
     },
     {
       "name": "invoice-organizer",
@@ -267,22 +607,41 @@
       "skill_file": "invoice-organizer/SKILL.md",
       "description": "Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours of manual bookkeeping into minutes of automated organization.",
       "category": "Productivity & Organization",
-      "tags": [
-        "api",
-        "automation",
-        "business",
-        "code",
-        "content",
-        "creative",
-        "document",
-        "email",
-        "file",
-        "image",
-        "organization",
-        "pdf",
-        "productivity & organization",
-        "test"
-      ]
+      "tags": []
+    },
+    {
+      "name": "jira-automation",
+      "path": "jira-automation",
+      "skill_file": "jira-automation/SKILL.md",
+      "description": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "klaviyo-automation",
+      "path": "klaviyo-automation",
+      "skill_file": "klaviyo-automation/SKILL.md",
+      "description": "Automate Klaviyo tasks via Rube MCP (Composio): manage email/SMS campaigns, inspect campaign messages, track tags, and monitor send jobs. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "langsmith-fetch",
+      "path": "langsmith-fetch",
+      "skill_file": "langsmith-fetch/SKILL.md",
+      "description": "Debug LangChain and LangGraph agents by fetching execution traces from LangSmith Studio. Use when debugging agent behavior, investigating errors, analyzing tool calls, checking memory operations, or examining agent performance. Automatically fetches recent traces and analyzes execution patterns. Requires langsmith-fetch CLI installed.",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "lead-research-assistant",
@@ -290,20 +649,59 @@
       "skill_file": "lead-research-assistant/SKILL.md",
       "description": "Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business development, and marketing professionals.",
       "category": "Business & Marketing",
-      "tags": [
-        "business",
-        "business & marketing",
-        "code",
-        "data",
-        "email",
-        "file",
-        "git",
-        "marketing",
-        "media",
-        "productivity",
-        "research",
-        "web"
-      ]
+      "tags": []
+    },
+    {
+      "name": "linear-automation",
+      "path": "linear-automation",
+      "skill_file": "linear-automation/SKILL.md",
+      "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "linkedin-automation",
+      "path": "linkedin-automation",
+      "skill_file": "linkedin-automation/SKILL.md",
+      "description": "Automate LinkedIn tasks via Rube MCP (Composio): create posts, manage profile, company info, comments, and image uploads. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "mailchimp-automation",
+      "path": "mailchimp-automation",
+      "skill_file": "mailchimp-automation/SKILL.md",
+      "description": "Automate Mailchimp email marketing including campaigns, audiences, subscribers, segments, and analytics via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "make-automation",
+      "path": "make-automation",
+      "skill_file": "make-automation/SKILL.md",
+      "description": "Automate Make (Integromat) tasks via Rube MCP (Composio): operations, enums, language and timezone lookups. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "mcp-builder",
@@ -311,163 +709,367 @@
       "skill_file": "mcp-builder/SKILL.md",
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
       "category": "Development & Code Tools",
-      "tags": [
-        "api",
-        "code",
-        "content",
-        "data",
-        "design",
-        "development & code tools",
-        "document",
-        "file",
-        "git",
-        "organization",
-        "research",
-        "security",
-        "test",
-        "web"
-      ]
+      "tags": []
     },
     {
       "name": "meeting-insights-analyzer",
       "path": "meeting-insights-analyzer",
       "skill_file": "meeting-insights-analyzer/SKILL.md",
       "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversations, or miss opportunities to listen. Perfect for professionals seeking to improve their communication and leadership skills.",
-      "category": "Communication & Writing",
-      "tags": [
-        "analysis",
-        "code",
-        "communication",
-        "communication & writing",
-        "data",
-        "file",
-        "meeting",
-        "word"
-      ]
+      "category": "Document Processing",
+      "tags": []
     },
     {
-      "name": "pdf",
-      "path": "document-skills/pdf",
-      "skill_file": "document-skills/pdf/SKILL.md",
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
-      "category": "Document Processing",
-      "tags": [
-        "aws",
-        "code",
-        "content",
-        "data",
-        "document",
-        "document processing",
-        "excel",
-        "file",
-        "image",
-        "pdf",
-        "word"
-      ]
+      "name": "microsoft-teams-automation",
+      "path": "microsoft-teams-automation",
+      "skill_file": "microsoft-teams-automation/SKILL.md",
+      "description": "Automate Microsoft Teams tasks via Rube MCP (Composio): send messages, manage channels, create meetings, handle chats, and search messages. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
-      "name": "pptx",
-      "path": "document-skills/pptx",
-      "skill_file": "document-skills/pptx/SKILL.md",
-      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
-      "category": "Document Processing",
-      "tags": [
-        "analysis",
-        "api",
-        "code",
-        "content",
-        "creative",
-        "data",
-        "design",
-        "document",
-        "document processing",
-        "file",
-        "image",
-        "media",
-        "organization",
-        "pdf",
-        "powerpoint",
-        "web",
-        "writing"
-      ]
+      "name": "miro-automation",
+      "path": "miro-automation",
+      "skill_file": "miro-automation/SKILL.md",
+      "description": "Automate Miro tasks via Rube MCP (Composio): boards, items, sticky notes, frames, sharing, connectors. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "mixpanel-automation",
+      "path": "mixpanel-automation",
+      "skill_file": "mixpanel-automation/SKILL.md",
+      "description": "Automate Mixpanel tasks via Rube MCP (Composio): events, segmentation, funnels, cohorts, user profiles, JQL queries. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "monday-automation",
+      "path": "monday-automation",
+      "skill_file": "monday-automation/SKILL.md",
+      "description": "Automate Monday.com work management including boards, items, columns, groups, subitems, and updates via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "notion-automation",
+      "path": "notion-automation",
+      "skill_file": "notion-automation/SKILL.md",
+      "description": "Automate Notion tasks via Rube MCP (Composio): pages, databases, blocks, comments, users. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "one-drive-automation",
+      "path": "one-drive-automation",
+      "skill_file": "one-drive-automation/SKILL.md",
+      "description": "Automate OneDrive file management, search, uploads, downloads, sharing, permissions, and folder operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "outlook-automation",
+      "path": "outlook-automation",
+      "skill_file": "outlook-automation/SKILL.md",
+      "description": "Automate Outlook tasks via Rube MCP (Composio): emails, calendar, contacts, folders, attachments. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "outlook-calendar-automation",
+      "path": "outlook-calendar-automation",
+      "skill_file": "outlook-calendar-automation/SKILL.md",
+      "description": "Automate Outlook Calendar tasks via Rube MCP (Composio): create events, manage attendees, find meeting times, and handle invitations. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "pagerduty-automation",
+      "path": "pagerduty-automation",
+      "skill_file": "pagerduty-automation/SKILL.md",
+      "description": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "pipedrive-automation",
+      "path": "pipedrive-automation",
+      "skill_file": "pipedrive-automation/SKILL.md",
+      "description": "Automate Pipedrive CRM operations including deals, contacts, organizations, activities, notes, and pipeline management via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "posthog-automation",
+      "path": "posthog-automation",
+      "skill_file": "posthog-automation/SKILL.md",
+      "description": "Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "postmark-automation",
+      "path": "postmark-automation",
+      "skill_file": "postmark-automation/SKILL.md",
+      "description": "Automate Postmark email delivery tasks via Rube MCP (Composio): send templated emails, manage templates, monitor delivery stats and bounces. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "raffle-winner-picker",
       "path": "raffle-winner-picker",
       "skill_file": "raffle-winner-picker/SKILL.md",
       "description": "Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.",
-      "category": "Productivity & Organization",
-      "tags": [
-        "data",
-        "document",
-        "email",
-        "excel",
-        "file",
-        "media",
-        "productivity & organization",
-        "slack",
-        "test"
-      ]
+      "category": "Business & Marketing",
+      "tags": []
+    },
+    {
+      "name": "reddit-automation",
+      "path": "reddit-automation",
+      "skill_file": "reddit-automation/SKILL.md",
+      "description": "Automate Reddit tasks via Rube MCP (Composio): search subreddits, create posts, manage comments, and browse top content. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "render-automation",
+      "path": "render-automation",
+      "skill_file": "render-automation/SKILL.md",
+      "description": "Automate Render tasks via Rube MCP (Composio): services, deployments, projects. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "salesforce-automation",
+      "path": "salesforce-automation",
+      "skill_file": "salesforce-automation/SKILL.md",
+      "description": "Automate Salesforce tasks via Rube MCP (Composio): leads, contacts, accounts, opportunities, SOQL queries. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "segment-automation",
+      "path": "segment-automation",
+      "skill_file": "segment-automation/SKILL.md",
+      "description": "Automate Segment tasks via Rube MCP (Composio): track events, identify users, manage groups, page views, aliases, batch operations. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "sendgrid-automation",
+      "path": "sendgrid-automation",
+      "skill_file": "sendgrid-automation/SKILL.md",
+      "description": "Automate SendGrid email operations including sending emails, managing contacts/lists, sender identities, templates, and analytics via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "sentry-automation",
+      "path": "sentry-automation",
+      "skill_file": "sentry-automation/SKILL.md",
+      "description": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "shopify-automation",
+      "path": "shopify-automation",
+      "skill_file": "shopify-automation/SKILL.md",
+      "description": "Automate Shopify tasks via Rube MCP (Composio): products, orders, customers, inventory, collections. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "skill-creator",
       "path": "skill-creator",
       "skill_file": "skill-creator/SKILL.md",
       "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
-      "category": "Development & Code Tools",
-      "tags": [
-        "analysis",
-        "api",
-        "business",
-        "code",
-        "content",
-        "data",
-        "design",
-        "development & code tools",
-        "document",
-        "file",
-        "image",
-        "organization",
-        "pdf",
-        "powerpoint",
-        "test",
-        "web",
-        "word",
-        "writing"
-      ]
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "skill-share",
       "path": "skill-share",
       "skill_file": "skill-share/SKILL.md",
       "description": "A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery.",
-      "category": "Other",
-      "tags": [
-        "analysis",
-        "data",
-        "design",
-        "document",
-        "file",
-        "other",
-        "pdf",
-        "slack"
-      ]
+      "category": "Communication & Writing",
+      "tags": []
+    },
+    {
+      "name": "slack-automation",
+      "path": "slack-automation",
+      "skill_file": "slack-automation/SKILL.md",
+      "description": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "slack-gif-creator",
       "path": "slack-gif-creator",
       "skill_file": "slack-gif-creator/SKILL.md",
       "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\".",
-      "category": "Creative & Media",
-      "tags": [
-        "creative",
-        "creative & media",
-        "data",
-        "design",
-        "file",
-        "image",
-        "slack"
-      ]
+      "category": "Communication & Writing",
+      "tags": []
+    },
+    {
+      "name": "square-automation",
+      "path": "square-automation",
+      "skill_file": "square-automation/SKILL.md",
+      "description": "Automate Square tasks via Rube MCP (Composio): payments, orders, invoices, locations. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "stripe-automation",
+      "path": "stripe-automation",
+      "skill_file": "stripe-automation/SKILL.md",
+      "description": "Automate Stripe tasks via Rube MCP (Composio): customers, charges, subscriptions, invoices, products, refunds. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "supabase-automation",
+      "path": "supabase-automation",
+      "skill_file": "supabase-automation/SKILL.md",
+      "description": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "tailored-resume-generator",
+      "path": "tailored-resume-generator",
+      "skill_file": "tailored-resume-generator/SKILL.md",
+      "description": "Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "name": "telegram-automation",
+      "path": "telegram-automation",
+      "skill_file": "telegram-automation/SKILL.md",
+      "description": "Automate Telegram tasks via Rube MCP (Composio): send messages, manage chats, share photos/documents, and handle bot commands. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "template-skill",
@@ -475,9 +1077,7 @@
       "skill_file": "template-skill/SKILL.md",
       "description": "Replace with description of the skill and when Claude should use it.",
       "category": "Other",
-      "tags": [
-        "other"
-      ]
+      "tags": []
     },
     {
       "name": "theme-factory",
@@ -485,12 +1085,80 @@
       "skill_file": "theme-factory/SKILL.md",
       "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
       "category": "Creative & Media",
-      "tags": [
-        "code",
-        "creative & media",
-        "file",
-        "pdf"
-      ]
+      "tags": []
+    },
+    {
+      "name": "tiktok-automation",
+      "path": "tiktok-automation",
+      "skill_file": "tiktok-automation/SKILL.md",
+      "description": "Automate TikTok tasks via Rube MCP (Composio): upload/publish videos, post photos, manage content, and view user profiles/stats. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "todoist-automation",
+      "path": "todoist-automation",
+      "skill_file": "todoist-automation/SKILL.md",
+      "description": "Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "trello-automation",
+      "path": "trello-automation",
+      "skill_file": "trello-automation/SKILL.md",
+      "description": "Automate Trello boards, cards, and workflows via Rube MCP (Composio). Create cards, manage lists, assign members, and search across boards programmatically.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "twitter-algorithm-optimizer",
+      "path": "twitter-algorithm-optimizer",
+      "skill_file": "twitter-algorithm-optimizer/SKILL.md",
+      "description": "Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation system ranks content.",
+      "category": "Communication & Writing",
+      "tags": []
+    },
+    {
+      "name": "twitter-automation",
+      "path": "twitter-automation",
+      "skill_file": "twitter-automation/SKILL.md",
+      "description": "Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "vercel-automation",
+      "path": "vercel-automation",
+      "skill_file": "vercel-automation/SKILL.md",
+      "description": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     },
     {
       "name": "video-downloader",
@@ -498,52 +1166,106 @@
       "skill_file": "video-downloader/SKILL.md",
       "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival. Handles various formats and quality options.",
       "category": "Creative & Media",
-      "tags": [
-        "aws",
-        "content",
-        "creative & media",
-        "data",
-        "file",
-        "research",
-        "video",
-        "web"
-      ]
+      "tags": []
     },
     {
       "name": "webapp-testing",
       "path": "webapp-testing",
       "skill_file": "webapp-testing/SKILL.md",
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
-      "category": "Development & Code Tools",
-      "tags": [
-        "api",
-        "automation",
-        "content",
-        "debug",
-        "development & code tools",
-        "file",
-        "test",
-        "web"
-      ]
+      "category": "Other",
+      "tags": []
     },
     {
-      "name": "xlsx",
-      "path": "document-skills/xlsx",
-      "skill_file": "document-skills/xlsx/SKILL.md",
-      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
-      "category": "Document Processing",
-      "tags": [
-        "analysis",
-        "code",
-        "content",
-        "data",
-        "document",
-        "document processing",
-        "excel",
-        "file",
-        "test",
-        "writing"
-      ]
+      "name": "webflow-automation",
+      "path": "webflow-automation",
+      "skill_file": "webflow-automation/SKILL.md",
+      "description": "Automate Webflow CMS collections, site publishing, page management, asset uploads, and ecommerce orders via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "whatsapp-automation",
+      "path": "whatsapp-automation",
+      "skill_file": "whatsapp-automation/SKILL.md",
+      "description": "Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "wrike-automation",
+      "path": "wrike-automation",
+      "skill_file": "wrike-automation/SKILL.md",
+      "description": "Automate Wrike project management via Rube MCP (Composio): create tasks/folders, manage projects, assign work, and track progress. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "youtube-automation",
+      "path": "youtube-automation",
+      "skill_file": "youtube-automation/SKILL.md",
+      "description": "Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "zendesk-automation",
+      "path": "zendesk-automation",
+      "skill_file": "zendesk-automation/SKILL.md",
+      "description": "Automate Zendesk tasks via Rube MCP (Composio): tickets, users, organizations, replies. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "zoho-crm-automation",
+      "path": "zoho-crm-automation",
+      "skill_file": "zoho-crm-automation/SKILL.md",
+      "description": "Automate Zoho CRM tasks via Rube MCP (Composio): create/update records, search contacts, manage leads, and convert leads. Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
+    },
+    {
+      "name": "zoom-automation",
+      "path": "zoom-automation",
+      "skill_file": "zoom-automation/SKILL.md",
+      "description": "Automate Zoom meeting creation, management, recordings, webinars, and participant tracking via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "App Automation",
+      "tags": [],
+      "requires": {
+        "mcp": [
+          "rube"
+        ]
+      }
     }
   ]
 }
