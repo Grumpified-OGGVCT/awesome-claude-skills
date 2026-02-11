@@ -11,6 +11,18 @@
 
 Successfully merged the largest upstream update to date - **832 new automation skills** bringing the total to **943 skills** (from 111). This represents the complete Composio toolkit ecosystem with all 874 toolkits now available as Claude skills.
 
+### Growth Statistics
+
+| Metric | Feb 6, 2026 | Feb 11, 2026 | Growth |
+|--------|-------------|--------------|--------|
+| Total Skills | 111 | 943 | +832 (+749%) |
+| Automation Skills | ~78 | ~910 | +832 (+1067%) |
+| Composio Toolkits | Partial | 874 (Complete) | 100% coverage |
+| Repository Size | ~2.5 MB | ~12.7 MB | +10.2 MB |
+| Total Lines | ~8,000 | ~88,000 | +80,000 (+1000%) |
+
+**Impact**: This sync represents an **8.5x increase** in available skills, making this one of the most comprehensive Claude skills repositories available.
+
 ### What Was Merged
 
 #### Major Additions
@@ -70,8 +82,11 @@ All base64 references are legitimate (file content encoding for API uploads, pag
 
 - **832 new directories** added (automation skills)
 - **832 new SKILL.md files** created
-- Total tracked files: ~943 skills
+- **Total skills: 943** (939 in direct subdirectories + 4 nested in document-skills/)
 - Repository size: ~12.7 MB
+- Total lines added: ~80,000
+
+**Note**: The skill count includes both top-level skills (e.g., `github-automation/SKILL.md`) and nested skills (e.g., `document-skills/pdf/SKILL.md`). Use `find . -name "SKILL.md" | wc -l` for accurate counts.
 
 ### Upstream Commits Merged (Since Feb 6, 2026)
 
