@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Massive Skills Expansion**: Synced 832 new automation skills from ComposioHQ/awesome-claude-skills (Feb 11, 2026)
+  - Total skills: 943 (from 111)
+  - All 874 Composio toolkit integrations
+  - 71 popular app skills upgraded with real tool data from RUBE_SEARCH_TOOLS
+  - Comprehensive API integration skills across 20+ categories
+- **Security Review Completed**: Audited all new skills for OpenClaw-style vulnerabilities
+  - No hardcoded API keys or secrets found
+  - No malicious shell commands or base64 encoded malware
+  - No prompt injection or social engineering patterns
+  - All YAML frontmatter properly formatted
 - **Universal LLM Skills Format**: All 27 skills now available in OpenAI-compatible format
   - Tier 1 (Instruction-only): 16 skills - works with ANY model
   - Tier 2 (Tool-enhanced): 7 skills - works with tool-calling models

@@ -1,16 +1,87 @@
 # Upstream Merge Summary
 
-**Date**: February 6, 2026  
+**Latest Sync Date**: February 11, 2026  
+**Previous Sync**: February 6, 2026  
 **Source Repository**: [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)  
 **Target Repository**: Grumpified-OGGVCT/awesome-claude-skills
 
-## Overview
+## Latest Merge (February 11, 2026)
 
-Successfully merged updates from the upstream ComposioHQ repository into our customized fork. This merge incorporates **86 new directories** containing **84 new SKILL.md files**, primarily focused on app automation integrations via Composio/Rube MCP.
+### Overview
 
-## What Was Merged
+Successfully merged the largest upstream update to date - **832 new automation skills** bringing the total to **943 skills** (from 111). This represents the complete Composio toolkit ecosystem with all 874 toolkits now available as Claude skills.
 
-### Major Additions
+### What Was Merged
+
+#### Major Additions
+
+1. **832 New Automation Skills** (Commit: 8c60204, bea5251, 99e2a29)
+   - Complete coverage of all 874 Composio toolkits
+   - Each skill includes:
+     - Toolkit slug and composio.dev/toolkits links
+     - Connection flow via RUBE_MANAGE_CONNECTIONS
+     - Tool discovery pattern with RUBE_SEARCH_TOOLS
+     - Real tool slugs discovered via RUBE_SEARCH_TOOLS API
+     - Step-by-step workflow sequences
+     - Parameter documentation
+     - Known pitfalls from actual API behavior
+     - Quick reference tables
+   - "Powered by Composio" attribution on all skills
+
+2. **71 Popular App Skills Upgraded** (Commit: bea5251)
+   - Replaced generic templates with detailed skills containing:
+     - Real tool data from RUBE_SEARCH_TOOLS
+     - Actual parameter schemas and types
+     - API-specific known pitfalls
+     - Quick reference tables with all discovered tools
+   - Apps upgraded include:
+     - Google Workspace (10 apps)
+     - Finance/Microsoft (10 apps)
+     - CRM/Sales (9 apps)
+     - DevOps/AI (10 apps)
+     - Marketing/Social (8 apps)
+     - Support/Productivity/HR (8 apps)
+     - Content/Analytics (9 apps)
+     - Communications/Events (7 apps)
+
+3. **YAML Frontmatter Fixes** (Commits: 79767d1, 594368e)
+   - Fixed 53 automation skill descriptions with unquoted colons
+   - Resolved "incomplete explicit mapping pair" errors
+   - All descriptions now properly quoted for gray-matter YAML parser
+
+4. **Marketplace Updates** (Commits: cdbda98, 388cc39)
+   - Added 78 automation skills to marketplace.json
+   - Improved discoverability via Claude Code plugin marketplace
+
+### Security Audit
+
+Completed comprehensive security review addressing concerns from OpenClaw community alerts:
+
+✅ **No hardcoded credentials** - All API keys are placeholders ("your_composio_api_key", etc.)  
+✅ **No malicious commands** - No base64-encoded malware, no password stealers  
+✅ **No prompt injection** - No "ignore previous instructions" patterns  
+✅ **No social engineering** - No fake verification steps or urgent action prompts  
+✅ **No suspicious URLs** - No typosquatting domains (.xyz, .tk, etc.)  
+✅ **No credential leakage** - Proper security documentation, no plaintext secrets
+
+All base64 references are legitimate (file content encoding for API uploads, pagination cursors).
+
+### Files Changed
+
+- **832 new directories** added (automation skills)
+- **832 new SKILL.md files** created
+- Total tracked files: ~943 skills
+- Repository size: ~12.7 MB
+
+### Upstream Commits Merged (Since Feb 6, 2026)
+
+- `99e2a29` - Merge PR #183: Add automation skills for all 874 Composio toolkits (Feb 11)
+- `bea5251` - Upgrade 71 popular app skills with real tool data (Feb 11)
+- `8c60204` - Add automation skills for all 874 Composio toolkits (Feb 11)
+
+---
+
+## Previous Merge (February 6, 2026)
 
 1. **78 App Automation Skills** (Commit: 255586d)
    - Pre-built workflow skills for 78 SaaS applications
