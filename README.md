@@ -48,8 +48,13 @@
 This repository is an **enhanced fork** that combines:
 - **939 automation skills** from upstream ComposioHQ/awesome-claude-skills (powered by [Composio](https://composio.dev))
 - **GrumpiFied enhancements**: Universal format support, NLP discovery, automated sync, extended docs, and custom tools
+- **🆕 Daily AI Skills Discovery**: Automated discovery and integration of universal skills from across GitHub
 
-**🔄 Auto-Synced Daily** - Automatically syncs with upstream while preserving all GrumpiFied features. [Learn more →](.github/workflows/AUTO-SYNC-README.md) | **📋 [Full Attribution Guide](ATTRIBUTIONS.md)**
+**🔄 Dual Auto-Sync** - Two automated workflows keep this repository cutting-edge:
+1. **Upstream Sync** (2 AM UTC) - Syncs with ComposioHQ/awesome-claude-skills
+2. **🆕 Universal Skills Discovery** (3 AM UTC) - Discovers and integrates new skills from GitHub
+
+[Learn more about auto-sync →](.github/workflows/AUTO-SYNC-README.md) | [Learn about daily discovery →](.github/workflows/DAILY-AGGREGATION-README.md) | **📋 [Full Attribution Guide](ATTRIBUTIONS.md)**
 
 ---
 
