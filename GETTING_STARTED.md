@@ -1,8 +1,8 @@
-# Getting Started with Claude Skills
+# Getting Started with AI Skills
 
 > **🚀 GrumpiFied Enhancement** - This comprehensive guide is custom documentation created by Grumpified-OGGVCT with extended multi-provider setup instructions.
 
-Welcome! This guide will help you start using Claude Skills in under 5 minutes.
+Welcome! This guide will help you start using AI Skills with **any LLM** (Claude, GPT-4, Gemini, Llama, etc.) and **any IDE or interface** in under 5 minutes.
 
 ## 📋 Table of Contents
 
@@ -10,47 +10,50 @@ Welcome! This guide will help you start using Claude Skills in under 5 minutes.
 - [Prerequisites](#prerequisites)
 - [Choose Your Path](#choose-your-path)
 - [Path 0: Finding the Right Skill (Start Here!)](#-path-0-finding-the-right-skill-start-here) ⭐ **NEW**
-- [Path 1: Claude.ai (Easiest)](#path-1-claudeai-easiest)
-- [Path 2: Claude Code](#path-2-claude-code)
-- [Path 3: Claude API](#path-3-claude-api)
-- [Path 4: Universal Format (Any LLM)](#path-4-universal-format-any-llm)
+- [Path 1: Universal Format (Any LLM, Any IDE)](#path-1-universal-format-any-llm-any-ide) ⭐ **RECOMMENDED**
+- [Path 2: IDE Integration](#path-2-ide-integration)
+- [Path 3: Claude.ai (Web Interface)](#path-3-claudeai-web-interface)
+- [Path 4: Claude Code (Terminal)](#path-4-claude-code-terminal)
+- [Path 5: Direct API Integration](#path-5-direct-api-integration)
 - [Next Steps](#next-steps)
 - [Troubleshooting](#troubleshooting)
 
 ## What You'll Learn
 
 By the end of this guide, you'll know how to:
-- Install and use Claude Skills
+- Install and use AI Skills with any LLM provider
 - Pick the right skill for your needs
+- Integrate skills into your preferred IDE or workflow
 - Create your first custom skill
-- Use skills with different LLM providers
+- Use skills across different platforms and providers
 
 ## Prerequisites
 
-Choose your path based on what you have access to:
+Choose your path based on what you want to use:
 
 | Path | Requirements | Best For |
 |------|-------------|----------|
-| **Claude.ai** | Free Claude account | Non-technical users, quick testing |
-| **Claude Code** | Claude Code installed | Developers, terminal workflows |
-| **Claude API** | Claude API key | Programmatic usage, automation |
-| **Universal Format** | OpenRouter/Ollama | Multi-model support, local usage |
+| **Universal Format** | Any OpenAI-compatible client | Maximum flexibility, any LLM |
+| **IDE Integration** | VS Code, Cursor, Cline, etc. | Developers, coding workflows |
+| **Claude.ai** | Free Claude account | Quick testing, web interface |
+| **Claude Code** | Claude Code installed | Terminal workflows (Claude-specific) |
+| **Direct API** | API key for your provider | Programmatic usage, automation |
 
 ## Choose Your Path
 
 Not sure which path to choose? Use this decision tree:
 
 ```
-Do you primarily use Claude in a web browser?
-├─ YES → Use Path 1: Claude.ai
-└─ NO
-   └─ Do you code in a terminal/editor?
-      ├─ YES → Use Path 2: Claude Code
-      └─ NO
-         └─ Do you need programmatic access?
-            ├─ YES → Use Path 3: Claude API
-            └─ NO → Want to try other AI models?
-               └─ YES → Use Path 4: Universal Format
+Want to use ANY AI model (Claude, GPT-4, Gemini, Llama)?
+├─ YES → Use Path 1: Universal Format (RECOMMENDED)
+└─ NO → Prefer Claude only?
+   └─ YES
+      └─ Use an IDE for coding?
+         ├─ YES → Use Path 2: IDE Integration
+         └─ NO
+            └─ Web browser?
+               ├─ YES → Use Path 3: Claude.ai
+               └─ NO → Terminal? → Use Path 4: Claude Code
 ```
 
 ---
@@ -109,7 +112,203 @@ $ python tools/discover.py --search "pdf"
 
 ---
 
-## Path 1: Claude.ai (Easiest)
+## Path 1: Universal Format (Any LLM, Any IDE) ⭐ **RECOMMENDED**
+
+**Time required: 3 minutes**
+
+**Why this path?** Works with **any AI model** (Claude, GPT-4, Gemini, Llama, etc.) and **any interface** (web, API, IDE). Maximum flexibility and future-proofing.
+
+### What You'll Need
+
+Choose one of these options:
+- **OpenRouter**: Cloud-based, 100+ models, pay-as-you-go ($0.20-$20/1M tokens)
+- **Ollama**: 100% local, free, private (requires local GPU/CPU)
+- **Direct API**: OpenAI, Anthropic, Google, etc. (various pricing)
+
+### Quick Start Example
+
+Here's how to use a skill with **any** LLM:
+
+```python
+from openai import OpenAI
+
+# Configure your provider (examples below)
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",  # or any provider
+    api_key="YOUR_API_KEY"
+)
+
+# Load ANY skill from universal/ directory
+with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
+    skill_prompt = f.read()
+
+# Use it with ANY model!
+response = client.chat.completions.create(
+    model="anthropic/claude-3.5-sonnet",  # or any model below
+    messages=[
+        {"role": "system", "content": skill_prompt},
+        {"role": "user", "content": "Suggest domain names for my AI startup"}
+    ]
+)
+
+print(response.choices[0].message.content)
+```
+
+### Supported Models (Examples)
+
+**Claude Models:**
+- `anthropic/claude-3.5-sonnet`
+- `anthropic/claude-3-opus`
+- `anthropic/claude-3-haiku`
+
+**OpenAI Models:**
+- `openai/gpt-4o`
+- `openai/gpt-4-turbo`
+- `openai/o1`
+
+**Google Models:**
+- `google/gemini-pro-1.5`
+- `google/gemini-flash-1.5`
+
+**Open Source Models:**
+- `meta-llama/llama-3.2-90b`
+- `mistralai/mistral-large`
+- `qwen/qwen-2.5-72b`
+
+**And 100+ more on OpenRouter!**
+
+### Setup Instructions by Provider
+
+#### Option A: OpenRouter (Easiest for Cloud)
+
+1. **Get API key**: Go to [openrouter.ai](https://openrouter.ai) → Sign up → Get API key
+2. **Use the code above** with `base_url="https://openrouter.ai/api/v1"`
+3. **Pick any model** from their catalog
+
+**Cost**: Pay-as-you-go, starting at $0.20/1M tokens for budget models
+
+#### Option B: Ollama (Best for Local/Private)
+
+1. **Install Ollama**:
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+
+2. **Pull a model**:
+   ```bash
+   ollama pull llama3.2  # or qwen2.5, mistral, gemma2, etc.
+   ```
+
+3. **Use the code above** with `base_url="http://localhost:11434/v1"`
+
+**Cost**: Free! Runs 100% locally
+
+#### Option C: Direct Provider APIs
+
+**Anthropic (Claude):**
+```python
+from anthropic import Anthropic
+client = Anthropic(api_key="YOUR_KEY")
+# Load skill and use with Claude API
+```
+
+**OpenAI (GPT-4):**
+```python
+from openai import OpenAI
+client = OpenAI(api_key="YOUR_KEY")
+# Default base_url works for OpenAI
+```
+
+**Google (Gemini):**
+```python
+import google.generativeai as genai
+genai.configure(api_key="YOUR_KEY")
+# Use with Gemini models
+```
+
+### IDE Integration
+
+Use skills directly in your coding environment:
+
+**VS Code with Continue:**
+```bash
+mkdir -p ~/.continue/prompts/
+cp universal/tier-1-instruction-only/YOUR_SKILL/system-prompt.md ~/.continue/prompts/
+```
+
+**Cursor:**
+```bash
+mkdir -p ~/.cursor/prompts/
+cp universal/tier-1-instruction-only/YOUR_SKILL/system-prompt.md ~/.cursor/prompts/
+```
+
+**Cline / Windsurf / Other IDEs:**
+- Check your IDE's documentation for custom prompts directory
+- Copy `system-prompt.md` files there
+
+### Tips for Universal Format
+
+- ✅ **Tier 1 skills** (instruction-only) work with ANY model
+- ✅ **Tier 2 skills** (tool-enhanced) work best with tool-calling models
+- ✅ Skills are model-agnostic—same file works everywhere
+- ✅ No modifications needed when switching providers
+- ✅ Future-proof: works with new models as they're released
+
+---
+
+## Path 2: IDE Integration
+
+**Time required: 2 minutes**
+
+Most modern AI coding assistants support custom instructions/prompts. Here's how to integrate skills:
+
+### Supported IDEs
+
+- **VS Code** (with Continue, Cline, or other AI extensions)
+- **Cursor** (AI-first code editor)
+- **Windsurf** (Codeium IDE)
+- **JetBrains IDEs** (with AI Assistant)
+- **Any IDE** with AI integration that supports custom prompts
+
+### Generic Integration Steps
+
+1. **Find your IDE's prompts/instructions directory**
+2. **Copy skill files** from `universal/tier-1-instruction-only/SKILL_NAME/`
+3. **Reference in your IDE settings** (varies by IDE)
+
+### Specific IDE Examples
+
+**Continue (VS Code):**
+```bash
+# Add to Continue config
+mkdir -p ~/.continue/prompts/
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md \
+   ~/.continue/prompts/brainstorm-domains.md
+```
+
+**Cursor:**
+```bash
+# Add to Cursor rules
+mkdir -p ~/.cursor/rules/
+cp universal/tier-1-instruction-only/YOUR_SKILL/system-prompt.md \
+   ~/.cursor/rules/your-skill.md
+```
+
+**Cline (VS Code):**
+1. Open Cline settings
+2. Navigate to "Custom Instructions"
+3. Paste content from `system-prompt.md`
+
+### Testing Your Integration
+
+1. Open a project in your IDE
+2. Invoke the AI assistant (usually Cmd/Ctrl+K or similar)
+3. Ask it to perform the skill's task
+4. The AI should follow the skill's instructions!
+
+---
+
+## Path 3: Claude.ai (Web Interface)
 
 **Time required: 2 minutes**
 
@@ -156,7 +355,7 @@ Let's try the Domain Name Brainstormer skill:
             - Any preferred keywords or style?"
    ```
 
-**🎉 Success!** You just used your first Claude Skill.
+**🎉 Success!** You just used your first AI Skill with Claude.
 
 ### Tips for Claude.ai
 
@@ -167,7 +366,7 @@ Let's try the Domain Name Brainstormer skill:
 
 ---
 
-## Path 2: Claude Code
+## Path 4: Claude Code (Terminal)
 
 **Time required: 3 minutes**
 
@@ -257,7 +456,7 @@ claude
 
 ---
 
-## Path 3: Claude API
+## Path 5: Direct API Integration
 
 **Time required: 5 minutes**
 
@@ -345,162 +544,48 @@ See [Skills API documentation](https://docs.claude.com/en/api/skills-guide) for 
 
 ---
 
-## Path 4: Universal Format (Any LLM)
-
-**Time required: 5-10 minutes**
-
-Use skills with GPT-4, Llama, Gemini, or any OpenAI-compatible model!
-
-### Option A: OpenRouter (Cloud, 100+ Models)
-
-**Step 1: Get API Key**
-1. Go to [openrouter.ai](https://openrouter.ai)
-2. Sign up and create an API key
-
-**Step 2: Install SDK**
-```bash
-pip install openai
-```
-
-**Step 3: Use a Skill**
-
-**Note**: Skills must be converted first using `python tools/convert.py --all`. Or use pre-converted skills from the `universal/` directory.
-
-```python
-from openai import OpenAI
-
-# Connect to OpenRouter
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key="YOUR_OPENROUTER_KEY"
-)
-
-# Load skill (example assumes skills are converted)
-with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
-    skill = f.read()
-
-# Use it with ANY model!
-response = client.chat.completions.create(
-    model="anthropic/claude-3.5-sonnet",  # or "openai/gpt-4o", "meta-llama/llama-3.2-90b", etc.
-    messages=[
-        {"role": "system", "content": skill},
-        {"role": "user", "content": "Suggest domain names for my AI startup"}
-    ]
-)
-
-print(response.choices[0].message.content)
-```
-
-**Available Models**: 100+ including Claude, GPT-4, Gemini, Llama, Qwen, Mistral, and more!
-
-### Option B: Ollama (Local, Free, Private)
-
-**Step 1: Install Ollama**
-```bash
-# macOS/Linux
-curl -fsSL https://ollama.com/install.sh | sh
-
-# Windows: Download from ollama.com
-```
-
-**Step 2: Download a Model**
-```bash
-# Fast and capable (3B parameters)
-ollama pull llama3.2
-
-# More powerful (8B parameters)
-ollama pull llama3.2:8b
-
-# Best quality (70B parameters, requires powerful hardware)
-ollama pull llama3.2:70b
-```
-
-**Step 3: Use a Skill**
-
-**Note**: Example assumes skill has been converted to universal format. Convert skills with `python tools/convert.py --skill skill-name`.
-
-```python
-from openai import OpenAI
-
-# Connect to local Ollama
-client = OpenAI(
-    base_url="http://localhost:11434/v1",
-    api_key="ollama"  # Ollama doesn't need a real key
-)
-
-# Load skill (example path - adjust to your converted skills)
-with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
-    skill = f.read()
-
-# Use it - completely local and private!
-response = client.chat.completions.create(
-    model="llama3.2",
-    messages=[
-        {"role": "system", "content": skill},
-        {"role": "user", "content": "Suggest domain names for my AI startup"}
-    ]
-)
-
-print(response.choices[0].message.content)
-```
-
-**Benefits**: 100% free, completely private, works offline, no API limits!
-
-### Understanding Skill Tiers
-
-- **Tier 1 (90% of skills)**: Work with ANY model - just system prompts
-- **Tier 2 (10% of skills)**: Work best with tool-calling models (Claude 3.5, GPT-4o, Gemini 1.5)
-- **Tier 3**: Claude-specific (Artifacts, MCP)
-
-Browse skills by tier:
-```bash
-ls universal/tier-1-instruction-only/    # Works everywhere
-ls universal/tier-2-tool-enhanced/       # Needs tool support
-```
-
-### More Resources
-
-- [OpenRouter Setup Guide](docs/OPENROUTER-SETUP.md)
-- [Ollama Setup Guide](docs/OLLAMA-SETUP.md)
-- [Model Compatibility Guide](docs/MODEL-COMPATIBILITY.md)
-
----
-
 ## Next Steps
 
 ### Learn More
 
 1. **Explore skills**: Browse the [Skills](README.md#skills) section by category
 2. **Create your own**: Follow the [Creating Skills](README.md#creating-skills) guide
-3. **Join the community**: [Discord](https://discord.com/invite/composio) | [Twitter](https://x.com/composio)
+3. **Universal format**: Learn about [tier structure and compatibility](UNIVERSAL-FORMAT.md)
+4. **IDE setup**: Check [docs/](docs/) for IDE-specific setup guides
+5. **Join the community**: [Discord](https://discord.com/invite/composio) | [Twitter](https://x.com/composio)
 
 ### Recommended Skills to Try
 
 Based on your role:
 
 **Developers:**
-- [MCP Builder](./mcp-builder/) - Create MCP servers
-- [Changelog Generator](./changelog-generator/) - Auto-generate changelogs
-- [Test-Driven Development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development)
+- [MCP Builder](./mcp-builder/) - Create MCP servers (works with any LLM)
+- [Changelog Generator](./changelog-generator/) - Auto-generate changelogs (universal)
+- [Test-Driven Development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) - External resource
 
 **Business Users:**
-- [Domain Name Brainstormer](./domain-name-brainstormer/)
-- [Lead Research Assistant](./lead-research-assistant/)
-- [Meeting Insights Analyzer](./meeting-insights-analyzer/)
+- [Domain Name Brainstormer](./domain-name-brainstormer/) - Works with any AI model
+- [Lead Research Assistant](./lead-research-assistant/) - Universal format
+- [Meeting Insights Analyzer](./meeting-insights-analyzer/) - Any LLM
 
 **Content Creators:**
-- [Content Research Writer](./content-research-writer/)
-- [Brand Guidelines](./brand-guidelines/)
-- [Theme Factory](./theme-factory/)
+- [Content Research Writer](./content-research-writer/) - Model-agnostic
+- [Brand Guidelines](./brand-guidelines/) - Works everywhere
+- [Theme Factory](./theme-factory/) - Universal
 
 **Everyone:**
-- [File Organizer](./file-organizer/)
-- [Invoice Organizer](./invoice-organizer/)
-- [Brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming)
+- [File Organizer](./file-organizer/) - Any AI assistant can use this
+- [Invoice Organizer](./invoice-organizer/) - Universal format
+- [Brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) - External resource
 
 ### Contributing
 
-Found a bug? Have an idea for a skill? [Open an issue](https://github.com/Grumpified-OGGVCT/awesome-claude-skills/issues) or submit a pull request!
+Found a bug? Have an idea for a skill? Want to add IDE-specific docs? [Open an issue](https://github.com/Grumpified-OGGVCT/awesome-claude-skills/issues) or submit a pull request!
+
+**Special interest:**
+- Universal format conversions for existing skills
+- IDE integration guides (Cursor, Continue, Cline, Windsurf, etc.)
+- Multi-provider examples and testing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -510,45 +595,53 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Common Issues
 
-**Problem: Skill isn't activating**
+**Problem: Skill isn't working with my LLM**
+
+Solution:
+1. Check skill tier: Tier 1 works with all models, Tier 2 needs tool support
+2. Verify you're loading the system prompt correctly
+3. Ensure the model has sufficient context window for the skill
+4. Try with a different model to isolate the issue
+
+**Problem: Skill not found in IDE**
+
+Solution:
+1. Verify skill is in correct directory for your IDE
+2. Check IDE's custom prompts/instructions configuration
+3. Restart IDE after adding new skills
+4. Consult your IDE's documentation for custom prompt support
+
+**Problem: Skill not activating in Claude.ai**
 
 Solution:
 1. Check that SKILL.md has valid YAML frontmatter
-2. Ensure skill is in correct directory
+2. Re-upload the skill if needed
 3. Verify your request matches the skill's description
 4. Try being more explicit: "Use the domain-name-brainstormer skill to..."
 
-**Problem: "Skill not found" error**
+**Problem: Universal format API call failing**
 
 Solution:
-1. Verify file is named `SKILL.md` (uppercase)
-2. Check file location:
-   - Claude.ai: Re-upload the skill
-   - Claude Code: Should be in `~/.config/claude-code/skills/skill-name/`
-   - API: Verify skill ID is correct
+1. Verify API key is correct for your provider
+2. Check base_url is set correctly (OpenRouter, Ollama, etc.)
+3. Ensure model name format matches provider requirements
+4. Test with a simple prompt first to verify connection
 
 **Problem: Skill works inconsistently**
 
 Solution:
 1. Make the skill description more specific
 2. Provide clearer instructions in your prompt
-3. Check if you're using the right model (some skills need advanced models)
-
-**Problem: Universal format skill not working**
-
-Solution:
-1. Check if you're using a Tier 1 skill (works with all models)
-2. For Tier 2 skills, ensure your model supports tool calling
-3. Verify the system prompt is being sent correctly
-4. Try a different model to isolate the issue
+3. Check if you're using the right model tier for the skill
+4. Some models perform better with certain types of instructions
 
 ### Getting Help
 
 - **Documentation**: Check the [FAQ](README.md#frequently-asked-questions)
-- **Community**: [Claude Community](https://community.anthropic.com)
+- **Universal Format**: [UNIVERSAL-FORMAT.md](UNIVERSAL-FORMAT.md) for multi-provider setup
 - **Discord**: [Composio Discord](https://discord.com/invite/composio)
 - **Issues**: [GitHub Issues](https://github.com/Grumpified-OGGVCT/awesome-claude-skills/issues)
-- **Official Docs**: [Claude Skills Documentation](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
+- **IDE-Specific**: Check your IDE's documentation for AI assistant configuration
 
 ---
 
