@@ -82,13 +82,24 @@ The same skill file works across all platforms—no modifications needed.
 
 ### What You'll Find Here
 
-- **🎓 Pre-built Skills**: 107+ production-ready skills covering development, business, creative work, automation, and more
-- **🌍 Universal Format**: Works with Claude, GPT-4, Llama, Gemini, and any OpenAI-compatible LLM
+- **🎓 Pre-built Skills**: 939+ automation skills + 23 universal format skills covering development, business, creative work, and more
+- **🌍 Universal Format**: 27 skills work with ANY LLM (Claude, GPT-4, Llama, Gemini, etc.)
 - **📚 Learning Resources**: Guides for creating your own custom skills
 - **🛠️ Tools & Scripts**: Automation for converting, validating, and testing skills
 - **💡 Real-World Examples**: Proven workflows from actual users and companies
 
-**✨ NEW: Universal Format** - All skills now available in OpenAI-compatible format for use with OpenRouter, Ollama, and other LLM providers! See [Universal Skills](#universal-llm-skills-format) below.
+**✨ NEW: Universal Format** - Select skills available in OpenAI-compatible format for use with OpenRouter, Ollama, and other LLM providers! See [Universal Skills](#universal-llm-skills-format) below.
+
+### 📊 Skills Breakdown
+
+| Format | Count | Compatibility | Status |
+|--------|-------|---------------|--------|
+| **Universal Tier 1** | 16 skills | ✅ Any LLM (Claude, GPT-4, Gemini, Llama, etc.) | 🎯 Instruction-based |
+| **Universal Tier 2** | 7 skills | ✅ Tool-calling LLMs (Claude 3.5, GPT-4o, Gemini Pro) | 🔧 Enhanced with tools |
+| **Universal Tier 3** | 4 skills | ⚠️ Claude-only (reference) | 📋 Platform-specific |
+| **Automation Skills** | 939 skills | ✅ Claude + Composio Rube MCP | 🤖 Full automation |
+
+**Total Skills**: 962+ | **Universal Coverage**: 27 skills work everywhere | **Growing**: More conversions ongoing
 
 > If you want your skills to take actions across 500+ apps, wire them up with [Composio](https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills)
 

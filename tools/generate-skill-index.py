@@ -2,8 +2,21 @@
 """
 Generate SKILL-INDEX.json from all SKILL.md files in the repository.
 Parses YAML frontmatter and auto-categorizes skills.
+
+Usage:
+    python generate-skill-index.py [--output FILE] [--verbose]
+    
+Options:
+    --output FILE    Output file path (default: SKILL-INDEX.json)
+    --verbose, -v    Show detailed progress
+    --help, -h       Show this help message
+    
+Examples:
+    python generate-skill-index.py
+    python generate-skill-index.py --output custom-index.json -v
 """
 
+import argparse
 import json
 import os
 import re
@@ -169,11 +182,36 @@ def generate_skill_index(root_dir: Path) -> Dict:
 
 def main():
     """Main function to generate SKILL-INDEX.json."""
+    parser = argparse.ArgumentParser(
+        description='Generate SKILL-INDEX.json from all SKILL.md files',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python generate-skill-index.py
+  python generate-skill-index.py --output custom-index.json -v
+  python generate-skill-index.py --help
+        """
+    )
+    parser.add_argument(
+        '--output', '-o',
+        type=str,
+        default='SKILL-INDEX.json',
+        help='Output file path (default: SKILL-INDEX.json)'
+    )
+    parser.add_argument(
+        '--verbose', '-v',
+        action='store_true',
+        help='Show detailed progress'
+    )
+    
+    args = parser.parse_args()
+    
     root_dir = Path(__file__).parent.parent
-    output_file = root_dir / "SKILL-INDEX.json"
+    output_file = root_dir / args.output
     
     print("Generating SKILL-INDEX.json...")
     print(f"Root directory: {root_dir}")
+    print(f"Output file: {output_file}")
     
     index = generate_skill_index(root_dir)
     
@@ -184,7 +222,8 @@ def main():
     print(f"\n✅ Generated {output_file}")
     print(f"   Total skills: {index['total_skills']}")
     print(f"   Categories: {len(index['categories'])}")
-    print(f"   Categories: {', '.join(index['categories'])}")
+    if args.verbose:
+        print(f"   Categories: {', '.join(index['categories'])}")
 
 
 if __name__ == "__main__":

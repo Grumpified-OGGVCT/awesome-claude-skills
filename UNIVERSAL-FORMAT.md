@@ -116,6 +116,8 @@ response = client.chat.completions.create(
 )
 ```
 
+> **💻 IDE Integration**: See [docs/IDE-INTEGRATION.md](docs/IDE-INTEGRATION.md) for complete setup guides covering Cursor, VS Code (Continue/Cline), Windsurf, JetBrains, Zed, and more with step-by-step instructions.
+
 ### Option C: IDE Integration (VS Code, Cursor, etc.)
 
 Skills work seamlessly with AI coding assistants:

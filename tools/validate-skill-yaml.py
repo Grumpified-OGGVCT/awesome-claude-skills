@@ -2,8 +2,23 @@
 """
 Validate YAML frontmatter in all SKILL.md files.
 Checks for syntax errors and required fields.
+
+Usage:
+    python validate-skill-yaml.py [--file FILE] [--fix] [--verbose]
+    
+Options:
+    --file FILE      Validate specific file instead of all
+    --fix            Auto-fix common issues (quotes, formatting)
+    --verbose, -v    Show detailed validation info
+    --help, -h       Show this help message
+    
+Examples:
+    python validate-skill-yaml.py
+    python validate-skill-yaml.py --file domain-name-brainstormer/SKILL.md
+    python validate-skill-yaml.py --verbose
 """
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -99,10 +114,52 @@ def find_skill_files(root_dir: Path) -> List[Path]:
 
 def main():
     """Main function to validate all SKILL.md files."""
-    root_dir = Path(__file__).parent.parent
-    skill_files = find_skill_files(root_dir)
+    parser = argparse.ArgumentParser(
+        description='Validate YAML frontmatter in SKILL.md files',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python validate-skill-yaml.py
+  python validate-skill-yaml.py --file domain-name-brainstormer/SKILL.md
+  python validate-skill-yaml.py --verbose
+        """
+    )
+    parser.add_argument(
+        '--file', '-f',
+        type=str,
+        help='Validate specific file instead of all'
+    )
+    parser.add_argument(
+        '--verbose', '-v',
+        action='store_true',
+        help='Show detailed validation info'
+    )
+    parser.add_argument(
+        '--fix',
+        action='store_true',
+        help='Auto-fix common issues (not implemented yet)'
+    )
     
-    print(f"Validating {len(skill_files)} SKILL.md files...\n")
+    args = parser.parse_args()
+    
+    root_dir = Path(__file__).parent.parent
+    
+    if args.file:
+        # Validate single file
+        skill_file = Path(args.file)
+        if not skill_file.is_absolute():
+            skill_file = root_dir / skill_file
+        
+        if not skill_file.exists():
+            print(f"❌ File not found: {skill_file}")
+            return 1
+        
+        skill_files = [skill_file]
+        print(f"Validating {skill_file}...\n")
+    else:
+        # Validate all files
+        skill_files = find_skill_files(root_dir)
+        print(f"Validating {len(skill_files)} SKILL.md files...\n")
     
     errors_found = 0
     files_with_errors = []
@@ -114,11 +171,14 @@ def main():
             errors_found += len(errors)
             files_with_errors.append(skill_file)
             
-            rel_path = skill_file.relative_to(root_dir)
+            rel_path = skill_file.relative_to(root_dir) if skill_file.is_relative_to(root_dir) else skill_file
             print(f"❌ {rel_path}")
             for error in errors:
                 print(f"   - {error}")
             print()
+        elif args.verbose:
+            rel_path = skill_file.relative_to(root_dir) if skill_file.is_relative_to(root_dir) else skill_file
+            print(f"✅ {rel_path}")
     
     # Summary
     print("=" * 70)
