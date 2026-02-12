@@ -41,8 +41,8 @@ jobs:
       - name: Check for new commits
         id: check_commits
         run: |
-          # Get latest commit from upstream main
-          UPSTREAM_COMMIT=$(git rev-parse upstream/main)
+          # Get latest commit from upstream master
+          UPSTREAM_COMMIT=$(git rev-parse upstream/master)
           echo "upstream_commit=$UPSTREAM_COMMIT" >> $GITHUB_OUTPUT
           
           # Check if we have a record of last sync
@@ -406,7 +406,7 @@ jobs:
               repo: context.repo.repo,
               title: `🔄 Auto-sync upstream (${new Date().toISOString().split('T')[0]})`,
               head: '${{ steps.create_branch.outputs.branch_name }}',
-              base: 'main',
+              base: 'master',
               body: prBody
             });
             
