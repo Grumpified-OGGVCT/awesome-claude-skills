@@ -452,15 +452,14 @@ jobs:
                   frontmatter = yaml_match.group(1)
                   rest = content[len(frontmatter):]
                   
-                  attribution = f"""
-<!-- 
-  Source: {skill['repo_url']}
-  Original: {skill['file_url']}
-  Discovered: {skill['discovered_at']}
-  Integrated via: Daily AI LLM Universal Skills Aggregation
--->
-
-"""
+                  # Build attribution using string formatting to avoid YAML conflicts
+                  attribution = "<!--\n"
+                  attribution += "  Source: " + skill['repo_url'] + "\n"
+                  attribution += "  Original: " + skill['file_url'] + "\n"
+                  attribution += "  Discovered: " + skill['discovered_at'] + "\n"
+                  attribution += "  Integrated via: Daily AI LLM Universal Skills Aggregation\n"
+                  attribution += "-->\n\n"
+                  
                   content = frontmatter + attribution + rest
               
               skill_file.write_text(content, encoding='utf-8')
