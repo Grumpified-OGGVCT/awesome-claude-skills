@@ -116,6 +116,58 @@ response = client.chat.completions.create(
 )
 ```
 
+### Option C: IDE Integration (VS Code, Cursor, etc.)
+
+Skills work seamlessly with AI coding assistants:
+
+**1. Cursor:**
+```bash
+# Copy skill to Cursor's prompts directory
+mkdir -p ~/.cursor/prompts/
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md \
+   ~/.cursor/prompts/brainstorm-domains.md
+```
+
+Then use Cursor's AI with the skill automatically loaded.
+
+**2. Continue (VS Code):**
+```bash
+# Add to Continue config
+mkdir -p ~/.continue/prompts/
+cp universal/tier-1-instruction-only/YOUR_SKILL/system-prompt.md \
+   ~/.continue/prompts/
+```
+
+**3. Cline (VS Code):**
+- Open Cline settings
+- Navigate to "Custom Instructions"  
+- Paste the content from `system-prompt.md`
+
+**4. Windsurf / Other IDEs:**
+- Check your IDE's AI assistant documentation
+- Look for "custom prompts" or "custom instructions" settings
+- Copy the `system-prompt.md` content there
+
+**Benefits:**
+- ✅ Skills available in your coding environment
+- ✅ Context-aware: AI can see your code
+- ✅ No API calls needed if IDE handles them
+- ✅ Works with IDE's choice of model
+
+## 💻 IDE Compatibility
+
+Universal format skills work with these AI coding assistants:
+
+| IDE / Tool | Integration Method | Notes |
+|------------|-------------------|-------|
+| **Cursor** | Copy to `~/.cursor/prompts/` | Native AI integration |
+| **VS Code + Continue** | Add to Continue config | Supports multiple providers |
+| **VS Code + Cline** | Custom instructions | Full context awareness |
+| **Windsurf** | Custom prompts | Codeium-powered |
+| **JetBrains + AI Assistant** | Custom prompts | Works with IntelliJ, PyCharm, etc. |
+| **Zed** | System prompts | Emerging support |
+| **Any IDE** | Manual paste | Copy system-prompt.md content |
+
 ## 📊 Skill Tiers
 
 ### Tier 1: Instruction-Only (90%)
@@ -205,6 +257,175 @@ Run the demo:
 ```bash
 python examples/demo.py
 ```
+
+## 🌐 Real-World Usage Scenarios
+
+### Scenario 1: Developer Using Multiple IDEs
+
+**Challenge**: Work with Cursor for web dev, VS Code for Python, and sometimes use Claude.ai for quick tasks.
+
+**Solution**: Universal format skills work everywhere!
+
+```bash
+# One-time setup
+# Copy skill to Cursor
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md \
+   ~/.cursor/prompts/
+
+# Copy to VS Code Continue
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md \
+   ~/.continue/prompts/
+
+# For Claude.ai, just upload the original SKILL.md
+```
+
+Now the same skill works in:
+- ✅ Cursor with Claude or GPT-4
+- ✅ VS Code with any model Continue supports
+- ✅ Claude.ai web interface
+- ✅ Direct API calls with any provider
+
+### Scenario 2: Cost-Conscious Startup
+
+**Challenge**: Need AI assistance but can't afford premium API costs.
+
+**Solution**: Mix and match based on task complexity!
+
+```python
+from openai import OpenAI
+
+# Use cheap model for simple tasks
+budget_client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key="YOUR_KEY"
+)
+
+# Load skill once
+with open("universal/tier-1-instruction-only/lead-research-assistant/system-prompt.md") as f:
+    skill = f.read()
+
+# Use Llama for bulk work ($0.20/1M tokens)
+for lead in leads:
+    response = budget_client.chat.completions.create(
+        model="meta-llama/llama-3.2-90b",
+        messages=[{"role": "system", "content": skill}, 
+                  {"role": "user", "content": f"Research {lead}"}]
+    )
+    
+# Switch to Claude for final review ($3/1M tokens, but worth it for quality)
+premium_client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key="YOUR_KEY"
+)
+final = premium_client.chat.completions.create(
+    model="anthropic/claude-3.5-sonnet",
+    messages=[{"role": "system", "content": skill},
+              {"role": "user", "content": "Review and refine these leads..."}]
+)
+```
+
+**Savings**: ~90% cost reduction by using budget models for bulk work!
+
+### Scenario 3: Privacy-Sensitive Company
+
+**Challenge**: Can't send data to external APIs due to compliance requirements.
+
+**Solution**: Use Ollama for 100% local processing!
+
+```python
+from openai import OpenAI
+
+# 100% local - data never leaves your machine
+local_client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # No real key needed
+)
+
+# Same skills, complete privacy
+with open("universal/tier-1-instruction-only/meeting-insights-analyzer/system-prompt.md") as f:
+    skill = f.read()
+
+# Process sensitive meeting transcripts locally
+response = local_client.chat.completions.create(
+    model="llama3.2",  # Running on your hardware
+    messages=[
+        {"role": "system", "content": skill},
+        {"role": "user", "content": confidential_meeting_transcript}
+    ]
+)
+```
+
+**Benefits**:
+- ✅ No data sent to external servers
+- ✅ No API costs
+- ✅ Works offline
+- ✅ Full compliance with data policies
+
+### Scenario 4: Experimenting with Latest Models
+
+**Challenge**: Want to try new models as they're released without rewriting skills.
+
+**Solution**: Skills work with any new OpenAI-compatible model!
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key="YOUR_KEY"
+)
+
+# Load skill once
+with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
+    skill = f.read()
+
+# Try different models with ZERO code changes
+models_to_test = [
+    "anthropic/claude-3.5-sonnet",      # Latest Claude
+    "openai/gpt-4o",                    # Latest GPT
+    "google/gemini-pro-1.5",            # Latest Gemini
+    "meta-llama/llama-3.2-90b",         # Latest Llama
+    "mistralai/mistral-large",          # Latest Mistral
+    "qwen/qwen-2.5-72b",               # Latest Qwen
+]
+
+results = {}
+for model in models_to_test:
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "system", "content": skill},
+                  {"role": "user", "content": "Suggest domains for my AI startup"}]
+    )
+    results[model] = response.choices[0].message.content
+
+# Compare outputs to find best model for your use case
+```
+
+**Result**: Test 6 different models without changing skill code!
+
+### Scenario 5: Team Using Different Tools
+
+**Challenge**: Team members use different tools - some use Cursor, some use VS Code, some prefer Claude.ai.
+
+**Solution**: Everyone uses the same skills, their own way!
+
+**Team Member A (Cursor user):**
+- Skills in `~/.cursor/prompts/`
+- Uses Cursor's built-in AI (their choice of model)
+
+**Team Member B (VS Code + Continue):**
+- Skills in `~/.continue/prompts/`
+- Uses Continue with OpenRouter (access to 100+ models)
+
+**Team Member C (Claude.ai):**
+- Uploads SKILL.md files to Claude.ai
+- Uses web interface
+
+**Team Member D (API Integration):**
+- Integrates skills into internal tools via OpenAI-compatible API
+- Uses whatever model the company prefers
+
+**Result**: Same skills, same quality, different preferences - all supported!
 
 ## 🔄 Maintaining Backward Compatibility
 
