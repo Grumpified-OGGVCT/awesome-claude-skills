@@ -1,5 +1,7 @@
 # Testing Guide for Claude Skills
 
+> **🚀 GrumpiFied Enhancement** - This testing guide and validation tools are custom additions created by Grumpified-OGGVCT.
+
 This guide helps you test and validate Claude skills from this repository.
 
 ## Quick Start Testing

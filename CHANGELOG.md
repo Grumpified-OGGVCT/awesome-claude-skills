@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Attribution Documentation** (Feb 12, 2026): Comprehensive documentation clarifying original vs GrumpiFied content
+  - Created ATTRIBUTIONS.md with complete breakdown of upstream vs fork contributions
+  - Added attribution headers to all GrumpiFied documentation files
+  - Updated README.md with prominent attribution section and footer
+  - Enhanced ARCHITECTURE.md, CONTRIBUTING.md with fork overview
+  - Clarified that all automation skills (943) are from ComposioHQ upstream
+  - Documented all GrumpiFied enhancements (universal format, tools, docs, CI/CD)
 - **Massive Skills Expansion**: Synced 832 new automation skills from ComposioHQ/awesome-claude-skills (Feb 11, 2026)
   - Total skills: 943 (from 111)
   - All 874 Composio toolkit integrations

@@ -41,11 +41,21 @@
 
 ---
 
+## 🌟 Repository Attribution
+
+> **Original by [ComposioHQ](https://github.com/ComposioHQ/awesome-claude-skills) | Enhanced by Grumpified-OGGVCT**
+
+This repository is an **enhanced fork** that combines:
+- **939 automation skills** from upstream ComposioHQ/awesome-claude-skills (powered by [Composio](https://composio.dev))
+- **GrumpiFied enhancements**: Universal format support, NLP discovery, automated sync, extended docs, and custom tools
+
+**🔄 Auto-Synced Daily** - Automatically syncs with upstream while preserving all GrumpiFied features. [Learn more →](.github/workflows/AUTO-SYNC-README.md) | **📋 [Full Attribution Guide](ATTRIBUTIONS.md)**
+
+---
+
 ## 🎯 What Is This Repository?
 
-**Awesome Claude Skills** is a curated collection of **943+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
-
-**🔄 Auto-Synced with Upstream** - This repository automatically syncs with [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) (last sync: Feb 11, 2026) while preserving all local customizations and running comprehensive security validation. [Learn more →](.github/workflows/AUTO-SYNC-README.md)
+**Awesome Claude Skills** is a curated collection of **939+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
 
 ### What You'll Find Here
 
@@ -250,6 +260,64 @@ See [Universal Skills Format](#universal-llm-skills-format) for more details.
 
 Skills automatically activate when Claude detects a relevant task, ensuring expertise is applied at the right time.
 
+---
+
+## 🚀 GrumpiFied Enhancements
+
+This fork adds powerful enhancements beyond the upstream repository:
+
+### 🌍 Universal Format Support
+**Use skills with ANY LLM** - Not just Claude!
+- ✅ Works with GPT-4, Llama, Gemini, Ollama, OpenRouter, and more
+- ✅ Three tiers: Instruction-only, Tool-enhanced, Claude-optimized
+- ✅ Automatic conversion tools included
+- 📁 Location: `universal/` directory | 📖 [Learn more](UNIVERSAL-FORMAT.md)
+
+### 🔍 NLP-Powered Discovery
+**Find skills by describing what you need** - Powered by Gemini AI
+- ✅ Natural language search (e.g., "I need to work with documents")
+- ✅ AI-generated skill explanations
+- ✅ Semantic understanding of user intent
+- 🛠️ Tools: `tools/nlp-discover.py` | 📖 [Quick Start](QUICK-START-NLP.md)
+
+### 🤖 Automated Sync & QA
+**Daily automated sync with comprehensive validation**
+- ✅ Automatic daily sync from upstream (2 AM UTC)
+- ✅ Intelligent merge preserving all customizations
+- ✅ Security scanning (OpenClaw-style vulnerability detection)
+- ✅ YAML validation and auto-repair
+- 📖 [Learn more](.github/workflows/AUTO-SYNC-README.md)
+
+### 📚 Extended Documentation
+**Comprehensive guides for all use cases**
+- Migration guides (Claude → Universal format)
+- Multi-provider setup (Ollama, OpenRouter)
+- Model compatibility matrices
+- Testing procedures
+- 📁 Location: `docs/` directory
+
+### 🛠️ Automation Tools
+**Convert, validate, discover, and test skills**
+- Skill format converters
+- YAML validators
+- Skill index generators
+- Multi-model testers
+- 📁 Location: `tools/` directory | 📖 [Tools Guide](tools/README.md)
+
+### 🎨 Original Custom Skills
+**Unique skills created by GrumpiFied** (not from upstream):
+- Content Research Writer
+- Domain Name Brainstormer
+- Lead Research Assistant
+- Meeting Insights Analyzer
+- Tailored Resume Generator
+- Twitter Algorithm Optimizer
+- And more...
+
+📋 **[See Full Attribution Guide](ATTRIBUTIONS.md)** for complete details on what's original vs GrumpiFied.
+
+---
+
 ## Universal LLM Skills Format
 
 🎯 **Skills now work with any OpenAI-compatible LLM!**
@@ -333,40 +401,44 @@ python tools/validate.py --all
 ### Backward Compatibility
 
 ✅ **Original skills remain unchanged** - The universal format is derived from originals
-✅ **Stays in sync with upstream** - Easy to pull updates from anthropics/skills
+✅ **Stays in sync with upstream** - Easy to pull updates from ComposioHQ/awesome-claude-skills
 ✅ **No breaking changes** - Both formats coexist peacefully
 
 ## Automated Upstream Sync
 
-This repository automatically stays synchronized with the official [anthropics/skills](https://github.com/anthropics/skills) repository while protecting all custom enhancements.
+This repository automatically stays synchronized with [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) while protecting all GrumpiFied enhancements.
 
 ### How It Works
 
 🤖 **Automated Synchronization**
-- Runs every 6 hours (4 times daily) to check for upstream updates
+- Runs daily at 2 AM UTC to check for upstream updates
 - Can also be triggered manually from the Actions tab
-- Uses fast-forward-only merge strategy for safety
+- Uses `rsync --ignore-existing` to preserve local customizations
 
 🛡️ **Safety First**
-- **Never overwrites custom work** - All custom directories are protected:
+- **Never overwrites GrumpiFied work** - All custom directories are protected:
   - `universal/` - Universal LLM Skills Format and conversions
-  - `tools/` - Custom tools (convert.py, validate.py, sync-upstream.sh)
+  - `tools/` - Custom tools (convert.py, validate.py, nlp-discover.py, etc.)
   - `docs/` - Enhanced documentation and guides
+  - `.github/` - CI/CD workflows
+  - All `*IMPLEMENTATION*.md`, `QA-*.md`, and custom docs
   - Custom skill folders not in upstream
-- **Automatic PR on conflicts** - If changes can't be merged cleanly, a pull request is automatically created for manual review
-- **No force pushes** - Human review required for any conflicts
+- **Automatic PR creation** - Creates detailed PR with QA reports for review
+- **Comprehensive validation** - YAML checks, security scans, integrity tests
 
 ### What Gets Synced
 
-✅ **New skills** from anthropics/skills main branch  
-✅ **Updates to existing skills** from upstream  
+✅ **New automation skills** from ComposioHQ/awesome-claude-skills  
+✅ **Updates to existing Composio skills** from upstream  
 ✅ **Bug fixes and improvements** from the official repository  
 
-❌ **Never synced** (protected):
+❌ **Never synced** (protected GrumpiFied content):
 - Universal format conversions in `universal/`
 - Custom tools and scripts in `tools/`
 - Enhanced documentation in `docs/`
-- Custom skills not in upstream (changelog-generator, domain-name-brainstormer, etc.)
+- CI/CD workflows in `.github/`
+- README.md and all custom documentation files
+- Custom skills not in upstream (domain-name-brainstormer, meeting-insights-analyzer, etc.)
 
 ### Manual Sync (Fallback)
 
@@ -381,16 +453,17 @@ This script:
 - Creates a backup branch before syncing
 - Shows you what will be merged before proceeding
 - Prompts for confirmation at each step
-- Offers to re-convert skills after sync
+- Preserves all GrumpiFied customizations
 
 ### When Human Review Is Needed
 
 The automation creates a pull request when:
-- 🔄 **Merge conflicts** occur between upstream and custom changes
-- 🚫 **Non-fast-forward** merge is required
-- ⚠️ **Protected files** would be modified by upstream
+- 🔄 **Upstream updates detected** - New skills or changes available
+- ✅ **QA validation passes** - All checks successful
+- ⚠️ **Warnings detected** - Minor issues found (review recommended)
+- ❌ **Critical issues** - Validation failures requiring attention
 
-Simply review the auto-generated PR, resolve any conflicts, and merge when ready.
+Simply review the auto-generated PR with detailed QA reports and merge when ready.
 
 ### Monitoring
 
@@ -398,6 +471,8 @@ Check the [Actions tab](https://github.com/Grumpified-OGGVCT/awesome-claude-skil
 - View sync history and results
 - Manually trigger a sync
 - Check for any auto-generated PRs needing review
+
+📖 **[Full Sync Documentation](.github/workflows/AUTO-SYNC-README.md)** | 📋 **[Sync History](UPSTREAM-MERGE-SUMMARY.md)**
 
 ## Skills
 
@@ -646,7 +721,8 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 ### Community Resources
 
-- [Anthropic Skills Repository](https://github.com/anthropics/skills) - Official example skills
+- [Anthropic Skills Repository](https://github.com/anthropics/skills) - Official Anthropic example skills
+- [ComposioHQ Skills Repository](https://github.com/ComposioHQ/awesome-claude-skills) - Upstream source for automation skills in this fork
 - [Claude Community](https://community.anthropic.com) - Discuss skills with other users
 - [Skills Marketplace](https://claude.ai/marketplace) - Discover and share skills
 
@@ -781,6 +857,42 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 This repository is licensed under the Apache License 2.0.
 
 Individual skills may have different licenses - please check each skill's folder for specific licensing information.
+
+---
+
+## 🙏 Attribution & Acknowledgments
+
+This repository is an **enhanced fork** that combines the best of both worlds:
+
+### 🌳 Upstream Original
+**939 automation skills** from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- Powered by [Composio](https://composio.dev) platform
+- Complete toolkit ecosystem (874 Composio toolkits)
+- Apache 2.0 License
+
+### 🚀 GrumpiFied Enhancements
+**Custom additions** by Grumpified-OGGVCT:
+- ✅ Universal format support (works with 100+ LLM models)
+- ✅ NLP-powered skill discovery (Gemini AI)
+- ✅ Automated daily sync with QA validation
+- ✅ Extended documentation & guides
+- ✅ Multi-provider examples (OpenRouter, Ollama)
+- ✅ Automation tools (convert, validate, discover)
+- ✅ Security scanning & quality assurance
+
+**🔄 Auto-Synced Daily** - This fork automatically syncs with upstream every day while preserving all GrumpiFied features.
+
+📋 **[Full Attribution Guide](ATTRIBUTIONS.md)** - Complete breakdown of original vs GrumpiFied content
+
+---
+
+<p align="center">
+  <strong>🌟 Original by <a href="https://github.com/ComposioHQ">ComposioHQ</a> | 🚀 Enhanced by <a href="https://github.com/Grumpified-OGGVCT">Grumpified-OGGVCT</a></strong>
+</p>
+
+<p align="center">
+  <em>Bringing together the best automation skills from Composio with universal format support for all LLM providers</em>
+</p>
 
 ---
 

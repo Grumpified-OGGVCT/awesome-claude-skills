@@ -1,6 +1,21 @@
 # Documentation
 
+> **🚀 GrumpiFied Enhancement** - All guides in this directory are custom documentation created by Grumpified-OGGVCT to support the enhanced features of this fork.
+
 This directory contains detailed guides for using Claude Skills with various LLM providers and understanding compatibility.
+
+## 🎯 Attribution
+
+**All documentation here is GrumpiFied original content:**
+- Multi-provider setup guides (OpenRouter, Ollama)
+- Model compatibility matrices
+- Migration guides for universal format
+- NLP discovery documentation
+- Skill discovery system guides
+
+These guides enable the universal format and multi-provider support that makes this fork special.
+
+📋 **[See Full Attribution Guide](../ATTRIBUTIONS.md)** for complete details.
 
 ## 📚 Available Guides
 

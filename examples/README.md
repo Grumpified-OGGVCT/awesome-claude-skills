@@ -1,5 +1,7 @@
 # Examples: Using Universal Skills
 
+> **🚀 GrumpiFied Enhancement** - These examples and multi-provider demonstrations are custom additions created by Grumpified-OGGVCT.
+
 This directory contains practical examples demonstrating how to use universal skills with different LLM providers.
 
 ## 🎯 What You'll Find Here

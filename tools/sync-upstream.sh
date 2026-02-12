@@ -1,12 +1,12 @@
 #!/bin/bash
 # sync-upstream.sh
 #
-# Synchronizes this fork with the upstream anthropics/skills repository
-# while preserving the universal/ directory and local changes.
+# Synchronizes this fork with the upstream ComposioHQ/awesome-claude-skills repository
+# while preserving the universal/ directory and other GrumpiFied customizations.
 #
 # This ensures backward compatibility by:
 # 1. Keeping original skills in sync with upstream
-# 2. Preserving the universal/ directory (our additions)
+# 2. Preserving GrumpiFied additions (universal/, tools/, docs/, etc.)
 # 3. Allowing easy updates without conflicts
 
 set -e  # Exit on error
@@ -50,7 +50,7 @@ if ! git diff-index --quiet HEAD -- 2>/dev/null; then
 fi
 
 # Configure upstream remote if not exists
-UPSTREAM_REPO="https://github.com/anthropics/skills.git"
+UPSTREAM_REPO="https://github.com/ComposioHQ/awesome-claude-skills.git"
 
 if ! git remote get-url upstream >/dev/null 2>&1; then
     echo -e "${YELLOW}Adding upstream remote: $UPSTREAM_REPO${NC}"

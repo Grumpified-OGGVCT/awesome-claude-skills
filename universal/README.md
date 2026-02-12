@@ -1,6 +1,20 @@
 # Universal LLM Skills Format
 
+> **🚀 GrumpiFied Enhancement** - This entire directory and the universal format system is a custom addition created by Grumpified-OGGVCT. The universal format enables skills to work with ANY LLM provider, not just Claude.
+
 This directory contains skills converted to a universal OpenAI-compatible format that works with multiple LLM providers including OpenRouter, Ollama, and direct API access.
+
+## 🎯 Attribution
+
+**The universal format is a GrumpiFied original creation:**
+- Provider-agnostic skill format (works with 100+ models)
+- Three-tier system (instruction-only, tool-enhanced, Claude-only)
+- Automatic conversion tools from Claude format
+- Multi-provider API examples and documentation
+
+This is NOT part of the upstream ComposioHQ/awesome-claude-skills repository - it's an enhancement that makes skills portable across all LLM platforms.
+
+📋 **[See Full Attribution Guide](../ATTRIBUTIONS.md)** for complete details.
 
 ## Why Universal Format?
 
