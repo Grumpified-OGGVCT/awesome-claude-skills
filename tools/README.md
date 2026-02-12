@@ -1,6 +1,23 @@
 # Tools
 
+> **🚀 GrumpiFied Enhancement** - All tools in this directory are custom additions created by Grumpified-OGGVCT. These automation tools are NOT part of the upstream ComposioHQ/awesome-claude-skills repository.
+
 Automation tools for working with Claude Skills and the universal format.
+
+## 🎯 Attribution
+
+**All tools here are GrumpiFied original creations:**
+- NLP-powered discovery (`nlp-discover.py`)
+- Universal format conversion (`convert.py`)
+- YAML validation (`validate-skill-yaml.py`, `validate.py`)
+- Skill index generation (`generate-skill-index.py`, `index-skills.py`)
+- Upstream sync automation (`sync-upstream.sh`)
+- Multi-model testing (`model-tester.py`)
+- Interactive discovery (`discover.py`, `find-skill`)
+
+These tools enable the enhanced functionality that makes this fork special.
+
+📋 **[See Full Attribution Guide](../ATTRIBUTIONS.md)** for complete details.
 
 ## 🛠️ Available Tools
 
@@ -700,14 +717,14 @@ Summary:
 
 ### sync-upstream.sh
 
-Syncs this repository with the official anthropics/skills repository while protecting custom work.
+Syncs this repository with [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) while protecting GrumpiFied customizations.
 
 #### Features
 
 - Interactive mode with safety checks
 - Creates backup before syncing
 - Shows what will be merged
-- Protects custom directories
+- Protects GrumpiFied directories
 - Offers to re-convert after sync
 
 #### Basic Usage
@@ -728,18 +745,19 @@ Syncs this repository with the official anthropics/skills repository while prote
 #### Protected Directories
 
 These are NEVER overwritten by upstream:
-- `universal/` - Universal format conversions
-- `tools/` - Custom tools
-- `docs/` - Enhanced documentation
+- `universal/` - Universal format conversions (GrumpiFied)
+- `tools/` - Custom automation tools (GrumpiFied)
+- `docs/` - Enhanced documentation (GrumpiFied)
+- `.github/` - CI/CD workflows (GrumpiFied)
 - Custom skills not in upstream
 
 #### What Gets Synced
 
-✅ New skills from anthropics/skills  
-✅ Updates to existing upstream skills  
+✅ New automation skills from ComposioHQ/awesome-claude-skills  
+✅ Updates to existing Composio skills  
 ✅ Bug fixes from official repository  
 
-❌ Custom enhancements (these are protected)
+❌ GrumpiFied enhancements (these are protected)
 
 #### Troubleshooting
 

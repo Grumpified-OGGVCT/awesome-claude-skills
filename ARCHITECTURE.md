@@ -1,15 +1,33 @@
 # Architecture & Design Decisions
 
+> **📋 Repository Attribution**: This is an enhanced fork of [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills). See [ATTRIBUTIONS.md](ATTRIBUTIONS.md) for complete details on original vs GrumpiFied content.
+
 This document explains the design philosophy, architecture, and key decisions behind the Awesome Claude Skills repository.
+
+## 🌟 Fork Overview
+
+This repository combines:
+- **943 automation skills** from upstream ComposioHQ (powered by Composio)
+- **GrumpiFied enhancements** including universal format, automation, and extended documentation
+
+### GrumpiFied Additions
+The following are custom additions NOT in upstream:
+- ✅ Universal format support (`universal/` directory)
+- ✅ All automation tools (`tools/` directory)
+- ✅ Extended documentation (`docs/` directory)
+- ✅ CI/CD automation (`.github/workflows/`)
+- ✅ NLP-powered discovery
+- ✅ Multi-provider examples
+- ✅ Custom original skills
 
 ## 🎯 Design Philosophy
 
 ### Core Principles
 
 1. **Backward Compatibility First**
-   - Original Claude skills remain untouched in their directories
+   - Original Composio automation skills remain untouched in their directories
    - Universal format is derived, not replacing
-   - Easy to sync with upstream anthropics/skills repository
+   - Easy to sync with upstream ComposioHQ/awesome-claude-skills
    - Both formats coexist peacefully
 
 2. **Automation Over Manual Work**
