@@ -452,7 +452,7 @@ Not sure where to start? Here are some ideas:
 
 ## 🔄 Syncing with Upstream
 
-This repository automatically syncs with [anthropics/skills](https://github.com/anthropics/skills) every 6 hours. Your contributions stay protected while we pull in upstream updates.
+This repository automatically syncs with [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) daily at 2 AM UTC. Your GrumpiFied contributions stay protected while we pull in upstream updates.
 
 See [Automated Upstream Sync](README.md#automated-upstream-sync) for details.
 

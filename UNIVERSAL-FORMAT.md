@@ -49,7 +49,7 @@ awesome-claude-skills/
 ├── tools/                     ← NEW: Automation tools
 │   ├── convert.py            # Convert skills to universal format
 │   ├── validate.py           # Validate conversions
-│   ├── sync-upstream.sh      # Sync with anthropics/skills
+│   ├── sync-upstream.sh      # Sync with ComposioHQ/awesome-claude-skills
 │   └── model-tester.py       # Test across providers
 │
 └── examples/                  ← NEW: Working examples
@@ -168,7 +168,7 @@ python tools/validate.py universal/tier-1-instruction-only/domain-name-brainstor
 
 ### Sync Upstream
 ```bash
-# Pull latest from anthropics/skills and reconvert
+# Pull latest from ComposioHQ/awesome-claude-skills and reconvert
 ./tools/sync-upstream.sh
 ```
 
@@ -218,7 +218,7 @@ The universal format is **derived** from original skills:
 This ensures:
 - ✅ No merge conflicts with upstream
 - ✅ Both formats stay in sync
-- ✅ Easy to pull updates from anthropics/skills
+- ✅ Easy to pull updates from ComposioHQ/awesome-claude-skills
 - ✅ Can contribute back to upstream
 
 ## 🌟 Model Recommendations
@@ -259,7 +259,8 @@ Apache 2.0 - Same as the main repository.
 
 ## 🙏 Acknowledgments
 
-- Original skills from [anthropics/skills](https://github.com/anthropics/skills)
+- Original automation skills from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- Additional skills from [Anthropic Skills Repository](https://github.com/anthropics/skills)
 - Universal format design inspired by OpenAI's API standard
 - Community feedback on provider compatibility
 

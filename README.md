@@ -46,7 +46,7 @@
 > **Original by [ComposioHQ](https://github.com/ComposioHQ/awesome-claude-skills) | Enhanced by Grumpified-OGGVCT**
 
 This repository is an **enhanced fork** that combines:
-- **943 automation skills** from upstream ComposioHQ/awesome-claude-skills (powered by [Composio](https://composio.dev))
+- **939 automation skills** from upstream ComposioHQ/awesome-claude-skills (powered by [Composio](https://composio.dev))
 - **GrumpiFied enhancements**: Universal format support, NLP discovery, automated sync, extended docs, and custom tools
 
 **🔄 Auto-Synced Daily** - Automatically syncs with upstream while preserving all GrumpiFied features. [Learn more →](.github/workflows/AUTO-SYNC-README.md) | **📋 [Full Attribution Guide](ATTRIBUTIONS.md)**
@@ -55,7 +55,7 @@ This repository is an **enhanced fork** that combines:
 
 ## 🎯 What Is This Repository?
 
-**Awesome Claude Skills** is a curated collection of **943+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
+**Awesome Claude Skills** is a curated collection of **939+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
 
 ### What You'll Find Here
 
@@ -401,7 +401,7 @@ python tools/validate.py --all
 ### Backward Compatibility
 
 ✅ **Original skills remain unchanged** - The universal format is derived from originals
-✅ **Stays in sync with upstream** - Easy to pull updates from anthropics/skills
+✅ **Stays in sync with upstream** - Easy to pull updates from ComposioHQ/awesome-claude-skills
 ✅ **No breaking changes** - Both formats coexist peacefully
 
 ## Automated Upstream Sync
@@ -721,7 +721,8 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 ### Community Resources
 
-- [Anthropic Skills Repository](https://github.com/anthropics/skills) - Official example skills
+- [Anthropic Skills Repository](https://github.com/anthropics/skills) - Official Anthropic example skills
+- [ComposioHQ Skills Repository](https://github.com/ComposioHQ/awesome-claude-skills) - Upstream source for automation skills in this fork
 - [Claude Community](https://community.anthropic.com) - Discuss skills with other users
 - [Skills Marketplace](https://claude.ai/marketplace) - Discover and share skills
 
@@ -864,7 +865,7 @@ Individual skills may have different licenses - please check each skill's folder
 This repository is an **enhanced fork** that combines the best of both worlds:
 
 ### 🌳 Upstream Original
-**943 automation skills** from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+**939 automation skills** from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 - Powered by [Composio](https://composio.dev) platform
 - Complete toolkit ecosystem (874 Composio toolkits)
 - Apache 2.0 License

@@ -7,7 +7,7 @@ This document explains the design philosophy, architecture, and key decisions be
 ## 🌟 Fork Overview
 
 This repository combines:
-- **943 automation skills** from upstream ComposioHQ (powered by Composio)
+- **939 automation skills** from upstream ComposioHQ (powered by Composio)
 - **GrumpiFied enhancements** including universal format, automation, and extended documentation
 
 ### GrumpiFied Additions

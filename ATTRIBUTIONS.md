@@ -11,7 +11,7 @@ This repository is an **active fork** of [ComposioHQ/awesome-claude-skills](http
 **Original Repository**: ComposioHQ/awesome-claude-skills  
 **Original License**: Apache 2.0  
 **Fork Maintainer**: Grumpified-OGGVCT  
-**Last Upstream Sync**: February 11, 2026  
+**Last Upstream Sync**: See [UPSTREAM-MERGE-SUMMARY.md](UPSTREAM-MERGE-SUMMARY.md) or `.github/last-upstream-sync` for latest sync timestamp  
 **Sync Frequency**: Daily at 2 AM UTC (automated)
 
 ---
@@ -21,7 +21,7 @@ This repository is an **active fork** of [ComposioHQ/awesome-claude-skills](http
 The following content originates from the upstream ComposioHQ/awesome-claude-skills repository:
 
 ### Core Skills Collection
-- **943 Automation Skills** - Complete Composio toolkit ecosystem
+- **939 Automation Skills** - Complete Composio toolkit ecosystem
   - All skill directories named `*-automation/` (e.g., `slack-automation`, `github-automation`)
   - Each skill includes SKILL.md with Composio-specific instructions
   - Powered by [Composio](https://composio.dev) platform
