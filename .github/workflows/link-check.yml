@@ -1,0 +1,57 @@
+name: Link Validation
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Check all markdown files, exclude known false positives
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,204,429,403
+            --timeout 20
+            --max-retries 2
+            --exclude-mail
+            --exclude 'https://youtube.com/watch'
+            --exclude 'https://claude.ai'
+            --exclude 'https://community.anthropic.com'
+            --exclude 'https://platform.openai.com'
+            --exclude 'https://api.ollama.cloud'
+            --exclude 'https://github.com/openai/agents'
+            --exclude 'https://github.com/composiohq/composio'
+            --exclude 'https://github.com/mhattingpete'
+            --exclude 'https://github.com/obra'
+            --exclude 'https://github.com/jthack'
+            --exclude 'https://github.com/anthropics/skills'
+            --exclude 'https://github.com/ollama/ollama'
+            --exclude 'https://claude.ai/marketplace'
+            --exclude 'file:///'
+            '**/*.md'
+          fail: false
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        continue-on-error: true
+
+      - name: Report Results
+        if: always()
+        run: |
+          echo "Link check completed. Review logs above for any issues."
+          echo "Note: Some external links (claude.ai, platform.openai.com, etc.) may be rate-limited or require auth."
