@@ -1,0 +1,42 @@
+name: Link Validation
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Check all markdown files
+          args: --verbose --no-progress --accept 200,204,429 --timeout 15 --max-retries 3 --exclude-mail '**/*.md'
+          # Exclude common false positives
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🔗 Broken links detected in markdown files',
+              body: 'The automated link checker found broken links. Please review the workflow logs and fix the links.',
+              labels: ['documentation', 'automated']
+            })

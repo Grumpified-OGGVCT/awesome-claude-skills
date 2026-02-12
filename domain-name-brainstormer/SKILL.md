@@ -7,6 +7,27 @@ description: Generates creative domain name ideas for your project and checks av
 
 This skill helps you find the perfect domain name for your project by generating creative options and checking what's actually available to register.
 
+## Prerequisites
+
+- No external tools or APIs required
+- Works directly with Claude's built-in knowledge of:
+  - Domain naming best practices
+  - Common TLD availability patterns
+  - Branding and memorability principles
+  - Industry-specific naming conventions
+
+**Note**: While this skill suggests domain names, actual availability checking requires manual verification through domain registrars like Namecheap, GoDaddy, or Google Domains.
+
+## Setup
+
+**No setup required.** This skill uses Claude's inherent capabilities to:
+1. Understand your project and target audience
+2. Generate creative, memorable domain name options
+3. Suggest relevant TLD extensions (.com, .io, .dev, .ai, etc.)
+4. Provide branding rationale for each suggestion
+
+Simply describe your project and ask for domain name suggestions.
+
 ## When to Use This Skill
 
 - Starting a new project or company
