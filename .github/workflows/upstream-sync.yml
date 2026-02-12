@@ -35,7 +35,7 @@ jobs:
           owner: anthropics
           repo: skills
           head: main
-          base: main
+          base: master
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
         id: sync
@@ -84,7 +84,7 @@ jobs:
             git add -A
             git commit -m "chore: sync upstream anthropics/skills \
             main - new/updated skills" || echo "No changes to commit"
-            git push origin main || echo "Push failed or nothing to push"
+            git push origin master || echo "Push failed or nothing to push"
           fi
 
       - name: Summary
