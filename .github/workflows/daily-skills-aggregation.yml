@@ -72,14 +72,30 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/validate_skills.py
       
+      - name: Persist discovery tracking
+        if: steps.discover.outputs.has_discoveries == 'true'
+        run: |
+          # Commit updated tracking file even if no integrations
+          # This prevents re-discovering/re-validating the same repos
+          if git diff --quiet .github/skill-discovery/discovered-skills.json; then
+            echo "No tracking changes to persist"
+          else
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add .github/skill-discovery/discovered-skills.json
+            git commit -m "Update skill discovery tracking [skip ci]" || echo "No changes to commit"
+            git push || echo "Nothing to push"
+          fi
+      
       - name: Test and fix valid skills
-        if: steps.validate.outputs.has_valid == 'true'
+        if: steps.validate.outputs.has_valid == 'true' || github.event.inputs.force_run == 'true'
         id: test_fix
         run: |
           echo "🔧 Testing and fixing skills..."
           
           # Simple fixes - just mark as tested for now
           python3 << 'PYTHON_EOF'
+          import os
           import json
           from pathlib import Path
           
@@ -348,17 +364,32 @@ jobs:
               labels: ['automated', 'daily-aggregation', 'universal-skills', 'auto-merge']
             });
             
-            // Wait for mergeable state
-            await new Promise(resolve => setTimeout(resolve, 5000));
+            // Wait for mergeable state to be calculated (can take a few seconds)
+            let prCheck;
+            let retries = 0;
+            const maxRetries = 10;
             
-            // Check if mergeable
-            const { data: prCheck } = await github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: pr.number
-            });
+            while (retries < maxRetries) {
+              await new Promise(resolve => setTimeout(resolve, 3000));
+              
+              const { data } = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+              
+              prCheck = data;
+              
+              if (prCheck.mergeable !== null) {
+                console.log(`PR #${pr.number} mergeable state: ${prCheck.mergeable}, state: ${prCheck.mergeable_state}`);
+                break;
+              }
+              
+              retries++;
+              console.log(`Waiting for mergeable state... (${retries}/${maxRetries})`);
+            }
             
-            if (prCheck.mergeable) {
+            if (prCheck.mergeable === true) {
               // Auto-merge
               await github.rest.pulls.merge({
                 owner: context.repo.owner,
@@ -378,7 +409,7 @@ jobs:
                 body: '✅ **Auto-merged successfully!** All ${{ steps.integrate.outputs.integrated_count }} skills integrated.'
               });
             } else {
-              console.log(`⚠️  PR #${pr.number} has conflicts - manual review required`);
+              console.log(`⚠️  PR #${pr.number} has conflicts or issues - manual review required`);
               
               await github.rest.issues.removeLabel({
                 owner: context.repo.owner,

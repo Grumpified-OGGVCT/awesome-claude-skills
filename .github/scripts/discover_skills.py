@@ -13,10 +13,14 @@ def main():
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
     DISCOVERY_LIMIT = int(os.environ.get('DISCOVERY_LIMIT', 10))
     
+    # Build headers - only include Authorization if token is available
     headers = {
-        'Authorization': f'token {GITHUB_TOKEN}',
         'Accept': 'application/vnd.github.v3+json'
     }
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f'token {GITHUB_TOKEN}'
+    else:
+        print("⚠️  No GITHUB_TOKEN set - using unauthenticated requests (rate limits apply)")
     
     # Load previously discovered skills
     discovery_file = Path('.github/skill-discovery/discovered-skills.json')

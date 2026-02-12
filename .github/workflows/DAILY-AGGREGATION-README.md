@@ -2,21 +2,24 @@
 
 ## Overview
 
-The **Daily Skills Aggregation Workflow** is an intelligent, self-managing system that automatically discovers, validates, tests, fixes, and integrates universal AI skills from across GitHub into this repository.
+The **Daily Skills Aggregation Workflow** is an automated system that discovers, validates, and integrates universal AI skills from public GitHub repositories into this repository.
 
 ## 🎯 What It Does
 
-This workflow performs a complete lifecycle automation:
+This workflow provides automated skill discovery and integration:
 
 1. **🔍 Discovery** - Searches GitHub for new Claude/AI skills using public APIs (no registration required)
 2. **✅ Validation** - Checks each skill for proper YAML format, required fields, and structure
-3. **🔒 Security Scan** - Detects hardcoded credentials, dangerous code patterns, and other vulnerabilities
-4. **🛠️ Auto-Repair** - Automatically fixes common issues like unquoted YAML descriptions, formatting problems
-5. **🧪 Testing** - Validates compatibility and marks skills that need Composio-specific adaptation
-6. **📦 Integration** - Creates skill directories, adds attribution, updates indices
-7. **📝 Documentation** - Updates README.md with daily discovery section showing new additions
-8. **🔍 CoVE QA** - Runs Chain of Verification quality assurance with gap analysis
-9. **🚀 PR Creation** - Generates comprehensive pull request with all findings and recommendations
+3. **🔒 Security Scan** - Performs comprehensive security checks including:
+   - Hardcoded credentials detection
+   - Dangerous code execution patterns (eval, exec, subprocess)
+   - Prompt injection phrases
+   - Suspicious URLs and data exfiltration endpoints
+   - Base64 encoded payloads
+4. **🛠️ Auto-Repair** - Fixes common issues automatically (YAML formatting, index regeneration)
+5. **📦 Integration** - Creates skill directories, adds attribution, updates indices
+6. **🔍 CoVE QA** - Runs Chain of Verification quality checks (initial pass → auto-fix → final verification)
+7. **🚀 Auto-Merge** - Creates PR and auto-merges when all checks pass; flags for manual review on conflicts
 
 ## ⏰ Schedule
 
