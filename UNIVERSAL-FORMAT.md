@@ -1,5 +1,7 @@
 # Universal LLM Skills Format
 
+> **🚀 GrumpiFied Enhancement** - The entire universal format system is a custom addition created by Grumpified-OGGVCT, enabling skills to work with ANY LLM provider beyond just Claude.
+
 ## Overview
 
 This repository now includes a universal format that makes all Claude skills compatible with **any OpenAI-compatible LLM provider**. This means you can use the same skills with OpenRouter, Ollama, or any direct API that follows the OpenAI standard.

@@ -1,5 +1,7 @@
 # Getting Started with Claude Skills
 
+> **🚀 GrumpiFied Enhancement** - This comprehensive guide is custom documentation created by Grumpified-OGGVCT with extended multi-provider setup instructions.
+
 Welcome! This guide will help you start using Claude Skills in under 5 minutes.
 
 ## 📋 Table of Contents

@@ -1,5 +1,7 @@
 # Quick Start: Testing NLP-Enhanced Skill Discovery
 
+> **🚀 GrumpiFied Enhancement** - NLP-powered discovery is a custom feature created by Grumpified-OGGVCT using Gemini AI for semantic skill search.
+
 ## ✅ What's Ready
 
 - **API Key**: `OLLAMA_API_KEY` configured in repository secrets

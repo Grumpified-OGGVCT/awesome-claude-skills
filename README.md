@@ -859,6 +859,42 @@ Individual skills may have different licenses - please check each skill's folder
 
 ---
 
+## 🙏 Attribution & Acknowledgments
+
+This repository is an **enhanced fork** that combines the best of both worlds:
+
+### 🌳 Upstream Original
+**943 automation skills** from [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- Powered by [Composio](https://composio.dev) platform
+- Complete toolkit ecosystem (874 Composio toolkits)
+- Apache 2.0 License
+
+### 🚀 GrumpiFied Enhancements
+**Custom additions** by Grumpified-OGGVCT:
+- ✅ Universal format support (works with 100+ LLM models)
+- ✅ NLP-powered skill discovery (Gemini AI)
+- ✅ Automated daily sync with QA validation
+- ✅ Extended documentation & guides
+- ✅ Multi-provider examples (OpenRouter, Ollama)
+- ✅ Automation tools (convert, validate, discover)
+- ✅ Security scanning & quality assurance
+
+**🔄 Auto-Synced Daily** - This fork automatically syncs with upstream every day while preserving all GrumpiFied features.
+
+📋 **[Full Attribution Guide](ATTRIBUTIONS.md)** - Complete breakdown of original vs GrumpiFied content
+
+---
+
+<p align="center">
+  <strong>🌟 Original by <a href="https://github.com/ComposioHQ">ComposioHQ</a> | 🚀 Enhanced by <a href="https://github.com/Grumpified-OGGVCT">Grumpified-OGGVCT</a></strong>
+</p>
+
+<p align="center">
+  <em>Bringing together the best automation skills from Composio with universal format support for all LLM providers</em>
+</p>
+
+---
+
 **Note**: Claude Skills work across Claude.ai, Claude Code, and the Claude API. Once you create a skill, it's portable across all platforms, making your workflows consistent everywhere you use Claude.
 
 - [AgentsKB](https://agentskb.com) - Upgrade your AI with researched answers. We did the research so your AI gets it right the first time.
