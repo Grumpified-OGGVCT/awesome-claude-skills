@@ -1,1 +1,126 @@
-{"discovered": [], "integrated": [], "rejected": []}
+{
+  "discovered": [
+    {
+      "repo_url": "https://github.com/AMALKRISHNAUR/interactive-deep-learning-platform",
+      "repo_name": "AMALKRISHNAUR/interactive-deep-learning-platform",
+      "file_path": "claude_code_quick_prompt.md",
+      "file_url": "https://github.com/AMALKRISHNAUR/interactive-deep-learning-platform/blob/20b1b4a9aa044b939836552c7ae177cbca91be9e/claude_code_quick_prompt.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": null,
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/johnlindquist/kit",
+      "repo_name": "johnlindquist/kit",
+      "file_path": "API.md",
+      "file_url": "https://github.com/johnlindquist/kit/blob/e82e7846392ba7ec8dac252a12af317d14486579/API.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Script Kit. Automate Anything.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/friuns2/BlackFriday-GPTs-Prompts",
+      "repo_name": "friuns2/BlackFriday-GPTs-Prompts",
+      "file_path": "Game.md",
+      "file_url": "https://github.com/friuns2/BlackFriday-GPTs-Prompts/blob/09c530e31212aaca68ab72e2b7fdfbb3faa57a62/Game.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "List of free GPTs that doesn't require plus subscription ",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/superagent-ai/vibekit",
+      "repo_name": "superagent-ai/vibekit",
+      "file_path": "LLM.md",
+      "file_url": "https://github.com/superagent-ai/vibekit/blob/c670afd2e332037cd591209b7df1ff48ab7162ee/LLM.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Run Claude Code, Gemini, Codex \u2014 or any coding agent \u2014 in a clean, isolated sandbox with sensitive data redaction and observability baked in.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/catlog22/Claude-Code-Workflow",
+      "repo_name": "catlog22/Claude-Code-Workflow",
+      "file_path": "FAQ.md",
+      "file_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/a512564b5a406e514595271d1abd5223edf4063c/FAQ.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": " JSON-driven multi-agent development framework with   intelligent CLI orchestration (Gemini/Qwen/Codex),   context-first architecture, and automated workflow   execution",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/Abelhubprog/HandyAgents",
+      "repo_name": "Abelhubprog/HandyAgents",
+      "file_path": "prompt.md",
+      "file_url": "https://github.com/Abelhubprog/HandyAgents/blob/d7f250eb3ba9bf35acf41c7f6c385f5d165d0b94/prompt.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": null,
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/VikashLoomba/copilot-mcp",
+      "repo_name": "VikashLoomba/copilot-mcp",
+      "file_path": "mcp.md",
+      "file_url": "https://github.com/VikashLoomba/copilot-mcp/blob/8b0ca72b40fc0c4b7bf2566cd8ed4cc5dec47637/mcp.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A powerful VSCode extension that lets you find and install Agent Skills and MCP Apps to use with GitHub Copilot, Claude Code, and Codex CLI.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/microsoft/AL",
+      "repo_name": "microsoft/AL",
+      "file_path": "News.md",
+      "file_url": "https://github.com/microsoft/AL/blob/4c8363751b16e0904017754a0f0a508c06a3c73d/News.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Home of the Dynamics 365 Business Central AL Language extension for Visual Studio Code. Used to track issues regarding the latest version of the AL compiler and developer tools available in the Visual Studio Code Marketplace or as part of the AL Developer Preview builds for Dynamics 365 Business Central.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/dlorenc/multiclaude",
+      "repo_name": "dlorenc/multiclaude",
+      "file_path": "SPEC.md",
+      "file_url": "https://github.com/dlorenc/multiclaude/blob/dfad1a58343bceaf20017fe93cfad55af54550d1/SPEC.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": null,
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/alexei-led/aws-mcp-server",
+      "repo_name": "alexei-led/aws-mcp-server",
+      "file_path": "spec.md",
+      "file_url": "https://github.com/alexei-led/aws-mcp-server/blob/3f4519b309062e56a7026867e95abc5192c3ef61/spec.md",
+      "discovered_at": "2026-02-13 04:54:37 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    }
+  ],
+  "integrated": [],
+  "rejected": []
+}
