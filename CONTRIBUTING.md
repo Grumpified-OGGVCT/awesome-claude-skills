@@ -1,8 +1,8 @@
-# Contributing to Awesome Claude Skills
+# Contributing to Awesome AI Skills
 
 > **📋 Repository Attribution**: This is an enhanced fork of [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills). See [ATTRIBUTIONS.md](ATTRIBUTIONS.md) for complete details on where to contribute different types of content.
 
-Thank you for your interest in contributing to the premier collection of Claude Skills! This guide will help you add new skills that benefit the entire Claude community.
+Thank you for your interest in contributing to the premier collection of universal AI skills! This guide will help you add new skills that work across any LLM, any IDE, and benefit the entire AI community.
 
 ## 🎯 Where to Contribute What
 
@@ -13,13 +13,14 @@ Contribute here for:
 
 **Repository**: https://github.com/ComposioHQ/awesome-claude-skills
 
-### This Fork (GrumpiFied Enhancements)
+### This Fork (GrumpiFied Enhancements) ⭐ **RECOMMENDED**
 Contribute here for:
-- **Universal format conversions** - New skills in provider-agnostic format
+- **Universal format skills** - Skills that work with ANY LLM (Claude, GPT-4, Gemini, Llama, etc.)
+- **IDE integration guides** - Setup docs for Cursor, Continue, Cline, Windsurf, etc.
 - **Custom non-automation skills** - Original skill creations
 - **Documentation improvements** - Enhanced guides and docs
 - **Automation tools** - Discovery, validation, conversion tools
-- **Multi-provider examples** - OpenRouter, Ollama integrations
+- **Multi-provider examples** - OpenRouter, Ollama, direct API integrations
 - **CI/CD improvements** - Workflow and automation enhancements
 
 **Repository**: https://github.com/Grumpified-OGGVCT/awesome-claude-skills
@@ -27,22 +28,26 @@ Contribute here for:
 ## 🎯 What We're Looking For
 
 We welcome contributions including:
-- **New skills** based on real-world use cases
-- **Improvements** to existing skills
+- **Universal format skills** - Works with any LLM provider ⭐ **PRIORITY**
+- **IDE integration docs** - VS Code, Cursor, Cline, etc. ⭐ **HIGH DEMAND**
+- **New skills** based on real-world use cases (universal format preferred)
+- **Improvements** to existing skills (especially universal conversions)
 - **Documentation** enhancements
 - **Bug reports** and fixes
-- **Examples** and tutorials
+- **Examples** and tutorials for multi-provider usage
 
 ## 📋 Quick Contribution Checklist
 
 Before submitting, ensure your contribution:
 
+- [ ] **Works universally** - Tested with multiple LLMs/providers (Claude, GPT-4, etc.)
 - [ ] Solves a **real problem** (not hypothetical)
 - [ ] Is **not a duplicate** of existing skills
 - [ ] Includes **clear documentation**
 - [ ] Has been **tested** across relevant platforms
-- [ ] Follows the **skill structure** template
+- [ ] Follows the **universal format** template (preferred)
 - [ ] Includes proper **attribution** (if based on someone else's workflow)
+- [ ] **IDE-friendly** - Can be used in coding environments
 
 ## Before You Start
 
@@ -67,14 +72,14 @@ All skills must be based on **real usage**, not theoretical applications. Ask yo
 - Would others benefit from this?
 
 **Good examples:**
-- ✅ "I brainstorm domain names weekly for clients"
-- ✅ "Our team analyzes meeting transcripts every sprint"
-- ✅ "I organize invoice PDFs for tax season"
+- ✅ "I brainstorm domain names weekly for clients" (works with any AI)
+- ✅ "Our team analyzes meeting transcripts every sprint" (model-agnostic)
+- ✅ "I organize invoice PDFs for tax season" (universal workflow)
 
 **Poor examples:**
-- ❌ "Someone might want to..."
-- ❌ "Theoretically, Claude could..."
-- ❌ "I thought it would be cool if..."
+- ❌ "Someone might want to..." (hypothetical)
+- ❌ "Theoretically, an AI could..." (not tested)
+- ❌ "I thought it would be cool if..." (no real use case)
 
 ## Skill Requirements
 
@@ -87,56 +92,123 @@ All skills must meet these requirements:
    - Solves a recurring need
    - Documented use case or attribution
 
-2. **Well-Documented** 📚
+2. **Universal Compatibility** 🌍 ⭐ **NEW PRIORITY**
+   - Works with multiple LLM providers (test with at least 2: Claude, GPT-4, Gemini, or Llama)
+   - No provider-specific features (unless clearly marked as optional)
+   - Follows universal format guidelines
+   - Can be used in IDEs and coding assistants
+
+3. **Well-Documented** 📚
    - Clear YAML frontmatter (name, description)
    - Step-by-step instructions
    - Real-world examples
    - When to use this skill
+   - **Provider compatibility** notes
 
-3. **Accessible** 🌐
+4. **Accessible** 🌐
    - Written for both technical and non-technical users
    - Clear language, no unexplained jargon
    - Includes context and rationale
+   - No vendor-specific terminology
 
-4. **Includes Examples** 💡
+5. **Includes Examples** 💡
    - Show practical, real-world usage
    - Include expected input and output
    - Cover common edge cases
+   - **Show multi-provider examples** when possible
 
-5. **Tested** ✅
-   - Works across platforms (Claude.ai, Claude Code, or API)
+6. **Tested** ✅
+   - Works across multiple LLM providers
+   - Tested in at least one IDE or interface
    - Instructions are accurate and complete
    - No broken references or dependencies
 
-6. **Safe** 🛡️
+7. **Safe** 🛡️
    - Confirms before destructive operations
    - Includes error handling guidance
    - Documents potential risks
 
-7. **Portable** 🚀
-   - Works across Claude platforms when applicable
+8. **Portable** 🚀
+   - Works across any LLM provider (Claude, GPT-4, Gemini, etc.)
+   - Works in web chat, API, and IDE environments
    - Minimal external dependencies
    - Clear setup instructions for any dependencies
 
 ### Optional Enhancements
 
-- **Universal format** conversion (we can help with this)
+- **Tier classification** (Tier 1 = any model, Tier 2 = tool-calling models)
 - **Helper scripts** for complex operations
 - **Reference materials** for domain knowledge
 - **Assets/templates** for consistent output
+- **IDE-specific integration notes**
 
 ## Skill Structure
 
-Create a new folder with your skill name (use lowercase and hyphens):
+### Universal Format (Recommended)
+
+Create your skill in universal format for maximum compatibility:
+
+```
+skill-name/
+├── system-prompt.md      # Universal instruction format
+├── README.md             # Usage guide
+└── examples/             # Optional: example usage
+    ├── claude.py
+    ├── gpt4.py
+    ├── ollama.py
+    └── ide-integration.md
+```
+
+### Legacy Format (Still Supported)
+
+Traditional format, works primarily with Claude:
 
 ```
 skill-name/
 └── SKILL.md
 ```
 
-## SKILL.md Template
+## Universal Format Template (Recommended)
 
-Use this template for your skill:
+Use this template for maximum compatibility:
+
+**system-prompt.md:**
+```markdown
+# [Skill Name]
+
+You are an expert assistant specialized in [domain]. Your role is to help users [main purpose].
+
+## Core Capabilities
+- [Capability 1]
+- [Capability 2]
+- [Capability 3]
+
+## Workflow
+When a user asks you to [trigger phrase]:
+
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+## Guidelines
+- [Guideline 1]
+- [Guideline 2]
+- Always [best practice]
+
+## Output Format
+[Description of expected output]
+
+## Examples
+**User:** [Example request]
+**Assistant:** [Example response]
+
+---
+*This skill works with any LLM: Claude, GPT-4, Gemini, Llama, and more.*
+```
+
+## Traditional SKILL.md Template
+
+For Claude-specific skills or backward compatibility:
 
 ```markdown
 ---
@@ -263,6 +335,22 @@ Choose clear, descriptive names that indicate what the skill does:
    ```
 
 3. **Add your skill folder**
+   
+   **Recommended: Universal format**
+   ```
+   awesome-claude-skills/
+   └── universal/
+       └── tier-1-instruction-only/
+           └── your-skill-name/
+               ├── system-prompt.md    # Required: Universal instructions
+               ├── README.md           # Required: Usage guide
+               └── examples/           # Optional: Multi-provider examples
+                   ├── claude.py
+                   ├── gpt4.py
+                   └── ollama.py
+   ```
+   
+   **Alternative: Traditional format**
    ```
    awesome-claude-skills/
    └── your-skill-name/
@@ -276,6 +364,7 @@ Choose clear, descriptive names that indicate what the skill does:
    - Find the appropriate category
    - Add your skill in alphabetical order
    - Follow the existing format exactly
+   - **Note compatibility** if it's universal format
 
    ```markdown
    - [Your Skill Name](./your-skill-name/) - One-sentence description of what it does and when to use it.
@@ -312,12 +401,13 @@ Add [Skill Name] skill
 - **Use case**: Who uses this workflow and when?
 - **Attribution**: If based on someone's workflow, give credit
 - **Example**: Show how it's used in practice
-- **Testing**: Confirm which platforms you tested on
+- **Testing**: Confirm which platforms/LLMs you tested on
+- **Compatibility**: Note if universal format or provider-specific
 
 **Example PR Description:**
 ```markdown
 ## Summary
-Adds a skill for automatically organizing invoice files for tax preparation.
+Adds a universal skill for automatically organizing invoice files for tax preparation.
 
 ## Problem
 Freelancers and small business owners spend hours manually organizing 
@@ -335,9 +425,16 @@ The skill:
 Inspired by my own workflow, refined over 3 tax seasons.
 
 ## Testing
-- ✅ Tested on Claude.ai
-- ✅ Tested on Claude Code
+- ✅ Tested with Claude 3.5 Sonnet
+- ✅ Tested with GPT-4o
+- ✅ Tested with Llama 3.2 (Ollama)
+- ✅ Works in VS Code with Continue extension
 - ✅ Works with 50+ real invoices
+
+## Format
+- ✅ Universal format (Tier 1)
+- ✅ Works with any LLM
+- ✅ No provider-specific features
 
 ## Example Usage
 Input: "Organize my Downloads/invoices folder"

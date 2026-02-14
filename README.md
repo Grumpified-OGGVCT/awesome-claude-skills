@@ -1,4 +1,5 @@
-<h1 align="center">Awesome Claude Skills</h1>
+<h1 align="center">Awesome AI Skills</h1>
+<p align="center"><em>Universal AI Workflows for Any LLM, Any IDE, Any Agent</em></p>
 
 <p align="center">
 <a href="https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills">
@@ -33,10 +34,16 @@
   </p>
 </div>
 
-<p align="center"><strong>The most comprehensive collection of Claude Skills - reusable AI workflows that supercharge your productivity.</strong></p>
+<p align="center"><strong>The most comprehensive collection of universal AI skills - reusable workflows for Claude, GPT-4, Llama, Gemini, and any LLM.</strong></p>
 
 <p align="center">
-  <em>Stop repeating instructions. Start using skills.</em>
+  <em>Write once, use everywhere. Works with any AI agent, any IDE, any provider.</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Works%20With-Claude%20|%20GPT--4%20|%20Gemini%20|%20Llama-blue?style=flat-square" alt="Multi-Model Support" />
+  <img src="https://img.shields.io/badge/IDEs-VS%20Code%20|%20Cursor%20|%20Cline%20|%20Continue-green?style=flat-square" alt="Multi-IDE Support" />
+  <img src="https://img.shields.io/badge/Format-Universal%20|%20Provider%20Agnostic-orange?style=flat-square" alt="Universal Format" />
 </p>
 
 ---
@@ -60,17 +67,39 @@ This repository is an **enhanced fork** that combines:
 
 ## 🎯 What Is This Repository?
 
-**Awesome Claude Skills** is a curated collection of **939+ ready-to-use AI workflows** (called "skills") that teach Claude AI how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform Claude from a general assistant into a domain specialist.
+**Awesome AI Skills** is a curated collection of **939+ ready-to-use AI workflows** (called "skills") that teach any AI model how to perform specialized tasks consistently and professionally. Think of skills as expert training modules that transform any general-purpose LLM—Claude, GPT-4, Gemini, Llama, or others—into a domain specialist.
+
+### 🌍 Truly Universal
+
+Unlike other skill collections tied to specific platforms, these skills work **everywhere**:
+
+- **Any LLM Provider**: Claude (Anthropic), GPT-4 (OpenAI), Gemini (Google), Llama (Meta), Mistral, Qwen, and more
+- **Any Integration**: OpenRouter, Ollama, direct APIs, or custom deployments  
+- **Any IDE**: VS Code, Cursor, Cline, Continue, Windsurf, or any AI coding assistant
+- **Any Interface**: Web chat, API, CLI tools, or embedded applications
+
+The same skill file works across all platforms—no modifications needed.
 
 ### What You'll Find Here
 
-- **🎓 Pre-built Skills**: 107+ production-ready skills covering development, business, creative work, automation, and more
-- **🌍 Universal Format**: Works with Claude, GPT-4, Llama, Gemini, and any OpenAI-compatible LLM
+- **🎓 Pre-built Skills**: 939+ automation skills + 23 universal format skills covering development, business, creative work, and more
+- **🌍 Universal Format**: 27 skills work with ANY LLM (Claude, GPT-4, Llama, Gemini, etc.)
 - **📚 Learning Resources**: Guides for creating your own custom skills
 - **🛠️ Tools & Scripts**: Automation for converting, validating, and testing skills
 - **💡 Real-World Examples**: Proven workflows from actual users and companies
 
-**✨ NEW: Universal Format** - All skills now available in OpenAI-compatible format for use with OpenRouter, Ollama, and other LLM providers! See [Universal Skills](#universal-llm-skills-format) below.
+**✨ NEW: Universal Format** - Select skills available in OpenAI-compatible format for use with OpenRouter, Ollama, and other LLM providers! See [Universal Skills](#universal-llm-skills-format) below.
+
+### 📊 Skills Breakdown
+
+| Format | Count | Compatibility | Status |
+|--------|-------|---------------|--------|
+| **Universal Tier 1** | 16 skills | ✅ Any LLM (Claude, GPT-4, Gemini, Llama, etc.) | 🎯 Instruction-based |
+| **Universal Tier 2** | 7 skills | ✅ Tool-calling LLMs (Claude 3.5, GPT-4o, Gemini Pro) | 🔧 Enhanced with tools |
+| **Universal Tier 3** | 4 skills | ⚠️ Claude-only (reference) | 📋 Platform-specific |
+| **Automation Skills** | 939 skills | ✅ Claude + Composio Rube MCP | 🤖 Full automation |
+
+**Total Skills**: 962+ | **Universal Coverage**: 27 skills work everywhere | **Growing**: More conversions ongoing
 
 > If you want your skills to take actions across 500+ apps, wire them up with [Composio](https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills)
 
@@ -80,12 +109,13 @@ This repository is an **enhanced fork** that combines:
 
 This repository is perfect for:
 
-- **Developers** building applications with Claude API, Claude Code, or other LLMs
+- **Developers** building AI-powered applications with any LLM (Claude, GPT-4, Gemini, etc.)
+- **IDE Users** working with VS Code, Cursor, Cline, Continue, or other AI coding assistants
 - **Product Teams** automating workflows like changelogs, documentation, or competitive research
-- **Content Creators** generating consistent, high-quality content with AI assistance
+- **Content Creators** generating consistent, high-quality content with any AI model
 - **Business Users** leveraging AI for lead research, domain brainstorming, or meeting analysis
-- **AI Enthusiasts** learning how to build effective AI workflows and prompts
-- **Anyone** who uses Claude regularly and wants to save time with reusable workflows
+- **AI Enthusiasts** learning how to build effective, portable AI workflows
+- **Anyone** who wants reusable AI skills that work across any platform or provider
 
 ---
 
@@ -142,7 +172,48 @@ python tools/discover.py --category "Business & Marketing"
 
 ---
 
-### Option 1: Use Skills with Claude.ai (Easiest)
+### Usage Options: Choose Your Setup
+
+#### ⭐ Recommended: Universal Format (Works Everywhere)
+
+Use skills with **any LLM provider** and **any IDE or interface**:
+
+```python
+from openai import OpenAI
+
+# Works with OpenRouter, Ollama, direct APIs, or any OpenAI-compatible client
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",  # or http://localhost:11434/v1 for Ollama
+    api_key="YOUR_API_KEY"
+)
+
+# Load any skill from universal/ directory
+with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
+    skill = f.read()
+
+# Use it with ANY model - Claude, GPT-4, Gemini, Llama, etc.!
+response = client.chat.completions.create(
+    model="anthropic/claude-3.5-sonnet",  # or "gpt-4o", "google/gemini-pro", "meta-llama/llama-3.2-90b", etc.
+    messages=[
+        {"role": "system", "content": skill},
+        {"role": "user", "content": "Suggest domain names for my AI startup"}
+    ]
+)
+```
+
+**Supports**:
+- 🤖 **Models**: Claude, GPT-4, Gemini, Llama, Mistral, Qwen, DeepSeek, and 100+ more
+- 🛠️ **Platforms**: OpenRouter, Ollama, OpenAI, Anthropic, Google AI, or self-hosted
+- 💻 **IDEs**: Use with Continue, Cline, Cursor, Windsurf, or any AI coding assistant
+- 🌐 **Interfaces**: API, CLI, web chat, embedded apps—anywhere
+
+👉 **[Universal Skills Setup Guide](#universal-llm-skills-format)**
+
+---
+
+#### Option 1: Claude.ai (Web Interface)
+
+For quick testing with Claude in your browser:
 
 1. **Find a skill** using the discovery tool OR browse the [Skills](#skills) section below
 2. Pick a skill that matches your needs (e.g., [Domain Name Brainstormer](./domain-name-brainstormer/))
@@ -152,7 +223,34 @@ python tools/discover.py --category "Business & Marketing"
 
 **Example**: "Help me brainstorm domain names for my startup" → Claude uses the Domain Name Brainstormer skill
 
-### Option 2: Use Skills with Claude Code
+---
+
+#### Option 2: IDE Integration (VS Code, Cursor, etc.)
+
+Use skills directly in your coding environment:
+
+```bash
+# For Cursor, Cline, Continue, or other AI assistants
+# Copy skill to your IDE's custom instructions directory
+
+# Example with Cursor:
+mkdir -p ~/.cursor/prompts/
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md ~/.cursor/prompts/
+
+# Example with Continue:
+mkdir -p ~/.continue/prompts/
+cp universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md ~/.continue/prompts/
+```
+
+**Works with**: VS Code (Continue), Cursor, Cline, Windsurf, and any IDE with AI assistant support
+
+👉 **See [IDE Setup Guides](docs/)** for your specific editor
+
+---
+
+#### Option 3: Claude Code (Terminal)
+
+If you use Claude Code specifically:
 
 ```bash
 # Find a skill using discovery tool first!
@@ -166,35 +264,6 @@ cp -r domain-name-brainstormer ~/.config/claude-code/skills/
 claude
 ```
 
-### Option 3: Use Skills with Any LLM (Universal Format)
-
-**Note**: Skills must be converted to universal format first. See [Universal Skills Format](#universal-llm-skills-format) for details.
-
-```python
-from openai import OpenAI
-
-# Works with OpenRouter, Ollama, or any OpenAI-compatible API
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",  # or http://localhost:11434/v1 for Ollama
-    api_key="YOUR_API_KEY"
-)
-
-# Load any skill (example assumes skills are already converted)
-with open("universal/tier-1-instruction-only/domain-name-brainstormer/system-prompt.md") as f:
-    skill = f.read()
-
-# Use it with any model!
-response = client.chat.completions.create(
-    model="anthropic/claude-3.5-sonnet",  # or "gpt-4o", "llama3.2", etc.
-    messages=[
-        {"role": "system", "content": skill},
-        {"role": "user", "content": "Suggest domain names for my AI startup"}
-    ]
-)
-```
-
-See [Universal Skills Format](#universal-llm-skills-format) for more details.
-
 ---
 
 
@@ -204,7 +273,7 @@ See [Universal Skills Format](#universal-llm-skills-format) for more details.
 - [👥 Who Is This For?](#-who-is-this-for)
 - [🚀 Quick Start](#-quick-start)
   - [🔍 Skill Discovery Tool](#-new-cant-find-what-you-need-use-skill-discovery) ⭐ **NEW**
-- [💡 What Are Claude Skills?](#-what-are-claude-skills)
+- [💡 What Are AI Skills?](#-what-are-ai-skills)
 - [Universal LLM Skills Format](#universal-llm-skills-format) ✨
 - [Automated Upstream Sync](#automated-upstream-sync)
 - [Skills](#skills)
@@ -224,46 +293,51 @@ See [Universal Skills Format](#universal-llm-skills-format) for more details.
 - [📚 Frequently Asked Questions](#-frequently-asked-questions)
 - [License](#license)
 
-**👉 New to Claude Skills?** Start with our comprehensive [Getting Started Guide](GETTING_STARTED.md)!
+**👉 New to AI Skills?** Start with our comprehensive [Getting Started Guide](GETTING_STARTED.md)!
 
-## 💡 What Are Claude Skills?
+## 💡 What Are AI Skills?
 
-**Claude Skills** are structured instruction sets that teach AI models how to perform specialized tasks consistently and professionally. They're like training manuals for AI - reusable workflows that transform a general-purpose assistant into a domain expert.
+**AI Skills** (also called "LLM Skills" or "Agent Skills") are structured instruction sets that teach any AI model how to perform specialized tasks consistently and professionally. They're like training manuals for AI—reusable workflows that transform a general-purpose assistant into a domain expert.
+
+These skills work universally across **any LLM** (Claude, GPT-4, Gemini, Llama, etc.) and **any interface** (web chat, API, IDE, CLI). Write once, use everywhere.
 
 ### Real-World Examples
 
 **Without a skill:**
 > "Help me come up with a domain name"
 > 
-> Claude: "How about mycompany.com or projectname.io?"
+> AI: "How about mycompany.com or projectname.io?"
 
 **With the Domain Name Brainstormer skill:**
 > "Help me come up with a domain name"
 >
-> Claude: "I'll help you brainstorm domain names! First, tell me about your project:
+> AI: "I'll help you brainstorm domain names! First, tell me about your project:
 > - What does it do?
 > - Who is it for?
 > - Any preferred keywords or style?"
 >
 > [Then generates 15+ creative options, checks availability across multiple TLDs, explains naming rationale, and provides branding insights]
 
+This same skill works identically with Claude, GPT-4, Gemini, Llama, or any other LLM.
+
 ### Why Use Skills?
 
-- **🎯 Consistency**: Get the same high-quality output every time
-- **⚡ Speed**: No need to explain requirements repeatedly
-- **🧠 Expertise**: Leverage proven workflows from experts
-- **🔄 Reusability**: Write once, use across all Claude platforms
-- **📦 Portability**: Works with Claude.ai, Claude Code, and API
-- **🌐 Universal**: Now compatible with any OpenAI-compatible LLM
+- **🎯 Consistency**: Get the same high-quality output every time, regardless of which LLM you use
+- **⚡ Speed**: No need to explain requirements repeatedly—skill handles it
+- **🧠 Expertise**: Leverage proven workflows from domain experts
+- **🔄 Reusability**: Write once, use across all platforms and providers
+- **📦 Portability**: Works with web chat, APIs, IDEs, and CLI tools
+- **🌐 Universal**: Compatible with any LLM—Claude, GPT-4, Gemini, Llama, and more
+- **💻 IDE-Friendly**: Integrate with VS Code, Cursor, Cline, Continue, Windsurf, etc.
 
 ### How Skills Work
 
-1. **Instructions**: Detailed step-by-step workflows in SKILL.md
+1. **Instructions**: Detailed step-by-step workflows in SKILL.md (universal format)
 2. **Scripts** (optional): Helper tools for complex operations
 3. **References** (optional): Domain knowledge and documentation
 4. **Assets** (optional): Templates, examples, or resources
 
-Skills automatically activate when Claude detects a relevant task, ensuring expertise is applied at the right time.
+Skills automatically activate when the AI detects a relevant task, ensuring expertise is applied at the right time—regardless of which model or interface you're using.
 
 ---
 
