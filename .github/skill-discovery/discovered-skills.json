@@ -442,7 +442,7 @@
       "stars": 0,
       "description": "Open-source telemetry dashboard. Supports UART, BLE, MQTT, Modbus, CAN Bus and more. ",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 404 Client Error: Not Found for url: https://api.github.com/repos/Serial-Studio/Serial-Studio/contents/FAQ.md"
     },
     {
       "repo_url": "https://github.com/id-andyyy/LabAI",
@@ -542,6 +542,21 @@
       "skill_description": "Generate baseline CLAUDE.md and AGENTS.md instruction files for a project. Use when a repo is missing instruction files or needs standardized agent guidance.",
       "skill_category": "general",
       "raw_content": "---\nname: agent-instructions-generator\ndescription: Generate baseline CLAUDE.md and AGENTS.md instruction files for a project. Use when a repo is missing instruction files or needs standardized agent guidance.\n---\n\n# Agent Instructions Generator\n\n## What this skill does\n\n- Creates `CLAUDE.md` and `AGENTS.md` from templates.\n- Enforces a reference-first rule pointing agents to `resource/`.\n\n## How to run\n\nFrom repo root:\n\n```bash\n./scripts/generate-agent-instructions.sh\n```\n\nFor a different project and name:\n\n```bash\n./scripts/generate-agent-instructions.sh /path/to/project ProjectName\n```\n\nOverwrite existing files:\n\n```bash\n./scripts/generate-agent-instructions.sh /path/to/project ProjectName --force\n```\n"
+    },
+    {
+      "repo_url": "https://github.com/raffertyuy/github-copilot-prompts",
+      "repo_name": "raffertyuy/github-copilot-prompts",
+      "file_path": ".claude/skills/generate-copilot-instructions/SKILL.md",
+      "file_url": "https://github.com/raffertyuy/github-copilot-prompts/blob/3c991e1e8d9d2a9cd78b60019ba0a6f5983ea885/.claude/skills/generate-copilot-instructions/SKILL.md",
+      "discovered_at": "2026-03-21 04:27:42 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": null,
+      "validated": true,
+      "skill_name": "generate-copilot-instructions",
+      "skill_description": "Analyze a repository and generate cross-compatible instruction files",
+      "skill_category": "general",
+      "raw_content": "---\nname: generate-copilot-instructions\ndescription: Analyze a repository and generate cross-compatible instruction files\n---\n# Repository Analysis & Instruction System Generator\n\n## Overview\nYou are an expert AI system architect tasked with analyzing the current repository and creating a comprehensive instruction system with specialized persona prompt files that work across both Claude Code and GitHub Copilot.\n\n## Primary Objectives\n\n1. **Analyze Repository**: Examine the current codebase, architecture, dependencies, and project structure\n2. **Generate CLAUDE.md**: Create contextually appropriate instructions based on the code analysis (with both @import and markdown link syntax for cross-compatibility)\n3. **Generate .claude/rules/**: Create path-specific rules for different file types found in the repo\n4. **Generate .github/instructions/**: Create GitHub Copilot equivalents of the rules\n5. **Create Skills**: Build specialized skill files for different workflows\n\n## Required Analysis Steps\n\n### 1. Repository Deep Dive\nPerform a comprehensive analysis of:\n- **Language & Framework Detection**: Identify primary programming languages, frameworks, libraries, and dependencies\n- **Architecture Patterns**: Analyze code structure, design patterns, architectural decisions\n- **Project Type**: Determine if it's a web app, API, mobile app, desktop app, library, etc.\n- **Build System**: Identify build tools, package managers, CI/CD configurations\n- **Code Quality**: Assess testing frameworks, linting rules, code organization\n\n### 2. Generate Files\nCreate the following cross-compatible file structure:\n```\nCLAUDE.md                              # Main instructions (both tools)\n.claude/\n  prompt-snippets/                     # Shared prompt text\n  rules/                              # Claude Code path-specific rules\n  skills/                             # Shared skills\n  agents/                             # Claude Code agents\n.github/\n  copilot-instructions.md             # GitHub Copilot instructions\n  instructions/                       # GitHub Copilot path-specific rules\n```\n\n## Execution\n1. Analyze the repository thoroughly\n2. Generate all files following the cross-compatibility patterns\n3. Ensure prompt snippets are the single source of truth\n4. Test that references between files are correct\n"
     }
   ],
   "integrated": [],
