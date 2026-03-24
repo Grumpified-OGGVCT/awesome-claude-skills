@@ -557,6 +557,42 @@
       "skill_description": "Analyze a repository and generate cross-compatible instruction files",
       "skill_category": "general",
       "raw_content": "---\nname: generate-copilot-instructions\ndescription: Analyze a repository and generate cross-compatible instruction files\n---\n# Repository Analysis & Instruction System Generator\n\n## Overview\nYou are an expert AI system architect tasked with analyzing the current repository and creating a comprehensive instruction system with specialized persona prompt files that work across both Claude Code and GitHub Copilot.\n\n## Primary Objectives\n\n1. **Analyze Repository**: Examine the current codebase, architecture, dependencies, and project structure\n2. **Generate CLAUDE.md**: Create contextually appropriate instructions based on the code analysis (with both @import and markdown link syntax for cross-compatibility)\n3. **Generate .claude/rules/**: Create path-specific rules for different file types found in the repo\n4. **Generate .github/instructions/**: Create GitHub Copilot equivalents of the rules\n5. **Create Skills**: Build specialized skill files for different workflows\n\n## Required Analysis Steps\n\n### 1. Repository Deep Dive\nPerform a comprehensive analysis of:\n- **Language & Framework Detection**: Identify primary programming languages, frameworks, libraries, and dependencies\n- **Architecture Patterns**: Analyze code structure, design patterns, architectural decisions\n- **Project Type**: Determine if it's a web app, API, mobile app, desktop app, library, etc.\n- **Build System**: Identify build tools, package managers, CI/CD configurations\n- **Code Quality**: Assess testing frameworks, linting rules, code organization\n\n### 2. Generate Files\nCreate the following cross-compatible file structure:\n```\nCLAUDE.md                              # Main instructions (both tools)\n.claude/\n  prompt-snippets/                     # Shared prompt text\n  rules/                              # Claude Code path-specific rules\n  skills/                             # Shared skills\n  agents/                             # Claude Code agents\n.github/\n  copilot-instructions.md             # GitHub Copilot instructions\n  instructions/                       # GitHub Copilot path-specific rules\n```\n\n## Execution\n1. Analyze the repository thoroughly\n2. Generate all files following the cross-compatibility patterns\n3. Ensure prompt snippets are the single source of truth\n4. Test that references between files are correct\n"
+    },
+    {
+      "repo_url": "https://github.com/NSEvteev/FullSpec",
+      "repo_name": "NSEvteev/FullSpec",
+      "file_path": ".claude/.instructions/skills/create-skill.md",
+      "file_url": "https://github.com/NSEvteev/FullSpec/blob/e96921c6a46a3eb9eae03098e575e876ffb1503c/.claude/.instructions/skills/create-skill.md",
+      "discovered_at": "2026-03-24 04:55:08 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": "A spec-driven framework that turns ideas into production code through formal analysis chains, automated testing, and structured delivery.",
+      "validated": false,
+      "validation_error": "Missing required fields"
+    },
+    {
+      "repo_url": "https://github.com/NSEvteev/FullSpec",
+      "repo_name": "NSEvteev/FullSpec",
+      "file_path": ".claude/.instructions/skills/modify-skill.md",
+      "file_url": "https://github.com/NSEvteev/FullSpec/blob/e96921c6a46a3eb9eae03098e575e876ffb1503c/.claude/.instructions/skills/modify-skill.md",
+      "discovered_at": "2026-03-24 04:55:08 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": "A spec-driven framework that turns ideas into production code through formal analysis chains, automated testing, and structured delivery.",
+      "validated": false,
+      "validation_error": "Missing required fields"
+    },
+    {
+      "repo_url": "https://github.com/NSEvteev/FullSpec",
+      "repo_name": "NSEvteev/FullSpec",
+      "file_path": ".claude/.instructions/skills/standard-skill.md",
+      "file_url": "https://github.com/NSEvteev/FullSpec/blob/e96921c6a46a3eb9eae03098e575e876ffb1503c/.claude/.instructions/skills/standard-skill.md",
+      "discovered_at": "2026-03-24 04:55:08 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": "A spec-driven framework that turns ideas into production code through formal analysis chains, automated testing, and structured delivery.",
+      "validated": false,
+      "validation_error": "Missing required fields"
     }
   ],
   "integrated": [],
