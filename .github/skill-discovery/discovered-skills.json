@@ -593,6 +593,66 @@
       "description": "A spec-driven framework that turns ideas into production code through formal analysis chains, automated testing, and structured delivery.",
       "validated": false,
       "validation_error": "Missing required fields"
+    },
+    {
+      "repo_url": "https://github.com/HariSekhon/Knowledge-Base",
+      "repo_name": "HariSekhon/Knowledge-Base",
+      "file_path": "ai.md",
+      "file_url": "https://github.com/HariSekhon/Knowledge-Base/blob/15bbc2ce968e7963a6bc022ef008ceef12ed5e27/ai.md",
+      "discovered_at": "2026-03-27 05:08:35 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Large Tech Knowledge Base from 20 years in DevOps, Linux, Cloud, Big Data, AWS, GCP and international Consulting including extensive Travel Tips around the world",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/Gentleman-Programming/gentle-ai",
+      "repo_name": "Gentleman-Programming/gentle-ai",
+      "file_path": "PRD.md",
+      "file_url": "https://github.com/Gentleman-Programming/gentle-ai/blob/019e213fde6398ed68d19eefbfd6a3ac4569cd7d/PRD.md",
+      "discovered_at": "2026-03-27 05:08:35 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": null,
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/sgharlow/claude-code-recipes",
+      "repo_name": "sgharlow/claude-code-recipes",
+      "file_path": "FAQ.md",
+      "file_url": "https://github.com/sgharlow/claude-code-recipes/blob/a9de46f51bcf17cda5489166949b8a7859ffe94e/FAQ.md",
+      "discovered_at": "2026-03-27 05:08:35 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "100 ready-to-use Claude Code recipes for knowledge workers. Transform meetings into action items, draft executive    communications, analyze data, write reports, and automate documentation. Step-by-step prompts with examples for managers,    analysts, HR, sales, and operations. From zero to productive in minutes. Built for busy professionals.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/navamai/navamai",
+      "repo_name": "navamai/navamai",
+      "file_path": "docs.md",
+      "file_url": "https://github.com/navamai/navamai/blob/8b43206f8fd657d3e725fb4198c354217007b003/docs.md",
+      "discovered_at": "2026-03-27 05:08:35 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Use NavamAI to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. Power of 15 LLMs and 7 providers at your finger tips. Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/ktchuang/TAICA_AIASE2026",
+      "repo_name": "ktchuang/TAICA_AIASE2026",
+      "file_path": "W5.md",
+      "file_url": "https://github.com/ktchuang/TAICA_AIASE2026/blob/4ea3a5d1f77584a9afd96d8e3dbe05d7d40de4c8/W5.md",
+      "discovered_at": "2026-03-27 05:08:35 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "TAICA AI/ASE 2026 Course",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
