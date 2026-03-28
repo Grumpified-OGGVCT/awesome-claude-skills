@@ -653,6 +653,18 @@
       "description": "TAICA AI/ASE 2026 Course",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/tankvn/awesome-ai-tools",
+      "repo_name": "tankvn/awesome-ai-tools",
+      "file_path": "Code.md",
+      "file_url": "https://github.com/tankvn/awesome-ai-tools/blob/26f51cf5acc82f406c9013ae3a0b3ed421af4b0a/Code.md",
+      "discovered_at": "2026-03-28 04:54:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A curated list of 7766 awesome AI tools",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
