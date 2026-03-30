@@ -665,6 +665,18 @@
       "description": "A curated list of 7766 awesome AI tools",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/spectral-mcp/spectral",
+      "repo_name": "spectral-mcp/spectral",
+      "file_path": "MCP.md",
+      "file_url": "https://github.com/spectral-mcp/spectral/blob/a650faf4946cbad71a67562287b0077205d79774/MCP.md",
+      "discovered_at": "2026-03-30 05:27:11 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Browse any app normally. Spectral captures the traffic, understands what each API call does, and generates MCP tools that AI agents can call directly.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
