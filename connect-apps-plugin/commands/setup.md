@@ -17,7 +17,7 @@ Just ask for the key directly. Don't ask if they have one first.
 
 ### Step 2: Validate & Get MCP URL
 
-Run this command (replace API_KEY_HERE with the actual key):
+Run this command with `python3` first (replace API_KEY_HERE with the actual key):
 
 ```bash
 python3 -c "
@@ -28,9 +28,11 @@ print(session.mcp.url)
 "
 ```
 
-> **Note**: If you need a specific Python version, replace `python3` with `python3.11` or your preferred interpreter path.
+If `python3` is not available, run the same command with `python` instead.
 
-If it fails with import error, first run: `pip3 install composio`
+If it fails with an import error, install Composio with the same interpreter you used above:
+- `python3 -m pip install composio`
+- or `python -m pip install composio`
 
 ### Step 3: Write Config
 

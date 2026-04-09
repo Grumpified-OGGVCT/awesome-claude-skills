@@ -11,14 +11,14 @@ Connect Claude to 1000+ apps. Actually send emails, create issues, post messages
 
 ### Step 1: Install the Plugin
 
-```
-/plugin install composio-toolrouter
+```bash
+claude --plugin-dir ./connect-apps-plugin
 ```
 
 ### Step 2: Run Setup
 
 ```
-/composio-toolrouter:setup
+/connect-apps:setup
 ```
 
 This will:
@@ -26,15 +26,17 @@ This will:
 - Configure Claude's connection to 1000+ apps
 - Take about 60 seconds
 
-### Step 3: Try It!
+### Step 3: Restart Claude
 
-After setup, restart Claude Code and try:
+After setup, exit and run `claude` again.
+
+### Step 4: Try It
 
 ```
 Send me a test email at YOUR_EMAIL@example.com
 ```
 
-If it works, you're connected!
+If it works, you're connected.
 
 ## What You Can Do
 
@@ -57,15 +59,15 @@ If it works, you're connected!
 ## How It Works
 
 1. You ask Claude to do something
-2. Composio Tool Router finds the right tool
+2. Composio routes the request to the right tool
 3. First time? You'll authorize via OAuth (one-time)
 4. Action executes and returns result
 
 ## Troubleshooting
 
-- **"Plugin not found"** → Make sure you ran `/plugin install composio-toolrouter`
-- **"Need to authorize"** → Click the OAuth link Claude provides, then say "done"
-- **Action failed** → Check you have permissions in the target app
+- **"Setup command not found"** -> Make sure you started Claude with `claude --plugin-dir ./connect-apps-plugin`
+- **"Need to authorize"** -> Click the OAuth link Claude provides, then say "done"
+- **Action failed** -> Check you have permissions in the target app
 
 ---
 
