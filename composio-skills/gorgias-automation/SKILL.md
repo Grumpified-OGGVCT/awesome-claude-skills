@@ -30,7 +30,7 @@ Retrieve tickets with filtering by status, channel, assignee, date range, and mo
 
 **Tool:** `GORGIAS_LIST_TICKETS`
 
-```
+```yaml
 List all open tickets from the email channel created in the last 7 days
 ```
 
@@ -48,7 +48,7 @@ Create new tickets or update existing ones with assignment, priority, and status
 
 **Tools:** `GORGIAS_CREATE_TICKET`, `GORGIAS_UPDATE_TICKET`, `GORGIAS_GET_TICKET`
 
-```
+```yaml
 Create a high-priority ticket for customer 12345 about a missing order with subject "Order #9876 not delivered"
 ```
 
@@ -62,7 +62,7 @@ Add tags to tickets for categorization, routing, and reporting.
 
 **Tools:** `GORGIAS_ADD_TICKET_TAGS`, `GORGIAS_LIST_TICKET_TAGS`
 
-```
+```yaml
 Add tags 101 and 202 to ticket 5678, then show me all tags on that ticket
 ```
 
@@ -75,7 +75,7 @@ Create new customers or merge duplicate customer records.
 
 **Tools:** `GORGIAS_CREATE_CUSTOMER`, `GORGIAS_MERGE_CUSTOMERS`, `GORGIAS_LIST_CUSTOMERS`
 
-```
+```yaml
 Create a new customer named "Jane Doe" with email jane@example.com and phone channel
 ```
 
@@ -89,7 +89,7 @@ List teams, retrieve account info, and inspect ticket custom fields.
 
 **Tools:** `GORGIAS_LIST_TEAMS`, `GORGIAS_GET_TEAM`, `GORGIAS_GET_ACCOUNT`, `GORGIAS_LIST_TICKET_FIELD_VALUES`
 
-```
+```yaml
 Show me all support teams in our Gorgias account
 ```
 
@@ -103,7 +103,7 @@ Monitor ticket activity and customer event history.
 
 **Tools:** `GORGIAS_LIST_EVENTS`
 
-```
+```yaml
 List recent events to see what activity has happened across our support queue
 ```
 

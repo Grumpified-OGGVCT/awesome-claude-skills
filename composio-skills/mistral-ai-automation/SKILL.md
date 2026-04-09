@@ -28,7 +28,7 @@ Automate your Mistral AI workflows -- upload files for fine-tuning, batch proces
 
 Use `MISTRAL_AI_UPLOAD_FILE` to upload files for fine-tuning, batch processing, or OCR.
 
-```
+```yaml
 Tool: MISTRAL_AI_UPLOAD_FILE
 Inputs:
   - file: object (required)
@@ -44,7 +44,7 @@ Inputs:
 
 Use `MISTRAL_AI_LIST_FILES` to browse uploaded files with pagination, and `MISTRAL_AI_RETRIEVE_FILE` to get metadata for a specific file.
 
-```
+```yaml
 Tool: MISTRAL_AI_LIST_FILES
 Inputs:
   - limit: integer (optional, min 1)
@@ -60,7 +60,7 @@ Inputs:
 
 Use `MISTRAL_AI_CREATE_LIBRARY` to group documents into libraries for use with RAG-enabled Mistral AI agents.
 
-```
+```yaml
 Tool: MISTRAL_AI_CREATE_LIBRARY
 Inputs:
   - name: string (required) -- e.g., "Project Documents"
@@ -71,7 +71,7 @@ Inputs:
 
 Use `MISTRAL_AI_UPLOAD_LIBRARY_DOCUMENT` to add documents to a library for RAG retrieval by Mistral AI agents.
 
-```
+```yaml
 Tool: MISTRAL_AI_UPLOAD_LIBRARY_DOCUMENT
   - Requires library_id and file details
   - Call RUBE_GET_TOOL_SCHEMAS for full input schema before use
@@ -81,7 +81,7 @@ Tool: MISTRAL_AI_UPLOAD_LIBRARY_DOCUMENT
 
 Use `MISTRAL_AI_LIST_LIBRARIES` to discover available document libraries, and `MISTRAL_AI_DOWNLOAD_FILE` to retrieve file content.
 
-```
+```yaml
 Tool: MISTRAL_AI_LIST_LIBRARIES
   - Lists all document libraries with metadata (id, name, document counts)
   - Call RUBE_GET_TOOL_SCHEMAS for full input schema
@@ -95,7 +95,7 @@ Tool: MISTRAL_AI_DOWNLOAD_FILE
 
 Use `MISTRAL_AI_GET_FINE_TUNING_JOBS` to list and filter fine-tuning jobs by model, status, and creation time.
 
-```
+```yaml
 Tool: MISTRAL_AI_GET_FINE_TUNING_JOBS
   - Supports filtering by model, status, creation time, and W&B integration
   - Call RUBE_GET_TOOL_SCHEMAS for full input schema

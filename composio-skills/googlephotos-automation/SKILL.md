@@ -28,7 +28,7 @@ Upload photos, manage albums, search media items, and batch-organize content in 
 
 ### 1. List Albums
 Use `GOOGLEPHOTOS_LIST_ALBUMS` to retrieve all albums visible in the user's Albums tab.
-```
+```yaml
 Tool: GOOGLEPHOTOS_LIST_ALBUMS
 Parameters:
   - pageSize: Number of albums per page
@@ -38,7 +38,7 @@ Parameters:
 
 ### 2. Create a New Album
 Use `GOOGLEPHOTOS_CREATE_ALBUM` to create a new album in Google Photos.
-```
+```yaml
 Tool: GOOGLEPHOTOS_CREATE_ALBUM
 Parameters:
   - title (required): Album title
@@ -46,7 +46,7 @@ Parameters:
 
 ### 3. Upload Media
 Use `GOOGLEPHOTOS_UPLOAD_MEDIA` to upload an image or video file to Google Photos.
-```
+```yaml
 Tool: GOOGLEPHOTOS_UPLOAD_MEDIA
 Parameters:
   - file_to_upload: Local file path to upload
@@ -57,7 +57,7 @@ Parameters:
 
 ### 4. Batch Upload and Create Media Items
 Use `GOOGLEPHOTOS_BATCH_CREATE_MEDIA_ITEMS` to upload multiple files and create media items in one operation.
-```
+```yaml
 Tool: GOOGLEPHOTOS_BATCH_CREATE_MEDIA_ITEMS
 Parameters:
   - files: Local file paths to upload
@@ -69,7 +69,7 @@ Parameters:
 
 ### 5. Search Media Items
 Use `GOOGLEPHOTOS_SEARCH_MEDIA_ITEMS` to search the user's photo library with filters.
-```
+```yaml
 Tool: GOOGLEPHOTOS_SEARCH_MEDIA_ITEMS
 Parameters:
   - albumId: Filter by album
@@ -81,7 +81,7 @@ Parameters:
 
 ### 6. Add Items to an Album
 Use `GOOGLEPHOTOS_BATCH_ADD_MEDIA_ITEMS` to add existing media items to an album.
-```
+```yaml
 Tool: GOOGLEPHOTOS_BATCH_ADD_MEDIA_ITEMS
 Parameters:
   - albumId (required): Target album ID

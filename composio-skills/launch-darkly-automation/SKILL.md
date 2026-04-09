@@ -28,7 +28,7 @@ Automate your LaunchDarkly feature flag workflows -- enumerate projects and envi
 
 Use `LAUNCH_DARKLY_LIST_PROJECTS` to discover all projects and their keys for subsequent operations.
 
-```
+```yaml
 Tool: LAUNCH_DARKLY_LIST_PROJECTS
 Inputs:
   - filter: string (e.g., "query:myproject" or "keys:proj1,proj2" or "tags:mytag")
@@ -42,7 +42,7 @@ Inputs:
 
 Use `LAUNCH_DARKLY_GET_ENVIRONMENTS` to list all environments within a project (production, staging, test, etc.).
 
-```
+```yaml
 Tool: LAUNCH_DARKLY_GET_ENVIRONMENTS
 Inputs:
   - project_key: string (required) -- e.g., "my-project", "default"
@@ -56,7 +56,7 @@ Inputs:
 
 Use `LAUNCH_DARKLY_CREATE_TRIGGER_WORKFLOW` to set up automated flag toggles triggered by external events (webhooks, Datadog alerts, etc.).
 
-```
+```yaml
 Tool: LAUNCH_DARKLY_CREATE_TRIGGER_WORKFLOW
 Inputs:
   - project_key: string (required)
@@ -75,7 +75,7 @@ The trigger generates a unique webhook URL that can be called to execute the con
 
 Use `LAUNCH_DARKLY_DELETE_TRIGGER_WORKFLOW` to permanently remove a trigger and its URL.
 
-```
+```yaml
 Tool: LAUNCH_DARKLY_DELETE_TRIGGER_WORKFLOW
 Inputs:
   - project_key: string (required)
@@ -90,7 +90,7 @@ Inputs:
 
 Use `LAUNCH_DARKLY_LIST_CODE_REFERENCE_REPOSITORIES` to track where feature flags are used in your codebase.
 
-```
+```yaml
 Tool: LAUNCH_DARKLY_LIST_CODE_REFERENCE_REPOSITORIES
 Inputs:
   - projKey: string (optional) -- filter by project key

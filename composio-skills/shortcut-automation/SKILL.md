@@ -30,7 +30,7 @@ Add new stories to your Shortcut workspace with full configuration.
 
 **Tool:** `SHORTCUT_CREATE_STORY`
 
-```
+```yaml
 Create a feature story called "Add dark mode support" in workflow state 500000001 with estimate 5 and label "frontend"
 ```
 
@@ -57,7 +57,7 @@ Create multiple stories in a single API call.
 
 **Tool:** `SHORTCUT_CREATE_MULTIPLE_STORIES`
 
-```
+```yaml
 Create 3 bug stories: "Login page 500 error", "Cart total rounding issue", and "Search results empty state broken"
 ```
 
@@ -71,7 +71,7 @@ Retrieve all stories within a specific project.
 
 **Tool:** `SHORTCUT_LIST_STORIES`
 
-```
+```yaml
 List all stories in project 42 with their descriptions
 ```
 
@@ -85,7 +85,7 @@ Create tasks (checklists) within stories for tracking sub-work.
 
 **Tool:** `SHORTCUT_CREATE_TASK`
 
-```
+```yaml
 Add a task "Write unit tests for dark mode toggle" to story 12345
 ```
 
@@ -102,7 +102,7 @@ Post comments on stories for discussion and documentation.
 
 **Tool:** `SHORTCUT_CREATE_STORY_COMMENT`
 
-```
+```yaml
 Add a comment to story 12345: "Reviewed the implementation -- looks good, but needs accessibility testing"
 ```
 
@@ -118,7 +118,7 @@ List workflows and projects to resolve IDs for story creation.
 
 **Tools:** `SHORTCUT_LIST_WORKFLOWS`, `SHORTCUT_LIST_PROJECTS`
 
-```
+```yaml
 Show me all workflows in our Shortcut workspace so I can find the right workflow state ID
 ```
 

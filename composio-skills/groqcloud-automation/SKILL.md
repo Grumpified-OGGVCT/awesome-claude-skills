@@ -29,7 +29,7 @@ List all models available on GroqCloud to find valid model IDs before running in
 
 **Tool:** `GROQCLOUD_LIST_MODELS`
 
-```
+```yaml
 No parameters required -- returns all available models with metadata.
 ```
 
@@ -84,7 +84,7 @@ Enumerate available text-to-speech voices for Groq PlayAI models to drive voice 
 
 **Tool:** `GROQCLOUD_LIST_VOICES`
 
-```
+```yaml
 Returns the set of supported TTS voices. Note: this is a static list maintained manually.
 ```
 

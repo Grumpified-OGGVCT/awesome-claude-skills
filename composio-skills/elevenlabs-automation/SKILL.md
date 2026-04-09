@@ -28,7 +28,7 @@ Automate your ElevenLabs text-to-speech workflows -- convert text to natural spe
 
 Use `ELEVENLABS_TEXT_TO_SPEECH` to convert text into a downloadable audio file.
 
-```
+```yaml
 Tool: ELEVENLABS_TEXT_TO_SPEECH
 Inputs:
   - voice_id: string (required) -- obtain from ELEVENLABS_GET_VOICES
@@ -51,7 +51,7 @@ Inputs:
 
 Use `ELEVENLABS_GET_VOICES` to list all voices with their attributes and settings.
 
-```
+```yaml
 Tool: ELEVENLABS_GET_VOICES
 Inputs: (none)
 ```
@@ -62,7 +62,7 @@ Returns an array at `data.voices[]` with `voice_id`, `name`, `labels` (gender, a
 
 Use `ELEVENLABS_GET_VOICE` to get detailed metadata for a candidate voice before synthesis.
 
-```
+```yaml
 Tool: ELEVENLABS_GET_VOICE
 Inputs:
   - voice_id: string (required) -- e.g., "21m00Tcm4TlvDq8ikWAM"
@@ -73,7 +73,7 @@ Inputs:
 
 Use `ELEVENLABS_GET_USER_SUBSCRIPTION_INFO` to verify plan limits and remaining credits before bulk generation.
 
-```
+```yaml
 Tool: ELEVENLABS_GET_USER_SUBSCRIPTION_INFO
 Inputs: (none)
 ```
@@ -82,7 +82,7 @@ Inputs: (none)
 
 Use `ELEVENLABS_GET_MODELS` to discover compatible models and filter by `can_do_text_to_speech: true`.
 
-```
+```yaml
 Tool: ELEVENLABS_GET_MODELS
 Inputs: (none)
 ```
@@ -91,7 +91,7 @@ Inputs: (none)
 
 Use `ELEVENLABS_TEXT_TO_SPEECH_STREAM` for low-latency streamed delivery, and `ELEVENLABS_GET_AUDIO_FROM_HISTORY_ITEM` to re-download previously generated audio.
 
-```
+```yaml
 Tool: ELEVENLABS_TEXT_TO_SPEECH_STREAM
   - Same core inputs as TEXT_TO_SPEECH but returns a stream for low-latency playback
 

@@ -42,7 +42,7 @@ Retrieve invoices with filtering by status, contact, date range, and pagination.
 - `tenant_id` -- Xero organization ID (uses first tenant if omitted)
 
 **Example:**
-```
+```yaml
 Tool: XERO_LIST_INVOICES
 Arguments:
   Statuses: "AUTHORISED,PAID"
@@ -68,7 +68,7 @@ Retrieve and search contacts for use in invoices and transactions.
 - `summaryOnly` -- Lightweight response when `true`
 
 **Example:**
-```
+```yaml
 Tool: XERO_GET_CONTACTS
 Arguments:
   searchTerm: "acme"
@@ -95,7 +95,7 @@ Link an invoice to a bank account by creating a payment record.
 - `CurrencyRate` -- Exchange rate for foreign currency payments
 
 **Example:**
-```
+```yaml
 Tool: XERO_CREATE_PAYMENT
 Arguments:
   InvoiceID: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
@@ -129,7 +129,7 @@ Record spend (payments out) or receive (money in) bank transactions.
 - `CurrencyCode` -- e.g., `"USD"`, `"EUR"`
 
 **Example:**
-```
+```yaml
 Tool: XERO_CREATE_BANK_TRANSACTION
 Arguments:
   Type: "SPEND"

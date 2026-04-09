@@ -30,7 +30,7 @@ Automate RingCentral operations through Composio's RingCentral toolkit via Rube 
 
 Always discover available tools before executing workflows:
 
-```
+```yaml
 RUBE_SEARCH_TOOLS: queries=[{"use_case": "calls, messages, meetings, and unified communications", "known_fields": ""}]
 ```
 
@@ -44,7 +44,7 @@ This returns:
 
 ### 1. Discover Available RingCentral Tools
 
-```
+```yaml
 RUBE_SEARCH_TOOLS:
   queries:
     - use_case: "list all available RingCentral tools and capabilities"
@@ -56,7 +56,7 @@ Review the returned tools, their descriptions, and input schemas before proceedi
 
 After discovering tools, execute them via:
 
-```
+```yaml
 RUBE_MULTI_EXECUTE_TOOL:
   tools:
     - tool_slug: "<discovered_tool_slug>"

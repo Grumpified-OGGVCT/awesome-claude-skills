@@ -28,7 +28,7 @@ Automate your Snowflake data warehouse workflows -- discover databases, browse s
 
 Use `SNOWFLAKE_SHOW_DATABASES` to discover available databases with optional filtering and Time Travel support.
 
-```
+```yaml
 Tool: SNOWFLAKE_SHOW_DATABASES
 Inputs:
   - like_pattern: string (SQL wildcard, e.g., "%test%") -- case-insensitive
@@ -45,7 +45,7 @@ Inputs:
 
 Use `SNOWFLAKE_SHOW_SCHEMAS` to list schemas within a database or across the account.
 
-```
+```yaml
 Tool: SNOWFLAKE_SHOW_SCHEMAS
 Inputs:
   - database: string (database context)
@@ -62,7 +62,7 @@ Inputs:
 
 Use `SNOWFLAKE_SHOW_TABLES` to discover tables with metadata including row counts, sizes, and clustering keys.
 
-```
+```yaml
 Tool: SNOWFLAKE_SHOW_TABLES
 Inputs:
   - database: string (database context)
@@ -80,7 +80,7 @@ Inputs:
 
 Use `SNOWFLAKE_EXECUTE_SQL` for SELECT queries, DDL (CREATE/ALTER/DROP), and DML (INSERT/UPDATE/DELETE) with parameterized bindings.
 
-```
+```yaml
 Tool: SNOWFLAKE_EXECUTE_SQL
 Inputs:
   - statement: string (required) -- SQL statement(s), semicolon-separated for multi-statement

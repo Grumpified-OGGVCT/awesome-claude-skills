@@ -30,7 +30,7 @@ Log time with project, task, and tag associations, or start/stop timers.
 
 **Tools:** `TOGGL_CREATE_TIME_ENTRY`, `TOGGL_PATCH_STOP_TIME_ENTRY`
 
-```
+```yaml
 Start a time entry in workspace 123456 for project 78910 tagged "meeting" and "design" with description "Design review session"
 ```
 
@@ -55,7 +55,7 @@ Create new projects and list existing ones with client details and pagination.
 
 **Tools:** `TOGGL_CREATE_PROJECT`, `TOGGL_GET_PROJECTS`, `TOGGL_GET_PROJECT_DETAILS`
 
-```
+```yaml
 Create a private billable project called "Q1 Marketing Campaign" in workspace 123456 for client 78910
 ```
 
@@ -76,7 +76,7 @@ Create and list clients within a workspace.
 
 **Tools:** `TOGGL_CREATE_CLIENT`, `TOGGL_GET_LIST_CLIENTS`
 
-```
+```yaml
 List all active clients in workspace 123456, then create a new client called "Acme Corp"
 ```
 
@@ -89,7 +89,7 @@ Retrieve tags for categorization and check workspace settings.
 
 **Tools:** `TOGGL_GET_TAGS`, `TOGGL_GET_WORKSPACE_PREFERENCES`
 
-```
+```yaml
 Show me all tags in workspace 123456 and the workspace preferences
 ```
 
@@ -102,7 +102,7 @@ List all workspaces the authenticated user belongs to.
 
 **Tool:** `TOGGL_GET_USER_WORKSPACES`
 
-```
+```yaml
 What Toggl workspaces do I have access to?
 ```
 
@@ -116,7 +116,7 @@ List projects visible to the authenticated user.
 
 **Tool:** `TOGGL_GET_USER_PROJECTS`
 
-```
+```yaml
 Show me all projects I can see across my workspaces
 ```
 

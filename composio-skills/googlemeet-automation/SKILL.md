@@ -30,7 +30,7 @@ Create Google Meet video conferences, schedule meetings with Meet links, and man
 
 ### 1. Create a Standalone Meet Space
 Use `GOOGLEMEET_CREATE_MEET` to create a new Google Meet meeting space with optional access configuration.
-```
+```yaml
 Tool: GOOGLEMEET_CREATE_MEET
 Description: Creates a new Google Meet space, optionally configuring
   its access type and entry points.
@@ -39,7 +39,7 @@ Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
 
 ### 2. Schedule a Meeting with Google Meet Link
 Use `GOOGLECALENDAR_CREATE_EVENT` to create a calendar event that automatically generates a Google Meet link (enabled by default).
-```
+```yaml
 Tool: GOOGLECALENDAR_CREATE_EVENT
 Parameters:
   - start_datetime (required): ISO 8601 format (e.g., "2025-01-16T13:00:00")
@@ -55,7 +55,7 @@ Parameters:
 
 ### 3. Find Available Time Slots
 Use `GOOGLECALENDAR_FIND_FREE_SLOTS` before scheduling to find when participants are available.
-```
+```yaml
 Tool: GOOGLECALENDAR_FIND_FREE_SLOTS
 Parameters:
   - items: List of calendar IDs to check (e.g., ["primary", "user@example.com"])
@@ -66,7 +66,7 @@ Parameters:
 
 ### 4. Update an Existing Meeting
 Use `GOOGLECALENDAR_PATCH_EVENT` to modify meeting details, reschedule, or update attendees.
-```
+```yaml
 Tool: GOOGLECALENDAR_PATCH_EVENT
 Parameters:
   - calendar_id (required): Calendar ID (use "primary")

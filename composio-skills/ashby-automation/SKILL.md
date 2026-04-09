@@ -30,7 +30,7 @@ Create, list, search, update, and retrieve detailed candidate information.
 
 **Tools:** `ASHBY_CREATE_CANDIDATE`, `ASHBY_LIST_CANDIDATES`, `ASHBY_SEARCH_CANDIDATES`, `ASHBY_GET_CANDIDATE_INFO`, `ASHBY_UPDATE_CANDIDATE`
 
-```
+```yaml
 Create a candidate named "Jane Smith" with email jane@example.com and LinkedIn profile https://linkedin.com/in/janesmith
 ```
 
@@ -53,7 +53,7 @@ Post new job openings and browse existing positions.
 
 **Tools:** `ASHBY_CREATE_JOB`, `ASHBY_LIST_JOBS`, `ASHBY_GET_JOB_INFO`
 
-```
+```yaml
 Create a new "Senior Software Engineer" job in team dept-123 at location loc-456 with brand brand-789
 ```
 
@@ -76,7 +76,7 @@ Create applications to connect candidates to jobs and track their progress.
 
 **Tools:** `ASHBY_CREATE_APPLICATION`, `ASHBY_LIST_APPLICATIONS`
 
-```
+```yaml
 Apply candidate cand-abc123 to job job-xyz789 with source src-referral
 ```
 
@@ -96,7 +96,7 @@ List scheduled interviews with timing, interviewer, and candidate details.
 
 **Tool:** `ASHBY_LIST_INTERVIEW_SCHEDULES`
 
-```
+```yaml
 Show me all upcoming interview schedules
 ```
 
@@ -110,7 +110,7 @@ View internal notes, observations, and recruiter comments on candidates.
 
 **Tool:** `ASHBY_LIST_CANDIDATE_NOTES`
 
-```
+```yaml
 Show me all notes for candidate cand-abc123
 ```
 
@@ -123,7 +123,7 @@ Combine listing tools to build hiring pipeline reports.
 
 **Tools:** `ASHBY_LIST_CANDIDATES`, `ASHBY_LIST_APPLICATIONS`, `ASHBY_LIST_JOBS`
 
-```
+```yaml
 List all applications to see the current state of our hiring pipeline
 ```
 

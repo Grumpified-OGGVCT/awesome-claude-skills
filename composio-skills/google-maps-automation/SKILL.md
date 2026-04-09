@@ -28,7 +28,7 @@ Geocode addresses, search places, get directions, compute distance matrices, and
 
 ### 1. Geocode an Address
 Use `GOOGLE_MAPS_GEOCODING_API` to convert a street address into geographic coordinates (latitude/longitude).
-```
+```yaml
 Tool: GOOGLE_MAPS_GEOCODING_API
 Parameters:
   - address: Street address or plus code to geocode
@@ -42,7 +42,7 @@ Parameters:
 
 ### 2. Search for Places
 Use `GOOGLE_MAPS_TEXT_SEARCH` to find places using a free-text query.
-```
+```yaml
 Tool: GOOGLE_MAPS_TEXT_SEARCH
 Parameters:
   - textQuery (required): Search text (e.g., "restaurants in London")
@@ -52,7 +52,7 @@ Parameters:
 
 ### 3. Get Directions Between Two Locations
 Use `GOOGLE_MAPS_GET_ROUTE` to calculate routes with distance and duration.
-```
+```yaml
 Tool: GOOGLE_MAPS_GET_ROUTE
 Parameters:
   - origin_address (required): Starting point (address or "lat,lng")
@@ -67,7 +67,7 @@ Parameters:
 
 ### 4. Compute Distance Matrix
 Use `GOOGLE_MAPS_COMPUTE_ROUTE_MATRIX` to calculate distances and durations between multiple origins and destinations.
-```
+```yaml
 Tool: GOOGLE_MAPS_COMPUTE_ROUTE_MATRIX
 Parameters:
   - origins (required): Array of origin locations (address strings or lat/lng objects)
@@ -80,7 +80,7 @@ Parameters:
 
 ### 5. Get Place Details
 Use `GOOGLE_MAPS_GET_PLACE_DETAILS` to retrieve comprehensive information about a specific place.
-```
+```yaml
 Tool: GOOGLE_MAPS_GET_PLACE_DETAILS
 Description: Retrieves comprehensive details for a place using its resource
   name (places/{place_id} format). Returns hours, contacts, reviews, etc.
@@ -89,7 +89,7 @@ Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
 
 ### 6. Search Nearby Places
 Use `GOOGLE_MAPS_NEARBY_SEARCH` to find places within a circular area around a point.
-```
+```yaml
 Tool: GOOGLE_MAPS_NEARBY_SEARCH
 Parameters:
   - latitude (required): Center latitude (-90 to 90)

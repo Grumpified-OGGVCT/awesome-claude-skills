@@ -30,7 +30,7 @@ Retrieve comprehensive profile information for the authenticated Spotify user.
 
 **Tool:** `SPOTIFY_GET_CURRENT_USER_S_PROFILE`
 
-```
+```yaml
 No parameters required.
 Returns: display name, email, country, subscription level (premium/free),
 explicit content settings, profile images, follower count, and Spotify URIs.

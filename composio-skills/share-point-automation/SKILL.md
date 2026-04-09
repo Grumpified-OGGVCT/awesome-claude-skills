@@ -37,7 +37,7 @@ Retrieve site details and enumerate subsites to discover the SharePoint topology
 - `site_id` (required) -- Composite format: `hostname,site-collection-guid,web-guid` (e.g., `"contoso.sharepoint.com,da60e844-...,712a596e-..."`)
 
 **Example:**
-```
+```yaml
 Tool: ONE_DRIVE_GET_SITE_DETAILS
 Arguments:
   site_id: "contoso.sharepoint.com,2C712604-1370-44E7-A1F5-426573FDA80A,2D2244C3-251A-49EA-93A8-39E1C3A060FE"
@@ -67,7 +67,7 @@ Create lists, enumerate existing lists, and retrieve list items.
 - `top` -- Limit results count
 
 **Example:**
-```
+```yaml
 Tool: SHARE_POINT_SHAREPOINT_CREATE_LIST
 Arguments:
   name: "Project Tasks"
@@ -98,7 +98,7 @@ Create folders, list files within folders, and navigate the document library.
 - `orderby` -- Sort expression, e.g., `"Name desc"`
 
 **Example:**
-```
+```yaml
 Tool: SHARE_POINT_LIST_FILES_IN_FOLDER
 Arguments:
   folder_name: "/Shared Documents/Reports"
@@ -122,7 +122,7 @@ Use Keyword Query Language (KQL) to search documents, list items, and other cont
 - `refinementfilters` -- Narrow results, e.g., `"FileType:equals(\"docx\")"`
 
 **Example:**
-```
+```yaml
 Tool: SHARE_POINT_SEARCH_QUERY
 Arguments:
   querytext: "IsDocument:1 FileType:pdf"

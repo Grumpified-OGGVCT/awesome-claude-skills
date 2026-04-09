@@ -28,7 +28,7 @@ Create, manage, organize, and bulk-operate on Google Tasks and task lists using 
 
 ### 1. List All Task Lists
 Use `GOOGLETASKS_LIST_TASK_LISTS` to fetch all available task lists for the authenticated user.
-```
+```yaml
 Tool: GOOGLETASKS_LIST_TASK_LISTS
 Parameters:
   - maxResults: Maximum task lists to return
@@ -37,7 +37,7 @@ Parameters:
 
 ### 2. Create a New Task
 Use `GOOGLETASKS_INSERT_TASK` to add a new task to a specific task list.
-```
+```yaml
 Tool: GOOGLETASKS_INSERT_TASK
 Parameters:
   - tasklist_id (required): ID of the target task list
@@ -51,7 +51,7 @@ Parameters:
 
 ### 3. List All Tasks Across Lists
 Use `GOOGLETASKS_LIST_ALL_TASKS` to fetch tasks across all task lists with optional filters.
-```
+```yaml
 Tool: GOOGLETASKS_LIST_ALL_TASKS
 Parameters:
   - max_tasks_total: Maximum total tasks to return
@@ -66,7 +66,7 @@ Parameters:
 
 ### 4. Update an Existing Task
 Use `GOOGLETASKS_UPDATE_TASK` to modify a task's title, notes, due date, or status.
-```
+```yaml
 Tool: GOOGLETASKS_UPDATE_TASK
 Parameters:
   - tasklist_id (required): Task list ID
@@ -79,7 +79,7 @@ Parameters:
 
 ### 5. Bulk Insert Tasks
 Use `GOOGLETASKS_BULK_INSERT_TASKS` to create multiple tasks at once in a single operation.
-```
+```yaml
 Tool: GOOGLETASKS_BULK_INSERT_TASKS
 Parameters:
   - tasklist_id (required): Target task list ID
@@ -89,7 +89,7 @@ Parameters:
 
 ### 6. Delete or Clear Tasks
 Use `GOOGLETASKS_DELETE_TASK` to remove a specific task, or `GOOGLETASKS_CLEAR_TASKS` to permanently remove all completed tasks from a list.
-```
+```yaml
 Tool: GOOGLETASKS_DELETE_TASK
 Parameters:
   - tasklist_id (required): Task list ID

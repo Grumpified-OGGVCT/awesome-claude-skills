@@ -30,7 +30,7 @@ Create, list, update, and retrieve time entries for accurate billing and reporti
 
 **Tools:** `HARVEST_CREATE_TIME_ENTRY`, `HARVEST_LIST_TIME_ENTRIES`, `HARVEST_GET_TIME_ENTRY`, `HARVEST_UPDATE_TIME_ENTRY`
 
-```
+```yaml
 Log 3.5 hours of development work on project 12345, task 67890 for today
 ```
 
@@ -54,7 +54,7 @@ Create new projects and list existing ones with client and billing configuration
 
 **Tools:** `HARVEST_CREATE_PROJECT`, `HARVEST_LIST_PROJECTS`, `HARVEST_GET_PROJECT`
 
-```
+```yaml
 Create a billable project called "Website Redesign" for client 456 with Tasks billing and project budget
 ```
 
@@ -70,7 +70,7 @@ Create and list clients that projects are organized under.
 
 **Tools:** `HARVEST_CREATE_CLIENT`, `HARVEST_LIST_CLIENTS`
 
-```
+```yaml
 List all active clients in our Harvest account
 ```
 
@@ -83,7 +83,7 @@ Create and list reusable task types for time tracking.
 
 **Tools:** `HARVEST_CREATE_TASK`, `HARVEST_LIST_TASKS`
 
-```
+```yaml
 Create a new billable task called "Code Review" with a default rate of $150/hr
 ```
 
@@ -97,7 +97,7 @@ Pull time entries with date ranges and filters for billing summaries and utiliza
 
 **Tools:** `HARVEST_LIST_TIME_ENTRIES`, `HARVEST_GET_TIME_ENTRY`
 
-```
+```yaml
 Show me all unbilled time entries for project 789 from January 2026
 ```
 
@@ -112,7 +112,7 @@ Modify existing time entries to fix hours, reassign projects, or update notes.
 
 **Tools:** `HARVEST_UPDATE_TIME_ENTRY`
 
-```
+```yaml
 Update time entry 123456 to change the hours to 4.0 and add the note "Completed API integration"
 ```
 

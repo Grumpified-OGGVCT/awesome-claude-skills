@@ -30,7 +30,7 @@ Log time with project, task, and tag associations, plus billable status.
 
 **Tool:** `CLOCKIFY_CREATE_TIME_ENTRY`
 
-```
+```yaml
 Log 2 hours of work on project 64a687e2 in workspace 64a687e3 starting at 9am UTC today with description "API development"
 ```
 
@@ -51,7 +51,7 @@ Retrieve historical time entries for reporting, auditing, and invoicing.
 
 **Tool:** `CLOCKIFY_GET_TIME_ENTRIES`
 
-```
+```yaml
 Get all time entries for user abc123 in workspace xyz789 from January 2026
 ```
 
@@ -73,7 +73,7 @@ Remove erroneous, duplicate, or cancelled time entries.
 
 **Tool:** `CLOCKIFY_DELETE_TIME_ENTRY`
 
-```
+```yaml
 Delete time entry 5b715448 from workspace 64a687e3
 ```
 
@@ -86,7 +86,7 @@ List all workspaces the authenticated user belongs to.
 
 **Tool:** `CLOCKIFY_GET_ALL_MY_WORKSPACES`
 
-```
+```yaml
 Show me all my Clockify workspaces
 ```
 
@@ -99,7 +99,7 @@ Retrieve current user details and list workspace members.
 
 **Tools:** `CLOCKIFY_GET_CURRENTLY_LOGGED_IN_USER_INFO`, `CLOCKIFY_FIND_ALL_USERS_ON_WORKSPACE`
 
-```
+```yaml
 Who am I logged in as? Then list all users in workspace 64a687e3
 ```
 
@@ -112,7 +112,7 @@ Start a timer by omitting `end` in create, or check for running entries.
 
 **Tools:** `CLOCKIFY_CREATE_TIME_ENTRY`, `CLOCKIFY_GET_TIME_ENTRIES`
 
-```
+```yaml
 Start a timer on project abc in workspace xyz with description "Working on bug fix"
 ```
 

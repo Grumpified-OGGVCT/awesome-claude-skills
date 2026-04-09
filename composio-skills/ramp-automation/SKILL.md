@@ -51,7 +51,7 @@ Retrieve all corporate card transactions with comprehensive filtering options.
 - `order_by_amount_desc` / `order_by_amount_asc` -- Sort by amount
 
 **Example:**
-```
+```yaml
 Tool: RAMP_GET_ALL_TRANSACTIONS
 Arguments:
   from_date: "2026-02-01T00:00:00Z"
@@ -73,7 +73,7 @@ Search transactions by merchant name, memo, or other transaction details.
 - All filter parameters from `RAMP_GET_ALL_TRANSACTIONS` are also available
 
 **Example:**
-```
+```yaml
 Tool: RAMP_SEARCH_TRANSACTIONS
 Arguments:
   query: "AWS"
@@ -93,7 +93,7 @@ Retrieve complete details of a specific transaction including merchant details, 
 - `transaction_id` (required) -- ID of the transaction
 
 **Example:**
-```
+```yaml
 Tool: RAMP_GET_TRANSACTION
 Arguments:
   transaction_id: "txn_abc123def456"
@@ -124,7 +124,7 @@ List and retrieve reimbursement records for approval workflows and expense analy
 - `start` -- Pagination cursor
 
 **Example:**
-```
+```yaml
 Tool: RAMP_LIST_REIMBURSEMENTS
 Arguments:
   from_date: "2026-02-01T00:00:00Z"
@@ -152,7 +152,7 @@ View organization users and personal transaction history.
 - `page_size` -- Results per page (2--100, default: 20)
 
 **Example:**
-```
+```yaml
 Tool: RAMP_LIST_USERS
 Arguments:
   role: "ADMIN"

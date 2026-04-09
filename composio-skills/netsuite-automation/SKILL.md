@@ -44,7 +44,7 @@ Create customer orders with line items including item references, quantities, an
 - `otherrefnum` -- External reference or PO number
 
 **Example:**
-```
+```yaml
 Tool: NETSUITE_CREATE_SALES_ORDER
 Arguments:
   entity: {"id": "1234"}
@@ -73,7 +73,7 @@ Execute ad-hoc SQL queries against NetSuite data with server-side paging.
 - `offset` -- Zero-based index of first row (must be a multiple of `limit`)
 
 **Examples:**
-```
+```yaml
 Tool: NETSUITE_RUN_SUITEQL_QUERY
 Arguments:
   q: "SELECT id, companyname, email FROM customer WHERE isinactive = 'F' ORDER BY companyname"
@@ -81,7 +81,7 @@ Arguments:
   offset: 0
 ```
 
-```
+```yaml
 Tool: NETSUITE_RUN_SUITEQL_QUERY
 Arguments:
   q: "SELECT id, entitystatus, total FROM transaction WHERE type = 'SalesOrd' AND trandate >= '2026-01-01'"
@@ -107,7 +107,7 @@ Create new customer records with subsidiary assignment and contact details.
 - `replace` -- Comma-separated sublist names to fully replace (e.g., `"contacts,addressbook"`)
 
 **Example:**
-```
+```yaml
 Tool: NETSUITE_CREATE_CUSTOMER
 Arguments:
   body: {
@@ -132,7 +132,7 @@ Create or update records idempotently using an external identifier. Essential fo
 - `body` (required) -- JSON object matching the record schema; include mandatory fields when creating
 
 **Example:**
-```
+```yaml
 Tool: NETSUITE_UPSERT_RECORD_BY_EXTERNAL_ID
 Arguments:
   record_type: "customer"
@@ -159,7 +159,7 @@ Discover available fields, data types, constraints, and requirements before crea
 - `accept` -- `"application/schema+json"` (default, JSON Schema) or `"application/swagger+json"` (OpenAPI 3.0)
 
 **Example:**
-```
+```yaml
 Tool: NETSUITE_GET_RECORD_METADATA
 Arguments:
   record_type: "salesorder"

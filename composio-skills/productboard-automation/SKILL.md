@@ -30,7 +30,7 @@ Create notes from customer feedback and organize them with tags, links, and foll
 
 **Tools:** `PRODUCTBOARD_CREATE_NOTE`, `PRODUCTBOARD_LIST_NOTES`, `PRODUCTBOARD_ADD_NOTE_TAG`, `PRODUCTBOARD_ADD_NOTE_FOLLOWERS`, `PRODUCTBOARD_CREATE_NOTE_LINK`
 
-```
+```yaml
 Create a note titled "Mobile app crash report" with content from customer feedback, tagged "bug" and linked to feature abc-123
 ```
 
@@ -56,7 +56,7 @@ List all features/subfeatures and retrieve detailed information.
 
 **Tools:** `PRODUCTBOARD_LIST_FEATURES`, `PRODUCTBOARD_RETRIEVE_FEATURE`
 
-```
+```yaml
 List the first 50 features in Productboard, then get details on feature abc-def-123
 ```
 
@@ -69,7 +69,7 @@ List objectives, view feature-objective links, and browse key results.
 
 **Tools:** `PRODUCTBOARD_LIST_OBJECTIVES`, `PRODUCTBOARD_LIST_FEATURE_OBJECTIVES`, `PRODUCTBOARD_LIST_KEY_RESULTS`
 
-```
+```yaml
 Show me all in-progress objectives owned by alice@example.com
 ```
 
@@ -89,7 +89,7 @@ List product components for organizing features and the product hierarchy.
 
 **Tool:** `PRODUCTBOARD_LIST_COMPONENTS`
 
-```
+```yaml
 List all components in our Productboard workspace
 ```
 
@@ -102,7 +102,7 @@ View feature-release assignments with state and date filters.
 
 **Tool:** `PRODUCTBOARD_LIST_FEATURE_RELEASE_ASSIGNMENTS`
 
-```
+```yaml
 Show all active release assignments for feature abc-123
 ```
 
@@ -115,7 +115,7 @@ Connect customer feedback notes to product features for insight aggregation.
 
 **Tool:** `PRODUCTBOARD_CREATE_NOTE_LINK`
 
-```
+```yaml
 Link note 3fa85f64-5717 to feature 1b6c8c76-8f5d for tracking
 ```
 

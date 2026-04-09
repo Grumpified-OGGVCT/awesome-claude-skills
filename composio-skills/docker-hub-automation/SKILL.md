@@ -28,7 +28,7 @@ Automate your Docker Hub workflows -- create and manage organizations, repositor
 
 Use `DOCKER_HUB_LIST_ORGANIZATIONS` to discover which organizations the authenticated user belongs to.
 
-```
+```yaml
 Tool: DOCKER_HUB_LIST_ORGANIZATIONS
 Inputs:
   - page: integer (1-indexed, default 1)
@@ -39,7 +39,7 @@ Inputs:
 
 Use `DOCKER_HUB_CREATE_ORGANIZATION` to programmatically create a new Docker Hub organization.
 
-```
+```yaml
 Tool: DOCKER_HUB_CREATE_ORGANIZATION
 Inputs:
   - orgname: string (required) -- lowercase, letters/numbers/._- only, min 2 chars
@@ -52,7 +52,7 @@ Inputs:
 
 Use `DOCKER_HUB_GET_ORGANIZATION` to retrieve namespace info and its repositories. Works with any public namespace.
 
-```
+```yaml
 Tool: DOCKER_HUB_GET_ORGANIZATION
 Inputs:
   - organization: string (required) -- e.g., "docker", "bitnami", "library"
@@ -62,7 +62,7 @@ Inputs:
 
 Use `DOCKER_HUB_CREATE_REPOSITORY` to create public or private repositories under a namespace.
 
-```
+```yaml
 Tool: DOCKER_HUB_CREATE_REPOSITORY
 Inputs:
   - namespace: string (required) -- Docker Hub username or org name
@@ -76,7 +76,7 @@ Inputs:
 
 Use `DOCKER_HUB_LIST_REPOSITORIES` to enumerate repos within a namespace with sorting and content-type filtering.
 
-```
+```yaml
 Tool: DOCKER_HUB_LIST_REPOSITORIES
 Inputs:
   - namespace: string (required) -- e.g., "library", "myorg"
@@ -90,7 +90,7 @@ Inputs:
 
 Use `DOCKER_HUB_LIST_TEAMS` to list teams within an org, `DOCKER_HUB_ADD_ORG_MEMBER` to invite users, and `DOCKER_HUB_CREATE_WEBHOOK` for push notifications.
 
-```
+```yaml
 Tool: DOCKER_HUB_LIST_TEAMS
   - Lists all teams/groups within a Docker Hub organization
 

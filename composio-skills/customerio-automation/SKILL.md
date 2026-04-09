@@ -71,7 +71,7 @@ Retrieve all segments defined in your workspace for audience analysis and broadc
 
 **Tool:** `CUSTOMERIO_GET_SEGMENTS`
 
-```
+```yaml
 No parameters required -- returns all segments with IDs and metadata.
 ```
 
@@ -97,7 +97,7 @@ List all transactional message templates to find IDs for sending via the API.
 
 **Tool:** `CUSTOMERIO_LIST_TRANSACTIONAL_MESSAGES`
 
-```
+```yaml
 No parameters required -- returns template IDs and trigger names.
 ```
 

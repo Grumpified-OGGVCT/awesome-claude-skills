@@ -28,7 +28,7 @@ Create, edit, search, export, and manage Google Docs documents programmatically 
 
 ### 1. Create a New Document
 Use `GOOGLEDOCS_CREATE_DOCUMENT` to create a new Google Doc with a title and initial text content.
-```
+```yaml
 Tool: GOOGLEDOCS_CREATE_DOCUMENT
 Parameters:
   - title (required): Document filename/title
@@ -37,7 +37,7 @@ Parameters:
 
 ### 2. Search for Documents
 Use `GOOGLEDOCS_SEARCH_DOCUMENTS` to find Google Docs by name, content, date, or sharing status.
-```
+```yaml
 Tool: GOOGLEDOCS_SEARCH_DOCUMENTS
 Parameters:
   - query: Search query string
@@ -52,7 +52,7 @@ Parameters:
 
 ### 3. Update Document Content with Markdown
 Use `GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN` to replace the entire content of a document with Markdown-formatted text.
-```
+```yaml
 Tool: GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN
 Parameters:
   - id (required): Document ID
@@ -61,7 +61,7 @@ Parameters:
 
 ### 4. Find and Replace Text
 Use `GOOGLEDOCS_REPLACE_ALL_TEXT` to replace all occurrences of a string in a document.
-```
+```yaml
 Tool: GOOGLEDOCS_REPLACE_ALL_TEXT
 Parameters:
   - document_id (required): Target document ID
@@ -74,7 +74,7 @@ Parameters:
 
 ### 5. Export Document as PDF
 Use `GOOGLEDOCS_EXPORT_DOCUMENT_AS_PDF` to export a Google Doc to PDF format.
-```
+```yaml
 Tool: GOOGLEDOCS_EXPORT_DOCUMENT_AS_PDF
 Parameters:
   - file_id (required): Document file ID
@@ -83,7 +83,7 @@ Parameters:
 
 ### 6. Copy a Document
 Use `GOOGLEDOCS_COPY_DOCUMENT` to duplicate an existing Google Doc.
-```
+```yaml
 Tool: GOOGLEDOCS_COPY_DOCUMENT
 Parameters:
   - document_id (required): Source document ID to copy

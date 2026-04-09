@@ -28,7 +28,7 @@ Automate your New Relic observability workflows -- create and manage alert polic
 
 Use `NEW_RELIC_GET_ALERT_POLICIES` to discover existing alert policies with optional filtering.
 
-```
+```yaml
 Tool: NEW_RELIC_GET_ALERT_POLICIES
 Inputs:
   - name: string (optional, partial match supported)
@@ -40,7 +40,7 @@ Inputs:
 
 Use `NEW_RELIC_CREATE_ALERT_POLICY` to set up a new policy container for alert conditions.
 
-```
+```yaml
 Tool: NEW_RELIC_CREATE_ALERT_POLICY
 Inputs:
   - name: string (required) -- must be unique within the account
@@ -56,7 +56,7 @@ Inputs:
 
 Use `NEW_RELIC_CREATE_ALERT_CHANNEL` to register notification endpoints for alert delivery.
 
-```
+```yaml
 Tool: NEW_RELIC_CREATE_ALERT_CHANNEL
 Inputs:
   - type: "email" | "slack" | "webhook" | "pagerduty" | "opsgenie" | "victorops" (required)
@@ -74,7 +74,7 @@ Inputs:
 
 Use `NEW_RELIC_GET_ALERT_CONDITIONS` to inspect the conditions attached to a specific policy.
 
-```
+```yaml
 Tool: NEW_RELIC_GET_ALERT_CONDITIONS
 Inputs:
   - policy_id: integer (required)
@@ -84,7 +84,7 @@ Inputs:
 
 Use `NEW_RELIC_GET_APPLICATIONS` and `NEW_RELIC_GET_BROWSER_APPLICATIONS` to list APM and browser-monitored apps.
 
-```
+```yaml
 Tool: NEW_RELIC_GET_APPLICATIONS
 Inputs:
   - name: string (optional, case-insensitive partial match)
@@ -102,7 +102,7 @@ Inputs:
 
 Use `NEW_RELIC_UPDATE_ALERT_CHANNEL` to modify existing channels and `NEW_RELIC_DELETE_ALERT_POLICY` to remove policies.
 
-```
+```yaml
 Tool: NEW_RELIC_UPDATE_ALERT_CHANNEL
 Inputs:
   - alert_channel_id: integer (required)

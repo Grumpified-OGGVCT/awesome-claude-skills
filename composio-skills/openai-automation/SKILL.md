@@ -28,7 +28,7 @@ Automate your OpenAI API workflows -- generate text with the Responses API (incl
 
 Use `OPENAI_CREATE_RESPONSE` for one-shot model responses including text, image analysis, OCR, and structured JSON outputs.
 
-```
+```yaml
 Tool: OPENAI_CREATE_RESPONSE
 Inputs:
   - model: string (required) -- e.g., "gpt-5", "gpt-4o", "o3-mini"
@@ -57,7 +57,7 @@ Inputs:
 
 Use `OPENAI_CREATE_EMBEDDINGS` for vector search, clustering, recommendations, and RAG pipelines.
 
-```
+```yaml
 Tool: OPENAI_CREATE_EMBEDDINGS
 Inputs:
   - input: string | string[] | int[] | int[][] (required) -- max 8192 tokens, max 2048 items
@@ -71,7 +71,7 @@ Inputs:
 
 Use `OPENAI_CREATE_IMAGE` to create images from text prompts using GPT Image or DALL-E models.
 
-```
+```yaml
 Tool: OPENAI_CREATE_IMAGE
 Inputs:
   - model: string (required) -- "gpt-image-1", "gpt-image-1.5", "dall-e-3", "dall-e-2"
@@ -88,7 +88,7 @@ Inputs:
 
 Use `OPENAI_LIST_MODELS` to discover which models are accessible with your API key.
 
-```
+```yaml
 Tool: OPENAI_LIST_MODELS
 Inputs: (none)
 ```

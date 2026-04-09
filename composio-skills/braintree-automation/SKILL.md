@@ -51,7 +51,7 @@ Create new customers and retrieve existing customer details.
 - `limit` -- Results per page (1--100, default 10)
 
 **Example:**
-```
+```yaml
 Tool: STRIPE_CREATE_CUSTOMER
 Arguments:
   email: "jane@example.com"
@@ -94,7 +94,7 @@ Create subscriptions and view customer subscription details.
 - `limit` -- Results per page (1--100, default 10)
 
 **Example:**
-```
+```yaml
 Tool: STRIPE_CREATE_SUBSCRIPTION
 Arguments:
   customer: "cus_abc123"
@@ -118,7 +118,7 @@ List and attach payment methods to customers.
 - `limit` -- Results per page (1--100, default 10)
 
 **Example:**
-```
+```yaml
 Tool: STRIPE_GET_CUSTOMERS_CUSTOMER_PAYMENT_METHODS
 Arguments:
   customer: "cus_abc123"
@@ -142,7 +142,7 @@ Retrieve the history of balance changes for a customer.
 - `starting_after` / `ending_before` -- Pagination cursors
 
 **Example:**
-```
+```yaml
 Tool: STRIPE_GET_CUSTOMERS_CUSTOMER_BALANCE_TRANSACTIONS
 Arguments:
   customer: "cus_abc123"

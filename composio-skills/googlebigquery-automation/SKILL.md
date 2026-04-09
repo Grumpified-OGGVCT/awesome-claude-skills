@@ -31,7 +31,7 @@ Run SQL queries, explore database schemas, and analyze datasets through the Meta
 
 ### 1. Run a Native SQL Query
 Use `METABASE_POST_API_DATASET` with type `native` to execute raw SQL queries against your BigQuery database.
-```
+```yaml
 Tool: METABASE_POST_API_DATASET
 Parameters:
   - database (required): Metabase database ID (integer)
@@ -44,7 +44,7 @@ Parameters:
 
 ### 2. Run a Structured MBQL Query
 Use `METABASE_POST_API_DATASET` with type `query` for Metabase Query Language queries with built-in aggregation and filtering.
-```
+```yaml
 Tool: METABASE_POST_API_DATASET
 Parameters:
   - database (required): Metabase database ID
@@ -60,7 +60,7 @@ Parameters:
 
 ### 3. Get Query Metadata
 Use `METABASE_POST_API_DATASET_QUERY_METADATA` to retrieve metadata about databases, tables, and fields available for querying.
-```
+```yaml
 Tool: METABASE_POST_API_DATASET_QUERY_METADATA
 Parameters:
   - database (required): Metabase database ID
@@ -70,7 +70,7 @@ Parameters:
 
 ### 4. Convert Query to Native SQL
 Use `METABASE_POST_API_DATASET_NATIVE` to convert an MBQL query into its native SQL representation.
-```
+```yaml
 Tool: METABASE_POST_API_DATASET_NATIVE
 Parameters:
   - database (required): Metabase database ID
@@ -81,7 +81,7 @@ Parameters:
 
 ### 5. List Available Databases
 Use `METABASE_GET_API_DATABASE` to discover all database connections configured in Metabase.
-```
+```yaml
 Tool: METABASE_GET_API_DATABASE
 Description: Retrieves a list of all Database instances configured in Metabase.
 Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
@@ -89,7 +89,7 @@ Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
 
 ### 6. Get Database Schema Metadata
 Use `METABASE_GET_API_DATABASE_ID_METADATA` to retrieve complete table and field information for a specific database.
-```
+```yaml
 Tool: METABASE_GET_API_DATABASE_ID_METADATA
 Description: Retrieves complete metadata for a specific database including
   all tables and fields.

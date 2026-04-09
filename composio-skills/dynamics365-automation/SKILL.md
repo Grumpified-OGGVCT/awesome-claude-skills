@@ -48,7 +48,7 @@ Create, update, retrieve, and list lead records.
 - `top` -- Max number of results
 
 **Example:**
-```
+```yaml
 Tool: DYNAMICS365_DYNAMICSCRM_CREATE_LEAD
 Arguments:
   firstname: "Jane"
@@ -74,7 +74,7 @@ Create and organize account (company) records in the CRM.
 - `creditonhold` -- Whether account is on credit hold (boolean)
 
 **Example:**
-```
+```yaml
 Tool: DYNAMICS365_DYNAMICSCRM_CREATE_ACCOUNT
 Arguments:
   name: "Contoso Ltd"
@@ -100,7 +100,7 @@ Create detailed contact records with address and phone information.
 - `address1_city`, `address1_stateorprovince`, `address1_postalcode`, `address1_country` -- Address fields
 
 **Example:**
-```
+```yaml
 Tool: DYNAMICS365_DYNAMICSCRM_CREATE_CONTACT
 Arguments:
   firstname: "Bob"
@@ -135,7 +135,7 @@ Create and update sales opportunities with estimated values and close dates.
 - `salesstagecode` -- 1 (Qualify), 2 (Develop), 3 (Propose)
 
 **Example:**
-```
+```yaml
 Tool: DYNAMICS365_DYNAMICSCRM_CREATE_OPPORTUNITY
 Arguments:
   name: "Enterprise Cloud Migration"
@@ -192,7 +192,7 @@ Create incident/case records for customer support tracking.
 - `contact_id` -- Related contact, format: `"/contacts(GUID)"`
 
 **Example:**
-```
+```yaml
 Tool: DYNAMICS365_DYNAMICSCRM_CREATE_CASE
 Arguments:
   title: "Login issue reported by customer"

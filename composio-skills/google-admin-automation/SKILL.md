@@ -29,7 +29,7 @@ Manage Google Workspace users, groups, memberships, and organizational settings 
 
 ### 1. List All Users
 Use `GOOGLE_ADMIN_LIST_USERS` to retrieve Google Workspace users with optional filtering and pagination.
-```
+```yaml
 Tool: GOOGLE_ADMIN_LIST_USERS
 Parameters:
   - customer: Customer ID or "my_customer" (default)
@@ -43,7 +43,7 @@ Parameters:
 
 ### 2. Create a New User
 Use `GOOGLE_ADMIN_CREATE_USER` to provision a new Google Workspace account.
-```
+```yaml
 Tool: GOOGLE_ADMIN_CREATE_USER
 Parameters:
   - primary_email (required): User's email (e.g., "john.doe@company.com")
@@ -59,7 +59,7 @@ Parameters:
 
 ### 3. List and Manage Groups
 Use `GOOGLE_ADMIN_LIST_GROUPS` to list groups, and `GOOGLE_ADMIN_CREATE_GROUP` to create new ones.
-```
+```yaml
 Tool: GOOGLE_ADMIN_LIST_GROUPS
 Parameters:
   - customer: "my_customer" (default)
@@ -78,7 +78,7 @@ Parameters:
 
 ### 4. Add Users to Groups
 Use `GOOGLE_ADMIN_ADD_USER_TO_GROUP` to manage group membership.
-```
+```yaml
 Tool: GOOGLE_ADMIN_ADD_USER_TO_GROUP
 Parameters:
   - group_key (required): Group email or ID
@@ -88,7 +88,7 @@ Parameters:
 
 ### 5. Suspend or Unsuspend Users
 Use `GOOGLE_ADMIN_SUSPEND_USER` to toggle user account suspension.
-```
+```yaml
 Tool: GOOGLE_ADMIN_SUSPEND_USER
 Parameters:
   - user_key (required): User's email or unique ID
@@ -98,7 +98,7 @@ Parameters:
 
 ### 6. Get User or Group Details
 Use `GOOGLE_ADMIN_GET_USER` or `GOOGLE_ADMIN_GET_GROUP` to retrieve detailed information.
-```
+```yaml
 Tool: GOOGLE_ADMIN_GET_USER
 Parameters:
   - user_key (required): User's email or unique ID

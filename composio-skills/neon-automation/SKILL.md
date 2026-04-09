@@ -28,7 +28,7 @@ Automate your Neon serverless Postgres workflows -- list projects and branches, 
 
 Use `NEON_RETRIEVE_PROJECTS_LIST` to discover all projects associated with the authenticated user.
 
-```
+```yaml
 Tool: NEON_RETRIEVE_PROJECTS_LIST
 Inputs:
   - org_id: string (REQUIRED when using a personal API key)
@@ -44,7 +44,7 @@ Inputs:
 
 Use `NEON_ACCESS_PROJECT_DETAILS_BY_ID` to inspect project configuration, owner info, and consumption metrics.
 
-```
+```yaml
 Tool: NEON_ACCESS_PROJECT_DETAILS_BY_ID
 Inputs:
   - project_id: string (required) -- format: "adjective-noun-number", e.g., "dry-smoke-26258271"
@@ -54,7 +54,7 @@ Inputs:
 
 Use `NEON_GET_BRANCHES_FOR_PROJECT` to enumerate branches (development stages) within a project.
 
-```
+```yaml
 Tool: NEON_GET_BRANCHES_FOR_PROJECT
 Inputs:
   - project_id: string (required)
@@ -65,7 +65,7 @@ Inputs:
 
 Use `NEON_FETCH_DATABASE_FOR_BRANCH` to inventory databases within a specific project and branch.
 
-```
+```yaml
 Tool: NEON_FETCH_DATABASE_FOR_BRANCH
 Inputs:
   - project_id: string (required)
@@ -76,7 +76,7 @@ Inputs:
 
 Use `NEON_GET_PROJECT_CONNECTION_URI` to obtain a Postgres connection string for a project/branch/database.
 
-```
+```yaml
 Tool: NEON_GET_PROJECT_CONNECTION_URI
 Inputs:
   - project_id: string (required)
@@ -93,7 +93,7 @@ Inputs:
 
 Use `NEON_RETRIEVE_BRANCH_DATABASE_DETAILS` to verify a database before connecting, and `NEON_GET_BRANCH_ROLES_FOR_PROJECT` to list available roles.
 
-```
+```yaml
 Tool: NEON_RETRIEVE_BRANCH_DATABASE_DETAILS
 Inputs:
   - project_id: string (required)

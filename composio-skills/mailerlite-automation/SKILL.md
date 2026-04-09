@@ -29,7 +29,7 @@ Retrieve account details including plan limits and timezone to ensure consistent
 
 **Tool:** `MAILERLITE_GET_ACCOUNT_INFO`
 
-```
+```yaml
 No parameters required -- returns account metadata, plan details, and timezone configuration.
 ```
 
@@ -42,7 +42,7 @@ Retrieve aggregate subscriber counts, sent email totals, and engagement metrics 
 
 **Tool:** `MAILERLITE_GET_ACCOUNT_STATS`
 
-```
+```yaml
 No parameters required -- returns overall subscriber counts, sent emails, and performance metrics.
 ```
 

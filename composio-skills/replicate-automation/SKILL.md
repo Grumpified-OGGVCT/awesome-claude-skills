@@ -28,7 +28,7 @@ Automate your Replicate AI model workflows -- run predictions on any public mode
 
 Use `REPLICATE_MODELS_GET` to inspect a model's input/output schema before running predictions.
 
-```
+```yaml
 Tool: REPLICATE_MODELS_GET
 Inputs:
   - model_owner: string (required) -- e.g., "meta", "black-forest-labs", "stability-ai"
@@ -41,7 +41,7 @@ Inputs:
 
 Use `REPLICATE_MODELS_PREDICTIONS_CREATE` to run inference on any model with optional synchronous waiting and webhooks.
 
-```
+```yaml
 Tool: REPLICATE_MODELS_PREDICTIONS_CREATE
 Inputs:
   - model_owner: string (required) -- e.g., "meta", "black-forest-labs"
@@ -59,7 +59,7 @@ Inputs:
 
 Use `REPLICATE_CREATE_FILE` to upload images, documents, or other binary inputs that models need.
 
-```
+```yaml
 Tool: REPLICATE_CREATE_FILE
 Inputs:
   - content: string (required) -- base64-encoded file content
@@ -72,7 +72,7 @@ Inputs:
 
 Use `REPLICATE_MODELS_README_GET` to access a model's README in Markdown format for detailed usage instructions.
 
-```
+```yaml
 Tool: REPLICATE_MODELS_README_GET
 Inputs:
   - model_owner: string (required)
@@ -83,7 +83,7 @@ Inputs:
 
 Use `REPLICATE_MODELS_VERSIONS_LIST` to see all available versions of a model, sorted newest first.
 
-```
+```yaml
 Tool: REPLICATE_MODELS_VERSIONS_LIST
 Inputs:
   - model_owner: string (required)
@@ -94,7 +94,7 @@ Inputs:
 
 Use `REPLICATE_PREDICTIONS_LIST` to retrieve prediction history, and `REPLICATE_FILES_GET`/`REPLICATE_FILES_LIST` to manage uploaded files.
 
-```
+```yaml
 Tool: REPLICATE_PREDICTIONS_LIST
   - Lists all predictions for the authenticated user with pagination
 

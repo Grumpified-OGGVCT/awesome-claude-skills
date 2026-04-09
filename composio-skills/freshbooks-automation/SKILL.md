@@ -32,7 +32,7 @@ Retrieve all businesses associated with the authenticated user. The `business_id
 **Parameters:** None required.
 
 **Example:**
-```
+```yaml
 Tool: FRESHBOOKS_LIST_BUSINESSES
 Arguments: {}
 ```
@@ -59,7 +59,7 @@ Retrieve all projects for a business with comprehensive filtering and sorting op
 - `skip_group` -- `true` to omit team member/invitation data (reduces response size)
 
 **Example:**
-```
+```yaml
 Tool: FRESHBOOKS_LIST_PROJECTS
 Arguments:
   business_id: 123456
@@ -98,7 +98,7 @@ Check for recent project activity using the `updated_since` filter.
 3. Review returned projects for recent changes
 
 **Example:**
-```
+```yaml
 Tool: FRESHBOOKS_LIST_PROJECTS
 Arguments:
   business_id: 123456

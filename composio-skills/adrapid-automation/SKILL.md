@@ -30,7 +30,7 @@ Automate Adrapid operations through Composio's Adrapid toolkit via Rube MCP.
 
 Always discover available tools before executing workflows:
 
-```
+```yaml
 RUBE_SEARCH_TOOLS
 queries: [{use_case: "Adrapid operations", known_fields: ""}]
 session: {generate_id: true}
@@ -42,7 +42,7 @@ This returns available tool slugs, input schemas, recommended execution plans, a
 
 ### Step 1: Discover Available Tools
 
-```
+```yaml
 RUBE_SEARCH_TOOLS
 queries: [{use_case: "your specific Adrapid task"}]
 session: {id: "existing_session_id"}
@@ -50,7 +50,7 @@ session: {id: "existing_session_id"}
 
 ### Step 2: Check Connection
 
-```
+```yaml
 RUBE_MANAGE_CONNECTIONS
 toolkits: ["adrapid"]
 session_id: "your_session_id"
@@ -58,7 +58,7 @@ session_id: "your_session_id"
 
 ### Step 3: Execute Tools
 
-```
+```yaml
 RUBE_MULTI_EXECUTE_TOOL
 tools: [{
   tool_slug: "TOOL_SLUG_FROM_SEARCH",

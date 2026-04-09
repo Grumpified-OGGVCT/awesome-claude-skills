@@ -29,7 +29,7 @@ Fetch every agent associated with your account or organization to inventory auto
 
 **Tool:** `PHANTOMBUSTER_GET_AGENTS_FETCH_ALL`
 
-```
+```yaml
 No parameters required -- returns all agents with IDs and metadata.
 Authenticate your API key first.
 ```
@@ -43,7 +43,7 @@ Retrieve all scripts available under your account (without code bodies) for scri
 
 **Tool:** `PHANTOMBUSTER_GET_SCRIPTS_FETCH_ALL`
 
-```
+```yaml
 No parameters required -- returns script metadata without source code.
 ```
 
@@ -54,7 +54,7 @@ Check your organization's current resource usage and quota limits to plan automa
 
 **Tool:** `PHANTOMBUSTER_GET_ORGS_FETCH_RESOURCES`
 
-```
+```yaml
 No parameters required -- returns resource allocation and current usage metrics.
 ```
 
@@ -76,7 +76,7 @@ Download a CSV report of all agents' run statistics for your organization.
 
 **Tool:** `PHANTOMBUSTER_GET_ORGS_EXPORT_AGENT_USAGE`
 
-```
+```yaml
 Returns a downloadable CSV with comprehensive agent execution statistics.
 ```
 

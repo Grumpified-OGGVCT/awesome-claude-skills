@@ -28,7 +28,7 @@ Automate your Lemlist multichannel outreach workflows -- manage campaigns, enrol
 
 Use `LEMLIST_GET_LIST_CAMPAIGNS` to enumerate all campaigns by status, with pagination support.
 
-```
+```yaml
 Tool: LEMLIST_GET_LIST_CAMPAIGNS
 Inputs:
   - status: "running" | "draft" | "archived" | "ended" | "paused" | "errors" (optional)
@@ -44,7 +44,7 @@ Inputs:
 
 Use `LEMLIST_GET_CAMPAIGN_BY_ID` to validate campaign configuration before writes.
 
-```
+```yaml
 Tool: LEMLIST_GET_CAMPAIGN_BY_ID
 Inputs:
   - campaignId: string (required) -- e.g., "cam_A1B2C3D4E5F6G7H8I9"
@@ -54,7 +54,7 @@ Inputs:
 
 Use `LEMLIST_POST_CREATE_LEAD_IN_CAMPAIGN` to add leads with optional email finding, phone lookup, and LinkedIn enrichment.
 
-```
+```yaml
 Tool: LEMLIST_POST_CREATE_LEAD_IN_CAMPAIGN
 Inputs:
   - campaignId: string (required)
@@ -72,7 +72,7 @@ Inputs:
 
 Use `LEMLIST_POST_ADD_VARIABLES_TO_LEAD` to enrich leads with personalization fields after enrollment.
 
-```
+```yaml
 Tool: LEMLIST_POST_ADD_VARIABLES_TO_LEAD
 Inputs:
   - leadId: string (required) -- internal Lemlist lead ID (NOT email)
@@ -86,7 +86,7 @@ Inputs:
 
 Use `LEMLIST_GET_EXPORT_CAMPAIGN_LEADS` to download leads with state filtering for reporting or QA.
 
-```
+```yaml
 Tool: LEMLIST_GET_EXPORT_CAMPAIGN_LEADS
 Inputs:
   - campaignId: string (required)
@@ -97,7 +97,7 @@ Inputs:
 
 Use `LEMLIST_DELETE_UNSUBSCRIBE_LEAD_FROM_CAMPAIGN` to stop outreach by removing a lead from a campaign.
 
-```
+```yaml
 Tool: LEMLIST_DELETE_UNSUBSCRIBE_LEAD_FROM_CAMPAIGN
 Inputs:
   - campaignId: string (required)

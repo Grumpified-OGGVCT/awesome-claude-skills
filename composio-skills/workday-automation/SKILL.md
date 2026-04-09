@@ -30,7 +30,7 @@ Retrieve worker information with search and pagination.
 
 **Tool:** `WORKDAY_LIST_WORKERS`
 
-```
+```yaml
 Search for workers named "Sarah" and include terminated employees
 ```
 
@@ -45,7 +45,7 @@ Submit time off requests for workers with full business process support.
 
 **Tool:** `WORKDAY_CREATE_TIME_OFF_REQUEST`
 
-```
+```yaml
 Create a vacation request for worker abc123 for March 15-17, 2026 (8 hours each day)
 ```
 
@@ -65,7 +65,7 @@ Validate which dates a worker can take off before submitting a request.
 
 **Tool:** `WORKDAY_GET_WORKER_VALID_TIME_OFF_DATES`
 
-```
+```yaml
 Check if worker abc123 is eligible to take time off on March 15, 2026
 ```
 
@@ -82,7 +82,7 @@ Check remaining time off balances for workers across all plans.
 
 **Tool:** `WORKDAY_LIST_ABSENCE_BALANCES`
 
-```
+```yaml
 Show me absence balances for all workers in the organization
 ```
 
@@ -95,7 +95,7 @@ Retrieve the authenticated worker's profile information.
 
 **Tool:** `WORKDAY_GET_CURRENT_USER`
 
-```
+```yaml
 Show me my Workday profile information
 ```
 
@@ -109,7 +109,7 @@ Retrieve time off details and history for a specific worker.
 
 **Tool:** `WORKDAY_GET_WORKER_TIME_OFF_DETAILS`
 
-```
+```yaml
 Show me the time off history for worker abc123
 ```
 

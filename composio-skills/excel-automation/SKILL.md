@@ -50,7 +50,7 @@ Use `GOOGLESHEETS_BATCH_UPDATE` to write values to a specific range or append ro
 - `valueInputOption` -- `"USER_ENTERED"` (default, parses formulas) or `"RAW"` (stores as-is)
 
 **Example:**
-```
+```yaml
 Tool: GOOGLESHEETS_BATCH_UPDATE
 Arguments:
   spreadsheet_id: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
@@ -76,7 +76,7 @@ Use `GOOGLESHEETS_UPSERT_ROWS` to update existing rows by matching a key column,
 - `strictMode` -- `true` (default) errors on mismatched columns; `false` truncates silently
 
 **Example:**
-```
+```yaml
 Tool: GOOGLESHEETS_UPSERT_ROWS
 Arguments:
   spreadsheetId: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
@@ -104,7 +104,7 @@ Use `GOOGLESHEETS_FORMAT_CELL` to apply bold, italic, font size, and background 
 - `red`, `green`, `blue` -- Background color components (0.0--1.0 float scale, NOT 0--255)
 
 **Example (bold header row with blue background):**
-```
+```yaml
 Tool: GOOGLESHEETS_FORMAT_CELL
 Arguments:
   spreadsheet_id: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
@@ -131,7 +131,7 @@ Use `GOOGLESHEETS_ADD_SHEET` to create new tabs within an existing spreadsheet.
 - `forceUnique` -- `true` (default) auto-appends suffix if name exists
 
 **Example:**
-```
+```yaml
 Tool: GOOGLESHEETS_ADD_SHEET
 Arguments:
   spreadsheetId: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"

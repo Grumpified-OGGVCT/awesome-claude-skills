@@ -30,7 +30,7 @@ Access Google Ads data through Google Analytics integration, run performance rep
 
 ### 1. List Google Ads Links for a Property
 Use `GOOGLE_ANALYTICS_ANALYTICS_ADMIN_PROPERTIES_GOOGLE_ADS` to retrieve all Google Ads account links configured for a GA4 property.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_ANALYTICS_ADMIN_PROPERTIES_GOOGLE_ADS
 Parameters:
   - parent (required): Property resource name (format: "properties/{propertyId}")
@@ -40,7 +40,7 @@ Parameters:
 
 ### 2. Run a GA4 Performance Report
 Use `GOOGLE_ANALYTICS_RUN_REPORT` to run customized reports with dimensions, metrics, date ranges, and filters.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_RUN_REPORT
 Parameters:
   - property (required): Property resource (format: "properties/{property_id}")
@@ -55,7 +55,7 @@ Parameters:
 
 ### 3. Check Dimension/Metric Compatibility
 Use `GOOGLE_ANALYTICS_CHECK_COMPATIBILITY` to validate dimension and metric combinations before running a report.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_CHECK_COMPATIBILITY
 Description: Validates compatibility of chosen dimensions or metrics
   before running a report.
@@ -64,7 +64,7 @@ Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
 
 ### 4. List GA4 Accounts
 Use `GOOGLE_ANALYTICS_LIST_ACCOUNTS` to enumerate all accessible Google Analytics accounts.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_LIST_ACCOUNTS
 Parameters:
   - pageSize: Max accounts to return
@@ -74,7 +74,7 @@ Parameters:
 
 ### 5. List GA4 Properties Under an Account
 Use `GOOGLE_ANALYTICS_LIST_PROPERTIES` to list properties for a specific GA4 account.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_LIST_PROPERTIES
 Parameters:
   - account (required): Account resource name (format: "accounts/{account_id}")
@@ -85,7 +85,7 @@ Parameters:
 
 ### 6. Get Available Dimensions and Metrics
 Use `GOOGLE_ANALYTICS_GET_METADATA` to discover all available fields for building reports.
-```
+```yaml
 Tool: GOOGLE_ANALYTICS_GET_METADATA
 Description: Gets metadata for dimensions, metrics, and comparisons
   for a GA4 property.

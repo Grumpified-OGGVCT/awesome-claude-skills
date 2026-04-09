@@ -28,7 +28,7 @@ Create, edit, and manage Google Slides presentations programmatically using Rube
 
 ### 1. Create a Blank Presentation
 Use `GOOGLESLIDES_PRESENTATIONS_CREATE` to initialize a new blank presentation.
-```
+```yaml
 Tool: GOOGLESLIDES_PRESENTATIONS_CREATE
 Parameters:
   - title (required): Title for the new presentation
@@ -37,7 +37,7 @@ Parameters:
 
 ### 2. Create Slides from Markdown
 Use `GOOGLESLIDES_CREATE_SLIDES_MARKDOWN` to generate a full presentation from Markdown text. Content is automatically split into slides.
-```
+```yaml
 Tool: GOOGLESLIDES_CREATE_SLIDES_MARKDOWN
 Parameters:
   - title (required): Presentation title
@@ -46,7 +46,7 @@ Parameters:
 
 ### 3. Batch Update a Presentation
 Use `GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE` to apply updates to an existing presentation using Markdown or raw API requests.
-```
+```yaml
 Tool: GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE
 Parameters:
   - presentationId (required): Target presentation ID
@@ -57,7 +57,7 @@ Parameters:
 
 ### 4. Copy from Template
 Use `GOOGLESLIDES_PRESENTATIONS_COPY_FROM_TEMPLATE` to duplicate an existing presentation as a template.
-```
+```yaml
 Tool: GOOGLESLIDES_PRESENTATIONS_COPY_FROM_TEMPLATE
 Parameters:
   - template_presentation_id (required): Source template presentation ID
@@ -67,7 +67,7 @@ Parameters:
 
 ### 5. Get Presentation Details
 Use `GOOGLESLIDES_PRESENTATIONS_GET` to retrieve the current state of a presentation including all slides and elements.
-```
+```yaml
 Tool: GOOGLESLIDES_PRESENTATIONS_GET
 Parameters:
   - presentationId (required): Presentation ID to retrieve
@@ -76,7 +76,7 @@ Parameters:
 
 ### 6. Generate Slide Thumbnails
 Use `GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL` to generate a thumbnail image URL for a specific slide.
-```
+```yaml
 Tool: GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL
 Parameters:
   - presentationId (required): Presentation ID

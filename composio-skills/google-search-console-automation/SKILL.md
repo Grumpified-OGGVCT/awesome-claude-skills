@@ -29,7 +29,7 @@ Query search analytics, inspect URLs, manage sitemaps, and monitor search perfor
 
 ### 1. List All Verified Sites
 Use `GOOGLE_SEARCH_CONSOLE_LIST_SITES` to retrieve all sites the authenticated user owns or has access to.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_LIST_SITES
 Parameters: (none required)
 Returns: List of site entries with siteUrl and permissionLevel
@@ -37,7 +37,7 @@ Returns: List of site entries with siteUrl and permissionLevel
 
 ### 2. Query Search Analytics
 Use `GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY` to get search performance data including clicks, impressions, CTR, and position.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY
 Parameters:
   - site_url (required): Site URL (e.g., "https://www.example.com/" or "sc-domain:example.com")
@@ -54,7 +54,7 @@ Parameters:
 
 ### 3. Inspect a URL
 Use `GOOGLE_SEARCH_CONSOLE_INSPECT_URL` to check the indexing status and issues for a specific URL.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_INSPECT_URL
 Parameters:
   - inspection_url (required): Full URL to inspect (e.g., "https://www.example.com/page")
@@ -64,7 +64,7 @@ Parameters:
 
 ### 4. List Sitemaps
 Use `GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS` to retrieve all sitemaps submitted for a site.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS
 Parameters:
   - site_url (required): Site URL (e.g., "https://www.example.com/")
@@ -73,7 +73,7 @@ Parameters:
 
 ### 5. Submit a Sitemap
 Use `GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP` to register or resubmit a sitemap for indexing.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP
 Parameters:
   - site_url (required): Site URL or domain property (e.g., "sc-domain:example.com")
@@ -82,7 +82,7 @@ Parameters:
 
 ### 6. Get Sitemap Details
 Use `GOOGLE_SEARCH_CONSOLE_GET_SITEMAP` to retrieve information about a specific submitted sitemap.
-```
+```yaml
 Tool: GOOGLE_SEARCH_CONSOLE_GET_SITEMAP
 Parameters:
   - site_url (required): Site URL

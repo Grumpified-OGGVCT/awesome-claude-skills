@@ -38,7 +38,7 @@ Create a new invoice for a customer with line items.
 - `minorversion` -- Optional API version parameter
 
 **Example:**
-```
+```yaml
 Tool: QUICKBOOKS_CREATE_INVOICE
 Arguments:
   customer_id: "21"
@@ -79,7 +79,7 @@ Create and read customer records.
 - `customer_id` (required) -- ID of the customer to read
 
 **Example:**
-```
+```yaml
 Tool: QUICKBOOKS_CREATE_CUSTOMER
 Arguments:
   display_name: "Acme Corporation"
@@ -101,7 +101,7 @@ Retrieve account information for use in invoice line items and financial reporti
 - `query` (required) -- SQL-like query string, e.g., `"SELECT * FROM Account WHERE AccountType = 'Income'"`
 
 **Example:**
-```
+```yaml
 Tool: QUICKBOOKS_QUERY_ACCOUNT
 Arguments:
   query: "SELECT * FROM Account WHERE AccountType = 'Income' MAXRESULTS 10"

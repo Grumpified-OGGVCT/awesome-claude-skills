@@ -29,7 +29,7 @@ Retrieve pre-designed avatar templates from the HeyGen library for video creatio
 
 **Tool:** `HEYGEN_V2_TEMPLATES`
 
-```
+```yaml
 No parameters required -- returns template IDs, names, preview images, and customization options.
 ```
 
@@ -55,7 +55,7 @@ List all realistic avatars available for video creation, useful for mapping char
 
 **Tool:** `HEYGEN_V2_AVATARS`
 
-```
+```yaml
 No parameters required -- returns avatar identifiers, names, and preview images.
 The list may be paginated; additional calls might be needed for the full set.
 ```

@@ -36,7 +36,7 @@ Retrieve all wallets from Coinbase with pagination support.
 - `ending_before` -- Cursor for backward pagination: ID of the first wallet from the previous page
 
 **Example (first page):**
-```
+```yaml
 Tool: COINBASE_LIST_WALLETS
 Arguments:
   limit: 50
@@ -44,7 +44,7 @@ Arguments:
 ```
 
 **Example (next page):**
-```
+```yaml
 Tool: COINBASE_LIST_WALLETS
 Arguments:
   limit: 50
