@@ -15,7 +15,7 @@ The simplest way to download a video:
 python scripts/download_video.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-This downloads the video in best available quality as MP4 to `/mnt/user-data/outputs/`.
+This downloads the video in best available quality as MP4 to `./outputs/`.
 
 ## Options
 
@@ -61,7 +61,7 @@ python scripts/download_video.py "URL" -a
 Use `-o` or `--output` to specify a different output directory:
 
 ```bash
-python scripts/download_video.py "URL" -o /path/to/directory
+python scripts/download_video.py "URL" -o ./downloads
 ```
 
 ## Complete Examples
@@ -78,7 +78,7 @@ python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -
 
 3. Download in 720p as WebM to custom directory:
 ```bash
-python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 720p -f webm -o /custom/path
+python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 720p -f webm -o ./downloads
 ```
 
 ## How It Works
@@ -92,8 +92,9 @@ The skill uses `yt-dlp`, a robust YouTube downloader that:
 
 ## Important Notes
 
-- Downloads are saved to `/mnt/user-data/outputs/` by default
+- Downloads are saved to `./outputs/` by default
+- The output directory is created automatically if it does not exist
 - Video filename is automatically generated from the video title
-- The script handles installation of yt-dlp automatically
+- The script attempts to install `yt-dlp` automatically if needed
 - Only single videos are downloaded (playlists are skipped by default)
 - Higher quality videos may take longer to download and use more disk space
