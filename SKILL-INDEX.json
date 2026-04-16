@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "generated_date": "2026-02-06",
-  "total_skills": 939,
+  "total_skills": 963,
   "categories": [
     "App Automation",
     "Business & Marketing",
@@ -38,6 +38,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "6-build-instructions",
+      "path": "6-build-instructions-universal",
+      "skill_file": "6-build-instructions-universal/SKILL.md",
+      "description": "Final step in building instruction context for codebase",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "Ahrefs Automation",
@@ -638,6 +646,14 @@
       }
     },
     {
+      "name": "Questions Are Not Instructions",
+      "path": "questions-are-not-instructions-universal",
+      "skill_file": "questions-are-not-instructions-universal/SKILL.md",
+      "description": "Ensures questions are answered literally before taking action. Triggers on user input containing '?' or patterns like 'why did you...?', 'will that work?', 'have you considered...?'. Use when user asks about your decisions, challenges an approach, or requests assessment. Prevents interpreting questions as implicit instructions or criticism.",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "name": "QuickBooks Automation",
       "path": "quickbooks-automation",
       "skill_file": "quickbooks-automation/SKILL.md",
@@ -1104,6 +1120,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "agent-instructions-generator",
+      "path": "agent-instructions-generator-universal",
+      "skill_file": "agent-instructions-generator-universal/SKILL.md",
+      "description": "Generate baseline CLAUDE.md and AGENTS.md instruction files for a project. Use when a repo is missing instruction files or needs standardized agent guidance.",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "agent-mail-automation",
@@ -1749,6 +1773,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "auditing-claude-instructions",
+      "path": "auditing-claude-instructions-universal",
+      "skill_file": "auditing-claude-instructions-universal/SKILL.md",
+      "description": "Use this skill when evaluating, auditing, reviewing, or optimizing CLAUDE.md files (or agents.md files) for effectiveness. Triggers on \"review my CLAUDE.md\", \"optimize my claude instructions\", \"is my CLAUDE.md effective\", \"audit my claude config\", or when users share their CLAUDE.md content for feedback. Evaluates files against a research-backed rubric covering minimality, tooling, codebase overviews, novelty, and authorship.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "auth0-automation",
@@ -3617,6 +3649,14 @@
       }
     },
     {
+      "name": "crafting-instructions",
+      "path": "crafting-instructions-universal",
+      "skill_file": "crafting-instructions-universal/SKILL.md",
+      "description": "Generate optimized instructions for Claude (Project instructions, Skills, or standalone prompts). Use when users request creating project setups, writing effective prompts, building Skills, or need guidance on instruction types for Claude.ai.",
+      "category": "Communication & Writing",
+      "tags": []
+    },
+    {
       "name": "craftmypdf-automation",
       "path": "craftmypdf-automation",
       "skill_file": "craftmypdf-automation/SKILL.md",
@@ -3628,6 +3668,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "creating-instructions",
+      "path": "creating-instructions-universal",
+      "skill_file": "creating-instructions-universal/SKILL.md",
+      "description": "Create VS Code Copilot custom instruction files for ui-kit. Use when defining coding standards, conventions, or context that should automatically apply to specific file patterns.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "crowdin-automation",
@@ -5084,6 +5132,14 @@
       }
     },
     {
+      "name": "footprint",
+      "path": "footprint-universal",
+      "skill_file": "footprint-universal/SKILL.md",
+      "description": "Use when building flowchart pipelines with footprintjs — stage functions, decider branches, selectors, subflows, loops, narrative traces, recorders, redaction, contracts, and LLM-ready output. Also use when someone asks how footprint.js works or wants to understand the library.",
+      "category": "Creative & Media",
+      "tags": []
+    },
+    {
       "name": "forcemanager-automation",
       "path": "forcemanager-automation",
       "skill_file": "forcemanager-automation/SKILL.md",
@@ -5329,6 +5385,22 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "generate-copilot-instructions",
+      "path": "generate-copilot-instructions-universal",
+      "skill_file": "generate-copilot-instructions-universal/SKILL.md",
+      "description": "Analyze a repository and generate cross-compatible instruction files",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "name": "generate-instructions",
+      "path": "generate-instructions-universal",
+      "skill_file": "generate-instructions-universal/SKILL.md",
+      "description": "Analyze a monorepo directory and generate a CLAUDE.md file with context for Claude Code",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "geoapify-automation",
@@ -6444,6 +6516,14 @@
       }
     },
     {
+      "name": "instructions-development",
+      "path": "instructions-development-universal",
+      "skill_file": "instructions-development-universal/SKILL.md",
+      "description": "This skill should be used when the user asks to \"create CLAUDE.md\", \"initialize CLAUDE.md\", \"sync CLAUDE.md with code\", \"update documentation from codebase\", \"create .claude/rules/\", \"manage modular rules\", \"split large CLAUDE.md\", or mentions project documentation setup. Manages complete lifecycle of project instructions including creation, synchronization with code patterns, and modular organization.",
+      "category": "Document Processing",
+      "tags": []
+    },
+    {
       "name": "intelliprint-automation",
       "path": "intelliprint-automation",
       "skill_file": "intelliprint-automation/SKILL.md",
@@ -6588,6 +6668,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "jhack",
+      "path": "jhack-universal",
+      "skill_file": "jhack-universal/SKILL.md",
+      "description": "Expert assistant for Juju charm development using jhack utilities. Use when debugging charms, inspecting relations, syncing code, replaying events, testing scenarios, or performing rapid development iterations. Keywords include jhack, Juju debugging, charm testing, relation inspection, event replay, sync, tail, fire, show-relation, show-stored.",
+      "category": "Document Processing",
+      "tags": []
     },
     {
       "name": "jigsawstack-automation",
@@ -6822,6 +6910,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "lab-instructions",
+      "path": "lab-instructions-universal",
+      "skill_file": "lab-instructions-universal/SKILL.md",
+      "description": "Изучение задания и создание пошаговой инструкции (instructions.md)",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "labs64-netlicensing-automation",
@@ -7072,6 +7168,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "lint-instructions",
+      "path": "lint-instructions-universal",
+      "skill_file": "lint-instructions-universal/SKILL.md",
+      "description": "Detect and fix violations of project instructions defined in .claude/rules/. Use when checking code compliance, reviewing changes, or when the user asks about instruction violations.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "listclean-automation",
@@ -8819,6 +8923,14 @@
       }
     },
     {
+      "name": "preen-review-instructions",
+      "path": "preen-review-instructions-universal",
+      "skill_file": "preen-review-instructions-universal/SKILL.md",
+      "description": "Audit and update code review instructions (REVIEW.md, .gemini/INSTRUCTIONS.md)",
+      "category": "Development & Code Tools",
+      "tags": []
+    },
+    {
       "name": "prerender-automation",
       "path": "prerender-automation",
       "skill_file": "prerender-automation/SKILL.md",
@@ -8895,6 +9007,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "project-brain-codex-instructions",
+      "path": "project-brain-codex-instructions-universal",
+      "skill_file": "project-brain-codex-instructions-universal/SKILL.md",
+      "description": "generate comprehensive project context and instructions. Trigger when onboarding a new agent, creating a README, or summarizing the project architecture.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "project-bubble-automation",
@@ -9124,6 +9244,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "refactoring-agent-instructions",
+      "path": "refactoring-agent-instructions-universal",
+      "skill_file": "refactoring-agent-instructions-universal/SKILL.md",
+      "description": "Refactors bloated agent instruction files (CLAUDE.md, AGENTS.md, COPILOT.md, .cursorrules, etc.)\nto follow progressive disclosure — minimal root file linking to categorized files in guidelines/.\nUse when agent instructions are too long, hard to maintain, contain contradictions, or need reorganization.",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "refiner-automation",
@@ -9397,6 +9525,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "root-level-project-instructions",
+      "path": "root-level-project-instructions-universal",
+      "skill_file": "root-level-project-instructions-universal/SKILL.md",
+      "description": "Root level project guidelines and initial steps to start and implement EEG processor",
+      "category": "Creative & Media",
+      "tags": []
     },
     {
       "name": "rootly-automation",
@@ -10140,6 +10276,14 @@
       }
     },
     {
+      "name": "skill-agent-instructions",
+      "path": "skill-agent-instructions-universal",
+      "skill_file": "skill-agent-instructions-universal/SKILL.md",
+      "description": "Generate, review, and optimize natural language instructions for Business Central agents (Designer or SDK). Triggers on: agent instructions, InstructionsV1.txt, InstructionsV2.txt, MEMORIZE, qualification rules, agent behavior, instruction keywords, agent task instructions, iterate instructions, or improve agent accuracy. Follows the Responsibilities-Guidelines-Instructions framework with official BC agent runtime keywords.",
+      "category": "Document Processing",
+      "tags": []
+    },
+    {
       "name": "skill-creator",
       "path": "skill-creator",
       "skill_file": "skill-creator/SKILL.md",
@@ -10279,6 +10423,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "spec-flow-instructions",
+      "path": "spec-flow-instructions-universal",
+      "skill_file": "spec-flow-instructions-universal/SKILL.md",
+      "description": "MUST use when working with spec files in `specs/` directories, or when commands reference this skill for conventions.",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "splitwise-automation",
@@ -10591,6 +10743,22 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "sync-agent-instructions",
+      "path": "sync-agent-instructions-universal",
+      "skill_file": "sync-agent-instructions-universal/SKILL.md",
+      "description": "Sync AI coding tool instruction files (CLAUDE.md, GEMINI.md, AGENTS.md) so they stay aligned. Detects which file changed and copies it to the others. Use when syncing md files, syncing instructions, updating GEMINI.md, or updating AGENTS.md.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "name": "sync-instructions",
+      "path": "sync-instructions-universal",
+      "skill_file": "sync-instructions-universal/SKILL.md",
+      "description": "Synchronize instruction files and skills across Claude Code and Codex after codebase changes. Use when new JS files are added, globals change, patterns evolve, version info updates, or skills are modified.",
+      "category": "Development & Code Tools",
+      "tags": []
     },
     {
       "name": "synthflow-ai-automation",
@@ -11249,6 +11417,14 @@
       }
     },
     {
+      "name": "uat-instructions",
+      "path": "uat-instructions-universal",
+      "skill_file": "uat-instructions-universal/SKILL.md",
+      "description": "Use when UAT test instructions are needed for Linear issues — after development is complete, before sprint review, or when onboarding testers. Triggered by need for Given-When-Then acceptance criteria, step-by-step test plans, or structured QA handoff documents.",
+      "category": "Document Processing",
+      "tags": []
+    },
+    {
       "name": "unione-automation",
       "path": "unione-automation",
       "skill_file": "unione-automation/SKILL.md",
@@ -11260,6 +11436,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "updating-openspec-instructions",
+      "path": "updating-openspec-instructions-universal",
+      "skill_file": "updating-openspec-instructions-universal/SKILL.md",
+      "description": "Updates OpenSpec instruction files in a project. Use when OpenSpec is already initialized but instructions need refreshing or the CLI was updated.",
+      "category": "Other",
+      "tags": []
     },
     {
       "name": "updown-io-automation",
@@ -11403,14 +11587,6 @@
           "rube"
         ]
       }
-    },
-    {
-      "name": "video-downloader",
-      "path": "video-downloader",
-      "skill_file": "video-downloader/SKILL.md",
-      "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival. Handles various formats and quality options.",
-      "category": "Creative & Media",
-      "tags": []
     },
     {
       "name": "virustotal-automation",
@@ -11733,6 +11909,14 @@
       }
     },
     {
+      "name": "writing-instructions",
+      "path": "writing-instructions-universal",
+      "skill_file": "writing-instructions-universal/SKILL.md",
+      "description": "Create custom instruction files (.instructions.md) for GitHub Copilot. Use when asked to create, write, or generate instruction files, coding guidelines, or auto-applied rules for specific file types. Covers frontmatter format, glob patterns, and best practices.",
+      "category": "Development & Code Tools",
+      "tags": []
+    },
+    {
       "name": "y-gy-automation",
       "path": "y-gy-automation",
       "skill_file": "y-gy-automation/SKILL.md",
@@ -11809,6 +11993,14 @@
           "rube"
         ]
       }
+    },
+    {
+      "name": "youtube-downloader",
+      "path": "video-downloader",
+      "skill_file": "video-downloader/SKILL.md",
+      "description": "Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 720p, 480p, 360p), multiple formats (mp4, webm, mkv), and audio-only downloads as MP3.",
+      "category": "Creative & Media",
+      "tags": []
     },
     {
       "name": "zendesk-automation",
