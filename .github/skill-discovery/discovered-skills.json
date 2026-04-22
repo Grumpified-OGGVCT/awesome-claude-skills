@@ -857,6 +857,54 @@
       "description": null,
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/killop/anything_about_game",
+      "repo_name": "killop/anything_about_game",
+      "file_path": "AI.md",
+      "file_url": "https://github.com/killop/anything_about_game/blob/e76092493962908571ef981b22a78516f385ad68/AI.md",
+      "discovered_at": "2026-04-22 05:27:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A wonderful list of Game Development resources.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/hilash/cabinet",
+      "repo_name": "hilash/cabinet",
+      "file_path": "PRD.md",
+      "file_url": "https://github.com/hilash/cabinet/blob/80ca3dfa7c42cadde39b8a8b807a5e99dcb2dafd/PRD.md",
+      "discovered_at": "2026-04-22 05:27:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "AI-first knowledge base and startup OS",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/accomplish-ai/accomplish",
+      "repo_name": "accomplish-ai/accomplish",
+      "file_path": "AD.md",
+      "file_url": "https://github.com/accomplish-ai/accomplish/blob/20e57da995f13f18814d74d4c21e4b411414003d/AD.md",
+      "discovered_at": "2026-04-22 05:27:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Accomplish\u2122 is the open source Al coworker that lives on your desktop",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/Community-Access/accessibility-agents",
+      "repo_name": "Community-Access/accessibility-agents",
+      "file_path": "prd.md",
+      "file_url": "https://github.com/Community-Access/accessibility-agents/blob/a03bc2aa9d64ef69aaf65ab877f07ada54abe0f4/prd.md",
+      "discovered_at": "2026-04-22 05:27:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Accessibility review agents for Claude Code, GitHub Copilot, and Claude Desktop. Eleven specialists that enforce WCAG 2.2 AA compliance so AI coding tools stop generating inaccessible code.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
