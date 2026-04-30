@@ -905,6 +905,18 @@
       "description": "Accessibility review agents for Claude Code, GitHub Copilot, and Claude Desktop. Eleven specialists that enforce WCAG 2.2 AA compliance so AI coding tools stop generating inaccessible code.",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/AICommitApp/community",
+      "repo_name": "AICommitApp/community",
+      "file_path": "FAQ.md",
+      "file_url": "https://github.com/AICommitApp/community/blob/b304f8a40be5254cd1c154a1c44f3bd784832813/FAQ.md",
+      "discovered_at": "2026-04-30 06:06:15 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Streamline your coding process with AI-powered commit suggestions.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
