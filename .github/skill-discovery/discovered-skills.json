@@ -880,7 +880,7 @@
       "stars": 0,
       "description": "AI-first knowledge base and startup OS",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 404 Client Error: Not Found for url: https://api.github.com/repos/hilash/cabinet/contents/PRD.md"
     },
     {
       "repo_url": "https://github.com/accomplish-ai/accomplish",
@@ -915,6 +915,30 @@
       "query": "claude prompt template in:file extension:md",
       "stars": 0,
       "description": "Streamline your coding process with AI-powered commit suggestions.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/flancian/agora-server",
+      "repo_name": "flancian/agora-server",
+      "file_path": "DONE.md",
+      "file_url": "https://github.com/flancian/agora-server/blob/ec5fc54846a53cd2773fe279dddac636b880ac3b/DONE.md",
+      "discovered_at": "2026-05-08 05:31:13 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Agora Server implementation for the Agora (flancia.org/go/agora).",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/exasol/dbt-exasol",
+      "repo_name": "exasol/dbt-exasol",
+      "file_path": "uv.md",
+      "file_url": "https://github.com/exasol/dbt-exasol/blob/9a936c76a2cf69ed9a42df86718287aec696d02e/uv.md",
+      "discovered_at": "2026-05-08 05:31:13 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Data Build Tool adapter for Exasol",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
     }
