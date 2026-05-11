@@ -941,6 +941,45 @@
       "description": "Data Build Tool adapter for Exasol",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/nibzard/awesome-agentic-patterns",
+      "repo_name": "nibzard/awesome-agentic-patterns",
+      "file_path": "TODO.md",
+      "file_url": "https://github.com/nibzard/awesome-agentic-patterns/blob/9c40e10042254ab896fed6953267b119711bae40/TODO.md",
+      "discovered_at": "2026-05-11 06:40:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A curated catalogue of awesome agentic AI patterns",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/open-gitagent/gitagent-protocol",
+      "repo_name": "open-gitagent/gitagent-protocol",
+      "file_path": "docs.md",
+      "file_url": "https://github.com/open-gitagent/gitagent-protocol/blob/085954b430b10a7990261b33731e84e96b0b1f28/docs.md",
+      "discovered_at": "2026-05-11 06:40:31 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "A framework-agnostic, git-native standard for defining AI agents",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/home-assistant/home-assistant.io",
+      "repo_name": "home-assistant/home-assistant.io",
+      "file_path": ".claude/skills/update-agent-instructions/SKILL.md",
+      "file_url": "https://github.com/home-assistant/home-assistant.io/blob/1dafec04ceca8b1d12785c32b04b55f99c63cc34/.claude/skills/update-agent-instructions/SKILL.md",
+      "discovered_at": "2026-05-11 06:40:38 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": ":blue_book: Home Assistant User documentation",
+      "validated": true,
+      "skill_name": "update-agent-instructions",
+      "skill_description": "Use this if the user wants to update the agent instructions for the Home Assistant website.",
+      "skill_category": "general",
+      "raw_content": "---\nname: update-agent-instructions\ndescription: Use this if the user wants to update the agent instructions for the Home Assistant website.\n---\n\n# Update Agent Instructions\n\nUpdate the agent instructions for the Home Assistant website.\n\nReview `.github/copilot-instructions.md` against these current home-assistant.io style-guide sources:\n\n- `./source/_integrations/_integration_docs_template.markdown`\n- `https://raw.githubusercontent.com/home-assistant/developers.home-assistant/master/docs/documenting/integration-docs-examples.md`\n- `https://raw.githubusercontent.com/home-assistant/developers.home-assistant/master/docs/documenting/standards.md`\n- `https://raw.githubusercontent.com/home-assistant/developers.home-assistant/master/docs/documenting/general-style-guide.md`\n\nUpdate only `.github/copilot-instructions.md`.\n\nRules:\n- Preserve the existing structure and wording where possible.\n- Prefer small, reviewable edits over broad rewrites.\n- Remove exact duplicates.\n- Merge overlapping guidance only when the meaning is the same or one source clearly supersedes the other.\n- If existing instructions conflict with the referenced style guides, update them to match the style guides.\n- Summarize guidance into actionable instructions. Do not copy large examples, templates, or explanatory text unless needed.\n- Do not make wrapping-only or other arbitrary style edits.\n- Do not edit any other files, including `AGENTS.md`, `GEMINI.md`, or `CLAUDE.md`.\n\nIf any remote source cannot be fetched, stop and report the missing source instead of guessing.\n\nAfter editing, provide a short summary of the changes made.\n"
     }
   ],
   "integrated": [],
