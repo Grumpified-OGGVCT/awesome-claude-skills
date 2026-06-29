@@ -1046,6 +1046,42 @@
       "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/gustavonline/pi-desktop",
+      "repo_name": "gustavonline/pi-desktop",
+      "file_path": "TODO.md",
+      "file_url": "https://github.com/gustavonline/pi-desktop/blob/5d698433864fbebafa24e141da0ea56297766cfe/TODO.md",
+      "discovered_at": "2026-06-29 08:13:58 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Native desktop shell for Pi Coding Agent (Tauri + Lit), extension-first and multi-session aware",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/druce/deep-research-machine",
+      "repo_name": "druce/deep-research-machine",
+      "file_path": "plan.md",
+      "file_url": "https://github.com/druce/deep-research-machine/blob/0e6c984556a708ab5f2158de286237becac7aca1/plan.md",
+      "discovered_at": "2026-06-29 08:13:58 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Stock Research Agent \u2014 async equity research pipeline",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/tieubao/til",
+      "repo_name": "tieubao/til",
+      "file_path": "log.md",
+      "file_url": "https://github.com/tieubao/til/blob/3801f040fd738e8792450ef52f34548882de3ad6/log.md",
+      "discovered_at": "2026-06-29 08:13:58 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Personal knowledge base following Zettelkasten + LLM Wiki pattern. Obsidian-compatible.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
