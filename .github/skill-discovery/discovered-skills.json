@@ -1082,6 +1082,18 @@
       "description": "Personal knowledge base following Zettelkasten + LLM Wiki pattern. Obsidian-compatible.",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/valdas1966/mypy",
+      "repo_name": "valdas1966/mypy",
+      "file_path": ".claude/instructions/meta/for_skill.md",
+      "file_url": "https://github.com/valdas1966/mypy/blob/0769abe013ac7091ce845057f3a60d1405a8275a/.claude/instructions/meta/for_skill.md",
+      "discovered_at": "2026-07-02 06:41:31 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": null,
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
