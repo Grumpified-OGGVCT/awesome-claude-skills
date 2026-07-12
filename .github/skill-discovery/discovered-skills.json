@@ -118,7 +118,7 @@
       "stars": 0,
       "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 502 Server Error: Bad Gateway for url: https://api.github.com/repos/alexei-led/aws-mcp-server/contents/spec.md"
     },
     {
       "repo_url": "https://github.com/nibzard/apex",
@@ -1169,6 +1169,45 @@
       "description": "\u4e00\u5957\u878d\u5408\u4e86bmad\u3001spec-kit\u3001OpenSpec\u3001GSD\u3001claude-task-master\u3001superpowers\u3001gstack\u3001skills\u7684 AI \u7f16\u7a0b\u89c4\u8303\u5316\u6d41\u7a0b",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/MervinPraison/PraisonAI",
+      "repo_name": "MervinPraison/PraisonAI",
+      "file_path": "api.md",
+      "file_url": "https://github.com/MervinPraison/PraisonAI/blob/611baf79404bc70c86635b28d20a8d1e8c6b8a79/api.md",
+      "discovered_at": "2026-07-12 06:05:04 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "PraisonAI \ud83e\udd9e \u2014 Hire a 24/7 AI Workforce. Stop writing boilerplate and start shipping autonomous self-improving agents that research, plan, code, and execute tasks. Deployed in 5 lines of code with built-in memory, RAG, and support for 100+ LLMs.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/TheArchitectit/agent-guardrails-template",
+      "repo_name": "TheArchitectit/agent-guardrails-template",
+      "file_path": "TOC.md",
+      "file_url": "https://github.com/TheArchitectit/agent-guardrails-template/blob/f43b1397516bee9207f423a50060da941f16bdb6/TOC.md",
+      "discovered_at": "2026-07-12 06:05:04 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Template repository with AI agent guardrails, safety protocols, and sprint task framework. For Claude, GPT, Gemini, and all LLMs.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/aiya000/dotfiles",
+      "repo_name": "aiya000/dotfiles",
+      "file_path": ".claude_global/skills/on-instructions-loaded/SKILL.md",
+      "file_url": "https://github.com/aiya000/dotfiles/blob/32bf2c3fb705bb1ade32fad530906382c48d5e89/.claude_global/skills/on-instructions-loaded/SKILL.md",
+      "discovered_at": "2026-07-12 06:05:07 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": "Practical configuration files by 5000++ commits. e.g., Neovim and tmux with editprompt for Claude Code. Global AI Instructions for Claude Code, Devin, gemini-cli, and (GitHub) copilot-cli. No needing mouse movements with XMonad. Pomodoro Timer. A lot of basic git aliases but practical.",
+      "validated": true,
+      "skill_name": "on-instructions-loaded",
+      "skill_description": "Announce which instructions file was just loaded. Use immediately after reading any CLAUDE.md or AGENTS.md file (including AGENTS.global.md and subdirectory AGENTS.md files).",
+      "skill_category": "general",
+      "raw_content": "---\nname: on-instructions-loaded\ndescription: Announce which instructions file was just loaded. Use immediately after reading any CLAUDE.md or AGENTS.md file (including AGENTS.global.md and subdirectory AGENTS.md files).\n---\n\n# on-instructions-loaded\n\nSay the appropriate loaded message based on the path of the instructions file that was just read.\n\n## Behavior\n\nDetermine the message based on the file path:\n\n| Condition | Message |\n|---|---|\n| Path is `~/.claude/CLAUDE.md` or resolves to it | `Global CLAUDE.md loaded!` |\n| Path is `{project-root}/.claude/CLAUDE.md` or any other CLAUDE.md | `Local CLAUDE.md loaded!` |\n| Path is `~/AGENTS.md` or `~/AGENTS.global.md` | `Global AGENTS.md loaded!` |\n| Path is any other AGENTS.md (project subdirectory, etc.) | `Local AGENTS.md loaded!` |\n\n## Classification Rules\n\n- **Global vs Local**: If the file lives under the user's home directory config (`~/.claude/`) or is the home-directory-level AGENTS.md / AGENTS.global.md \u2192 Global. Otherwise \u2192 Local.\n- **CLAUDE vs AGENTS**: Determined by the file name (`CLAUDE.md` \u2192 CLAUDE, `AGENTS.md` or `AGENTS.global.md` \u2192 AGENTS).\n\n## Does Not\n\n- Read or modify any files\n- Do anything other than say the single loaded message\n"
     }
   ],
   "integrated": [],
