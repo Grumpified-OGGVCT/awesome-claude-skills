@@ -118,7 +118,7 @@
       "stars": 0,
       "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
       "validated": false,
-      "validation_error": "Download error: 502 Server Error: Bad Gateway for url: https://api.github.com/repos/alexei-led/aws-mcp-server/contents/spec.md"
+      "validation_error": "Missing YAML frontmatter"
     },
     {
       "repo_url": "https://github.com/nibzard/apex",
@@ -1208,6 +1208,21 @@
       "skill_description": "Announce which instructions file was just loaded. Use immediately after reading any CLAUDE.md or AGENTS.md file (including AGENTS.global.md and subdirectory AGENTS.md files).",
       "skill_category": "general",
       "raw_content": "---\nname: on-instructions-loaded\ndescription: Announce which instructions file was just loaded. Use immediately after reading any CLAUDE.md or AGENTS.md file (including AGENTS.global.md and subdirectory AGENTS.md files).\n---\n\n# on-instructions-loaded\n\nSay the appropriate loaded message based on the path of the instructions file that was just read.\n\n## Behavior\n\nDetermine the message based on the file path:\n\n| Condition | Message |\n|---|---|\n| Path is `~/.claude/CLAUDE.md` or resolves to it | `Global CLAUDE.md loaded!` |\n| Path is `{project-root}/.claude/CLAUDE.md` or any other CLAUDE.md | `Local CLAUDE.md loaded!` |\n| Path is `~/AGENTS.md` or `~/AGENTS.global.md` | `Global AGENTS.md loaded!` |\n| Path is any other AGENTS.md (project subdirectory, etc.) | `Local AGENTS.md loaded!` |\n\n## Classification Rules\n\n- **Global vs Local**: If the file lives under the user's home directory config (`~/.claude/`) or is the home-directory-level AGENTS.md / AGENTS.global.md \u2192 Global. Otherwise \u2192 Local.\n- **CLAUDE vs AGENTS**: Determined by the file name (`CLAUDE.md` \u2192 CLAUDE, `AGENTS.md` or `AGENTS.global.md` \u2192 AGENTS).\n\n## Does Not\n\n- Read or modify any files\n- Do anything other than say the single loaded message\n"
+    },
+    {
+      "repo_url": "https://github.com/gaia-research/gaia-skill-tree",
+      "repo_name": "gaia-research/gaia-skill-tree",
+      "file_path": ".claude/skills/update-suite-instructions/SKILL.md",
+      "file_url": "https://github.com/gaia-research/gaia-skill-tree/blob/f73e7d57937ca90e7e0814e6e0e9403757e341d0/.claude/skills/update-suite-instructions/SKILL.md",
+      "discovered_at": "2026-07-20 06:18:46 UTC",
+      "query": "claude instructions SKILL.md in:path",
+      "stars": 0,
+      "description": "Gaia is a living, open registry of every AI agent skill \u2014 structured as a leveling skill graph. Live site: https://gaiaskilltree.com/",
+      "validated": true,
+      "skill_name": "update-suite-instructions",
+      "skill_description": "Sync suite skill installation instructions with upstream sources and ensure Gaia-compliant styling.",
+      "skill_category": "general",
+      "raw_content": "---\nname: update-suite-instructions\ndescription: Sync suite skill installation instructions with upstream sources and ensure Gaia-compliant styling.\n---\n\n# update-suite-instructions\n\nSync suite skill installation instructions with upstream sources and ensure Gaia-compliant styling.\n\n## Context\nSuite skills (like `ruvnet/ruflo`, `garrytan/gstack`, and `obra/superpowers`) often have detailed installation instructions in their upstream READMEs. This skill automates the synchronization of these instructions into the Gaia registry while enforcing consistency and adherence to `DESIGN.md`.\n\n## Instructions\n1. Run `python3 scripts/update_suite_instructions.py` to fetch, standardize, and inject the latest instructions.\n2. The script will:\n   - Fetch sections from upstream READMEs (e.g., \"Installation\", \"Quick Start\").\n   - Standardize code blocks to use `bash` syntax.\n   - Apply the Matt Pocock suite template to all Matt Pocock skills.\n   - Run `scripts/generateNamedIndex.py` to update the generated `named-skills.json`.\n3. Verify the changes in the relevant `.md` files in `registry/named/` and the resulting `registry/named-skills.json`.\n4. If a suite is missing instructions, refer to the tracking issue created for undocumented suites.\n\n## Resource\n- `scripts/update_suite_instructions.py`: The automation script.\n- `scripts/generateNamedIndex.py`: The registry indexer.\n- `DESIGN.md`: Visual design language and styling rules.\n- `registry/named/`: Source markdown files for named skills.\n"
     }
   ],
   "integrated": [],
