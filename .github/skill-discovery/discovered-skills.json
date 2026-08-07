@@ -1262,6 +1262,18 @@
       "description": "\u6280\u672f\u5c0f\u767d\u4e5f\u80fd\u62e5\u6709\u7684 AI \u7b2c\u4e8c\u5927\u8111\uff1a\u65e0\u9700\u7ffb\u5899\u3001\u65e0\u9700\u8ba2\u9605\uff0c\u8ddf\u7740\u56fe\u6587 ~20 \u5206\u949f\u88c5\u597d Obsidian + Claudian + cc-switch + DeepSeek V4\u3002",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/alecs5am/ralphy",
+      "repo_name": "alecs5am/ralphy",
+      "file_path": "CLI.md",
+      "file_url": "https://github.com/alecs5am/ralphy/blob/5af6cea86868512d9a66e6d7f9c5b0f924d7d34c/CLI.md",
+      "discovered_at": "2026-08-07 04:55:11 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "\ud83c\udfac Give AI agents tools to create viral videos. Influence at scale, from your terminal.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
