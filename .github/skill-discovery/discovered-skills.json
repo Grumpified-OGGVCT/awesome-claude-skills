@@ -892,7 +892,7 @@
       "stars": 0,
       "description": "Accomplish\u2122 is the open source Al coworker that lives on your desktop",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 404 Client Error: Not Found for url: https://api.github.com/repositories/1134220362/contents/AD.md"
     },
     {
       "repo_url": "https://github.com/Community-Access/accessibility-agents",
@@ -1144,7 +1144,7 @@
       "stars": 0,
       "description": "Coworker is the open source Al coworker that lives on your desktop",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 404 Client Error: Not Found for url: https://api.github.com/repos/accomplish-ai/coworker/contents/AD.md"
     },
     {
       "repo_url": "https://github.com/affaan-m/agentshield",
@@ -1192,7 +1192,7 @@
       "stars": 0,
       "description": "Template repository with AI agent guardrails, safety protocols, and sprint task framework. For Claude, GPT, Gemini, and all LLMs.",
       "validated": false,
-      "validation_error": "Missing YAML frontmatter"
+      "validation_error": "Download error: 404 Client Error: Not Found for url: https://api.github.com/repos/TheArchitectit/agent-guardrails-template/contents/TOC.md"
     },
     {
       "repo_url": "https://github.com/aiya000/dotfiles",
@@ -1272,6 +1272,18 @@
       "query": "claude prompt template in:file extension:md",
       "stars": 0,
       "description": "\ud83c\udfac Give AI agents tools to create viral videos. Influence at scale, from your terminal.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/VirtusLab/orca",
+      "repo_name": "VirtusLab/orca",
+      "file_path": "plan.md",
+      "file_url": "https://github.com/VirtusLab/orca/blob/9da3d07c526770f2dae3ccf3fa76401753d88c01/plan.md",
+      "discovered_at": "2026-08-16 03:49:01 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Deterministic, AI-driven development flows.",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
     }
