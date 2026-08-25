@@ -1286,6 +1286,18 @@
       "description": "Deterministic, AI-driven development flows.",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills",
+      "repo_name": "bitwize-music-studio/claude-ai-music-skills",
+      "file_path": "FAQ.md",
+      "file_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/b1b11a67e8ce5dd07691b68cf736cff8e4c55c87/FAQ.md",
+      "discovered_at": "2026-08-25 03:49:21 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Human + AI music production workflow for Suno - skills, templates, and tools",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
