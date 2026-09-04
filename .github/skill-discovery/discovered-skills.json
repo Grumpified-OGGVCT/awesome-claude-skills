@@ -1625,6 +1625,18 @@
       "description": "\u7528\u4e8e\u751f\u6210\u9ad8\u8d28\u91cf\u4e2a\u4eba\u4e3b\u9875\u4e0e HTML PPT \u7684 AI Skill\uff1a\u53c2\u8003\u4f18\u5148\u300119 \u4e2a\u6a21\u677f\u3001Hero \u89c6\u9891\u4e3b\u9875\u3001\u4fbf\u643a HTML \u4e0e\u8d28\u91cf\u68c0\u67e5",
       "validated": false,
       "validation_error": "Missing YAML frontmatter"
+    },
+    {
+      "repo_url": "https://github.com/Goldwaterfung/Stratawright",
+      "repo_name": "Goldwaterfung/Stratawright",
+      "file_path": "FAQ.md",
+      "file_url": "https://github.com/Goldwaterfung/Stratawright/blob/a3e5a0df4e58a6ead22200d8ea9bc26b7135a3c7/FAQ.md",
+      "discovered_at": "2026-09-04 07:46:39 UTC",
+      "query": "claude prompt template in:file extension:md",
+      "stars": 0,
+      "description": "Stratawright is an agentic DAW that your AI agent (Claude Code, Cursor, Codex) can natively control so you can focus purely on making music.",
+      "validated": false,
+      "validation_error": "Missing YAML frontmatter"
     }
   ],
   "integrated": [],
